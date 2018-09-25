@@ -1,0 +1,22 @@
+/*
+ Localizable.strings
+ POSMerchant
+
+ Created by Mederic Petit on 25/9/18.
+ Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
+ */
+
+// Global
+"global.next" = "Next";
+
+// Loading
+"loading.button.title.retry" = "Retry";
+
+
+// Global Errors
+"error.missing_required_fields" = "Missing required fields";
+"error.unexpected" = "An unexpected error has occured";
+
+// Biometric
+"biometric.touchID" = "Touch ID";
+"biometric.faceID" = "Face ID";
