@@ -12,7 +12,6 @@
 // Loading
 "loading.button.title.retry" = "Retry";
 
-
 // Global Errors
 "error.missing_required_fields" = "Missing required fields";
 "error.unexpected" = "An unexpected error has occured";
@@ -20,3 +19,11 @@
 // Biometric
 "biometric.touchID" = "Touch ID";
 "biometric.faceID" = "Face ID";
+
+// Sign in
+"sign_in.error.validation.email" = "Invalid email";
+"sign_in.error.validation.password" = "Password should be at least 8 characters long";
+"sign_in.text_field.placeholder.email" = "Email";
+"sign_in.text_field.placeholder.password" = "Password";
+"sign_in.button.title.login" = "Sign in";
+"sign_in.alert.biometric_auth" = "Authenticate to login";

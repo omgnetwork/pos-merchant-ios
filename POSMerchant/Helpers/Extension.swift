@@ -52,9 +52,7 @@ extension String {
     }
 
     func isValidPassword() -> Bool {
-        let regex = try? NSRegularExpression(pattern: "^(?=\\S*[a-z])(?=\\S*[A-Z])(?=\\S*\\d)(?=\\S*[^\\w\\s])\\S{8,}$",
-                                             options: .caseInsensitive)
-        return regex?.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.count)) != nil
+        return self.count >= 8
     }
 
     func localized() -> String {
