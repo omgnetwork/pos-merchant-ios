@@ -10,6 +10,7 @@ import TPKeyboardAvoiding
 
 class SigninViewController: BaseViewController {
     private var viewModel: SigninViewModelProtocol = SigninViewModel()
+    private let showAccountSelectionSegueIdentifier = "showAccountSelectionSegue"
 
     @IBOutlet var scrollView: TPKeyboardAvoidingScrollView!
     @IBOutlet var emailTextField: OMGFloatingTextField!
@@ -41,6 +42,10 @@ class SigninViewController: BaseViewController {
         }
         self.viewModel.onLoadStateChange = { [weak self] in
             $0 ? self?.showLoading() : self?.hideLoading()
+        }
+        self.viewModel.onSuccessfulLogin = { [weak self] in
+            guard let weakself = self else { return }
+            self?.performSegue(withIdentifier: weakself.showAccountSelectionSegueIdentifier, sender: nil)
         }
         self.viewModel.onFailedLogin = { [weak self] in
             self?.showError(withMessage: $0.localizedDescription)

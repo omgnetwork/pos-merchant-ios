@@ -14,6 +14,7 @@ protocol SessionManagerProtocol: Observable {
     var selectedAccount: Account? { get set }
     var isBiometricAvailable: Bool { get }
     func disableBiometricAuth()
+    func selectCurrentAccount(_ account: Account)
     func enableBiometricAuth(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func bioLogin(withPromptMessage message: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
@@ -73,6 +74,11 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     func isLoggedIn() -> Bool {
         return self.httpClient.isAuthenticated
+    }
+
+    func selectCurrentAccount(_ account: Account) {
+        self.userDefaultsWrapper.storeValue(value: account.id, forKey: .accountId)
+        self.selectedAccount = account
     }
 
     func disableBiometricAuth() {
@@ -144,6 +150,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
     }
 
     private func clearTokens() {
+        self.userDefaultsWrapper.clearValue(forKey: .accountId)
         self.keychainWrapper.clearValue(forKey: .authenticationToken)
         self.keychainWrapper.clearValue(forKey: .userId)
         self.selectedAccount = nil

@@ -27,3 +27,6 @@
 "sign_in.text_field.placeholder.password" = "Password";
 "sign_in.button.title.login" = "Sign in";
 "sign_in.alert.biometric_auth" = "Authenticate to login";
+
+// Select account
+"select_account.view.title" = "Select account";

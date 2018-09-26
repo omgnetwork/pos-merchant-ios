@@ -12,6 +12,7 @@ class SigninViewModel: BaseViewModel, SigninViewModelProtocol {
     // Delegate closures
     var updateEmailValidation: ViewModelValidationClosure?
     var updatePasswordValidation: ViewModelValidationClosure?
+    var onSuccessfulLogin: SuccessClosure?
     var onFailedLogin: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
 
@@ -59,6 +60,7 @@ class SigninViewModel: BaseViewModel, SigninViewModelProtocol {
         self.isLoading = true
         self.sessionManager.bioLogin(withPromptMessage: "sign_in.alert.biometric_auth".localized(), success: { [weak self] in
             self?.isLoading = false
+            self?.onSuccessfulLogin?()
         }, failure: { [weak self] _ in
             self?.isLoading = false
         })
@@ -78,6 +80,7 @@ class SigninViewModel: BaseViewModel, SigninViewModelProtocol {
         let params = LoginParams(email: self.email!, password: self.password!)
         self.sessionManager.login(withParams: params, success: { [weak self] in
             self?.isLoading = false
+            self?.onSuccessfulLogin?()
         }, failure: { [weak self] error in
             self?.isLoading = false
             self?.onFailedLogin?(error)
