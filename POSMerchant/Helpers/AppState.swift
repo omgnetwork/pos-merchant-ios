@@ -9,5 +9,6 @@
 enum AppState {
     case loggedOut
     case loading
+    case welcome
     case loggedIn
 }

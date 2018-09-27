@@ -30,3 +30,11 @@
 
 // Select account
 "select_account.view.title" = "Select account";
+
+// Loading
+"loading.button.title.retry" = "Retry";
+
+// Welcome
+"welcome.title" = "Welcome!";
+"welcome.label.you_are_in" = "You are in";
+"welcome.label.account" = "Account";

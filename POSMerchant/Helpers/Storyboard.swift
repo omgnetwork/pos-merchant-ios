@@ -10,14 +10,18 @@ import UIKit
 
 enum Storyboard {
     case loading
+    case welcome
     case signin
     case selectAccount
+    case tmp
 
     var name: String {
         switch self {
         case .loading: return "Loading"
+        case .welcome: return "Welcome"
         case .signin: return "Signin"
         case .selectAccount: return "SelectAccount"
+        case .tmp: return "Tmp"
         }
     }
 
