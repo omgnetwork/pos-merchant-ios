@@ -6,6 +6,7 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
+import OmiseGO
 import UIKit
 
 class ReceiveViewModel: BaseViewModel, ReceiveViewModelProtocol {
@@ -29,23 +30,26 @@ class ReceiveViewModel: BaseViewModel, ReceiveViewModelProtocol {
         super.init()
     }
 
-    func didTapCharacter(_ character: String) {
-        self.processInput(character)
+    func didTapNumber(_ number: String) {
+        if self.displayAmount == "0" {
+            if number == "0" { return }
+            self.displayAmount = number
+        } else {
+            self.displayAmount.append(number)
+        }
+    }
+
+    func didTapDecimalSeparator(_ character: Character) {
+        guard !self.displayAmount.contains(character) else { return }
+        self.displayAmount.append(character)
     }
 
     func didTapDelete() {
-        self.displayAmount.removeLast()
-        if self.displayAmount == "" {
-            self.displayAmount = "0"
+        var copiedAmount = self.displayAmount
+        copiedAmount.removeLast()
+        if copiedAmount == "" {
+            copiedAmount = "0"
         }
-    }
-
-    private func processInput(_ character: String) {
-        if self.displayAmount == "0" && character != NSLocale.current.decimalSeparator {
-            guard character != "0" else { return }
-            self.displayAmount = character
-        } else {
-            self.displayAmount.append(character)
-        }
+        self.displayAmount = copiedAmount
     }
 }
