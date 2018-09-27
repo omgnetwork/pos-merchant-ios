@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .welcome?:
             self.window?.rootViewController = Storyboard.welcome.storyboard.instantiateInitialViewController()
         case .loggedIn?:
-            self.window?.rootViewController = Storyboard.tmp.storyboard.instantiateInitialViewController()
+            self.window?.rootViewController = Storyboard.tabBar.storyboard.instantiateInitialViewController()
         default: break
         }
     }

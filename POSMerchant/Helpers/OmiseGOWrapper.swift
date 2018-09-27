@@ -21,3 +21,17 @@ class AccountLoader: AccountLoaderProtocol {
         return Account.list(using: SessionManager.shared.httpClient, params: params, callback: callback)
     }
 }
+
+protocol TokenLoaderProtocol {
+    func list(withParams params: WalletListForAccountParams,
+              callback: @escaping Wallet.PaginatedListRequestCallback) -> Wallet.PaginatedListRequest?
+}
+
+/// This wrapper has been created for the sake of testing with dependency injection
+class TokenLoader: TokenLoaderProtocol {
+    @discardableResult
+    func list(withParams params: WalletListForAccountParams,
+              callback: @escaping Wallet.PaginatedListRequestCallback) -> Wallet.PaginatedListRequest? {
+        return Wallet.listForAccount(using: SessionManager.shared.httpClient, params: params, callback: callback)
+    }
+}

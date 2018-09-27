@@ -38,3 +38,7 @@
 "welcome.title" = "Welcome!";
 "welcome.label.you_are_in" = "You are in";
 "welcome.label.account" = "Account";
+
+// Receive
+"receive.label.receive" = "Receive";
+"receive.button.receive" = "Receive";
