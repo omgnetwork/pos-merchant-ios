@@ -15,4 +15,6 @@ protocol ReceiveViewModelProtocol: KeyboardEventDelegate {
     var tokenString: String { get set }
     var onAmountUpdate: ObjectClosure<String>? { get set }
     var onTokenUpdate: ObjectClosure<String>? { get set }
+    var onFailGetDefaultToken: FailureClosure? { get set }
+    var isReady: Bool { get }
 }

@@ -42,3 +42,4 @@
 // Receive
 "receive.label.receive" = "Receive";
 "receive.button.receive" = "Receive";
+"receive.error.no_token" = "There is no token available.";

@@ -44,7 +44,16 @@ class ReceiveViewController: BaseViewController {
         }
         self.viewModel.onTokenUpdate = { [weak self] in
             self?.tokenLabel.text = $0
+            self?.updateReceiveButtonState()
         }
+        self.viewModel.onFailGetDefaultToken = { [weak self] in
+            self?.showError(withMessage: $0.message)
+        }
+    }
+
+    private func updateReceiveButtonState() {
+        self.receiveButton.isEnabled = self.viewModel.isReady
+        self.receiveButton.alpha = self.viewModel.isReady ? 1 : 0.5
     }
 }
 

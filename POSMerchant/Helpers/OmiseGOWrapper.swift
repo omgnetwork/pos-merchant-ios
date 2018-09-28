@@ -9,6 +9,7 @@
 import OmiseGO
 
 protocol AccountLoaderProtocol {
+    @discardableResult
     func list(withParams params: PaginatedListParams<Account>,
               callback: @escaping Account.PaginatedListRequestCallback) -> Account.PaginatedListRequest?
 }
@@ -23,15 +24,16 @@ class AccountLoader: AccountLoaderProtocol {
 }
 
 protocol TokenLoaderProtocol {
-    func list(withParams params: WalletListForAccountParams,
-              callback: @escaping Wallet.PaginatedListRequestCallback) -> Wallet.PaginatedListRequest?
+    @discardableResult
+    func listForAccount(withParams params: WalletListForAccountParams,
+                        callback: @escaping Wallet.PaginatedListRequestCallback) -> Wallet.PaginatedListRequest?
 }
 
 /// This wrapper has been created for the sake of testing with dependency injection
 class TokenLoader: TokenLoaderProtocol {
     @discardableResult
-    func list(withParams params: WalletListForAccountParams,
-              callback: @escaping Wallet.PaginatedListRequestCallback) -> Wallet.PaginatedListRequest? {
+    func listForAccount(withParams params: WalletListForAccountParams,
+                        callback: @escaping Wallet.PaginatedListRequestCallback) -> Wallet.PaginatedListRequest? {
         return Wallet.listForAccount(using: SessionManager.shared.httpClient, params: params, callback: callback)
     }
 }
