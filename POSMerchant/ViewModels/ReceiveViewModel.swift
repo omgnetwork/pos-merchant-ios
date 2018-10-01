@@ -93,4 +93,14 @@ class ReceiveViewModel: BaseViewModel, ReceiveViewModelProtocol {
     func didSelectToken(_ token: Token) {
         self.selectedToken = token
     }
+
+    func didDecode(_ string: String) {
+        print(string)
+    }
+
+    func qrReaderStrings() -> (String, String) {
+        let title = "\("qr_reader.label.scan_to".localized()) \("receive.label.receive".localized().lowercased())"
+        let tokenString = "\(self.displayAmount) \(self.selectedToken!.symbol)"
+        return (title, tokenString)
+    }
 }

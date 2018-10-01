@@ -8,7 +8,7 @@
 
 import OmiseGO
 
-protocol ReceiveViewModelProtocol: KeyboardEventDelegate, SelectTokenDelegate {
+protocol ReceiveViewModelProtocol: KeyboardEventDelegate, SelectTokenDelegate, QRReaderDelegate {
     var title: String { get }
     var receiveButtonTitle: String { get }
     var displayAmount: String { get set }
@@ -18,4 +18,5 @@ protocol ReceiveViewModelProtocol: KeyboardEventDelegate, SelectTokenDelegate {
     var onTokenUpdate: ObjectClosure<String>? { get set }
     var onFailGetDefaultToken: FailureClosure? { get set }
     var isReady: Bool { get }
+    func qrReaderStrings() -> (String, String)
 }

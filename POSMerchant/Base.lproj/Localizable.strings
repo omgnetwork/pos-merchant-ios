@@ -46,3 +46,7 @@
 
 // Select token
 "select_token.view.title" = "Select token";
+
+// QR reader
+"qr_reader.label.scan_to" = "Scan to";
+"qr_reader.label.hint" = "Allign QR code here";

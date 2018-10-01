@@ -11,6 +11,7 @@ import UIKit
 class ReceiveViewController: BaseViewController {
     private let keyboardSegueId = "keyboardSegueIdentifier"
     private let selectTokenSegueId = "selectTokenSegueIdentifier"
+    private let showScannerSegueId = "showScannerSegueIdentifier"
     private var viewModel: ReceiveViewModelProtocol = ReceiveViewModel()
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var amountLabel: UILabel!
@@ -42,6 +43,10 @@ class ReceiveViewController: BaseViewController {
             selectTokenTableVC.viewModel =
                 SelectTokenViewModel(delegate: self.viewModel,
                                      selectedToken: self.viewModel.selectedToken!)
+        } else if segue.identifier == self.showScannerSegueId,
+            let qrReaderVC: QRReaderViewController = segue.destination as? QRReaderViewController {
+            let strings = self.viewModel.qrReaderStrings()
+            qrReaderVC.viewModel = QRReaderViewModel(delegate: self.viewModel, title: strings.0, tokenString: strings.1)
         }
     }
 
@@ -73,5 +78,6 @@ extension ReceiveViewController {
     }
 
     @IBAction func tapReceiveButton(_: UIButton) {
+        self.performSegue(withIdentifier: self.showScannerSegueId, sender: nil)
     }
 }

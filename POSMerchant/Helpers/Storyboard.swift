@@ -19,6 +19,7 @@ enum Storyboard {
     case more
     case keyboard
     case selectToken
+    case qrReader
 
     var name: String {
         switch self {
@@ -32,6 +33,7 @@ enum Storyboard {
         case .more: return "More"
         case .keyboard: return "Keyboard"
         case .selectToken: return "SelectToken"
+        case .qrReader: return "QRReader"
         }
     }
 
