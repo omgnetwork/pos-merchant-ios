@@ -53,6 +53,13 @@
 		033802CE215CC95200C2501F /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802CD215CC95200C2501F /* KeyboardViewController.swift */; };
 		033802D0215CC96500C2501F /* KeyboardViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802CF215CC96500C2501F /* KeyboardViewModelProtocol.swift */; };
 		033802D2215CC97700C2501F /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802D1215CC97700C2501F /* KeyboardViewModel.swift */; };
+		033802D5215DDF4700C2501F /* SelectToken.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033802D3215DDF4700C2501F /* SelectToken.storyboard */; };
+		033802D7215DDF7300C2501F /* SelectTokenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802D6215DDF7300C2501F /* SelectTokenTableViewController.swift */; };
+		033802D9215DDF7F00C2501F /* SelectTokenViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802D8215DDF7F00C2501F /* SelectTokenViewModelProtocol.swift */; };
+		033802DB215DDFA200C2501F /* SelectTokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802DA215DDFA200C2501F /* SelectTokenViewModel.swift */; };
+		033802DE215DEAB400C2501F /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802DC215DEAB400C2501F /* BalanceTableViewCell.swift */; };
+		033802DF215DEAB400C2501F /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 033802DD215DEAB400C2501F /* BalanceTableViewCell.xib */; };
+		033802E1215DEABE00C2501F /* BalanceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802E0215DEABE00C2501F /* BalanceCellViewModel.swift */; };
 		03C94B41215B4109007DF271 /* AccountSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C94B3F215B4109007DF271 /* AccountSelection.storyboard */; };
 		03C94B43215B4179007DF271 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */; };
 		03C94B45215B4229007DF271 /* SelectAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */; };
@@ -129,6 +136,13 @@
 		033802CD215CC95200C2501F /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		033802CF215CC96500C2501F /* KeyboardViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModelProtocol.swift; sourceTree = "<group>"; };
 		033802D1215CC97700C2501F /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
+		033802D4215DDF4700C2501F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SelectToken.storyboard; sourceTree = "<group>"; };
+		033802D6215DDF7300C2501F /* SelectTokenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTokenTableViewController.swift; sourceTree = "<group>"; };
+		033802D8215DDF7F00C2501F /* SelectTokenViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTokenViewModelProtocol.swift; sourceTree = "<group>"; };
+		033802DA215DDFA200C2501F /* SelectTokenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTokenViewModel.swift; sourceTree = "<group>"; };
+		033802DC215DEAB400C2501F /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
+		033802DD215DEAB400C2501F /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
+		033802E0215DEABE00C2501F /* BalanceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCellViewModel.swift; sourceTree = "<group>"; };
 		03C94B40215B4109007DF271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AccountSelection.storyboard; sourceTree = "<group>"; };
 		03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountTableViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +204,8 @@
 			children = (
 				03C94B51215B49D5007DF271 /* AccountTableViewCell.swift */,
 				03C94B52215B49D5007DF271 /* AccountTableViewCell.xib */,
+				033802DC215DEAB400C2501F /* BalanceTableViewCell.swift */,
+				033802DD215DEAB400C2501F /* BalanceTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -264,6 +280,8 @@
 				033802A6215B9ABC00C2501F /* WelcomeViewModel.swift */,
 				033802CB215CC34600C2501F /* ReceiveViewModel.swift */,
 				033802D1215CC97700C2501F /* KeyboardViewModel.swift */,
+				033802DA215DDFA200C2501F /* SelectTokenViewModel.swift */,
+				033802E0215DEABE00C2501F /* BalanceCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -315,6 +333,7 @@
 				03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */,
 				033802C7215CC32000C2501F /* ReceiveViewController.swift */,
 				033802CD215CC95200C2501F /* KeyboardViewController.swift */,
+				033802D6215DDF7300C2501F /* SelectTokenTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -332,6 +351,7 @@
 				033802BE215CBE8F00C2501F /* Topup.storyboard */,
 				033802C1215CBEA000C2501F /* More.storyboard */,
 				033802C4215CC0E000C2501F /* Keyboard.storyboard */,
+				033802D3215DDF4700C2501F /* SelectToken.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -381,6 +401,7 @@
 				033802A8215B9AC600C2501F /* WelcomeViewModelProtocol.swift */,
 				033802C9215CC33400C2501F /* ReceiveViewModelProtocol.swift */,
 				033802CF215CC96500C2501F /* KeyboardViewModelProtocol.swift */,
+				033802D8215DDF7F00C2501F /* SelectTokenViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -492,6 +513,7 @@
 			files = (
 				033802BA215CBDFC00C2501F /* TabBar.storyboard in Resources */,
 				033802AE215CA3BC00C2501F /* Loading.storyboard in Resources */,
+				033802D5215DDF4700C2501F /* SelectToken.storyboard in Resources */,
 				0306DC95215A27D600612953 /* Signin.storyboard in Resources */,
 				033802BD215CBE7400C2501F /* Receive.storyboard in Resources */,
 				03C94B54215B49D5007DF271 /* AccountTableViewCell.xib in Resources */,
@@ -500,6 +522,7 @@
 				03FB02F5215A0DDF001EF0D4 /* Localizable.strings in Resources */,
 				03FB02F7215A0DDF001EF0D4 /* Assets.xcassets in Resources */,
 				033802C3215CBEA000C2501F /* More.storyboard in Resources */,
+				033802DF215DEAB400C2501F /* BalanceTableViewCell.xib in Resources */,
 				0306DCA7215A334E00612953 /* LoadingView.xib in Resources */,
 				03FB02F6215A0DDF001EF0D4 /* LaunchScreen.storyboard in Resources */,
 				03C94B41215B4109007DF271 /* AccountSelection.storyboard in Resources */,
@@ -622,7 +645,10 @@
 				033802D0215CC96500C2501F /* KeyboardViewModelProtocol.swift in Sources */,
 				033802A5215B9AAE00C2501F /* WelcomeViewController.swift in Sources */,
 				033802A9215B9AC600C2501F /* WelcomeViewModelProtocol.swift in Sources */,
+				033802DE215DEAB400C2501F /* BalanceTableViewCell.swift in Sources */,
+				033802E1215DEABE00C2501F /* BalanceCellViewModel.swift in Sources */,
 				033802CC215CC34600C2501F /* ReceiveViewModel.swift in Sources */,
+				033802D9215DDF7F00C2501F /* SelectTokenViewModelProtocol.swift in Sources */,
 				0306DC82215A25A100612953 /* Biometric.swift in Sources */,
 				03C94B45215B4229007DF271 /* SelectAccountTableViewController.swift in Sources */,
 				033802B0215CA3DA00C2501F /* LoadingViewController.swift in Sources */,
@@ -654,7 +680,9 @@
 				0306DC99215A28D900612953 /* AppEvent.swift in Sources */,
 				03C94B43215B4179007DF271 /* BaseNavigationViewController.swift in Sources */,
 				0306DC8A215A25A100612953 /* OmiseGOWrapper.swift in Sources */,
+				033802D7215DDF7300C2501F /* SelectTokenTableViewController.swift in Sources */,
 				03C94B47215B4259007DF271 /* SelectAccountViewModelProtocol.swift in Sources */,
+				033802DB215DDFA200C2501F /* SelectTokenViewModel.swift in Sources */,
 				0306DCA8215A334E00612953 /* LoadingView.swift in Sources */,
 				03C94B4F215B48BC007DF271 /* Paginator.swift in Sources */,
 			);
@@ -741,6 +769,14 @@
 				033802C5215CC0E000C2501F /* Base */,
 			);
 			name = Keyboard.storyboard;
+			sourceTree = "<group>";
+		};
+		033802D3215DDF4700C2501F /* SelectToken.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				033802D4215DDF4700C2501F /* Base */,
+			);
+			name = SelectToken.storyboard;
 			sourceTree = "<group>";
 		};
 		03C94B3F215B4109007DF271 /* AccountSelection.storyboard */ = {

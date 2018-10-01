@@ -45,7 +45,11 @@ class ReceiveViewModel: BaseViewModel, ReceiveViewModelProtocol {
     }
 
     func loadDefaultToken() {
-        let paginationParams = PaginatedListParams<Wallet>(page: 1, perPage: 1, sortBy: .address, sortDirection: .ascending)
+        let paginationParams = PaginatedListParams<Wallet>(page: 1,
+                                                           perPage: 1,
+                                                           searchTerms: [.identifier: "primary"],
+                                                           sortBy: .address,
+                                                           sortDirection: .ascending)
         let params = WalletListForAccountParams(paginatedListParams: paginationParams,
                                                 accountId: self.sessionManager.selectedAccount?.id ?? "",
                                                 owned: false)
@@ -84,5 +88,9 @@ class ReceiveViewModel: BaseViewModel, ReceiveViewModelProtocol {
             copiedAmount = "0"
         }
         self.displayAmount = copiedAmount
+    }
+
+    func didSelectToken(_ token: Token) {
+        self.selectedToken = token
     }
 }

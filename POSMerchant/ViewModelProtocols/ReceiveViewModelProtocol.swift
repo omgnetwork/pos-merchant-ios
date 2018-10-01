@@ -6,13 +6,14 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import UIKit
+import OmiseGO
 
-protocol ReceiveViewModelProtocol: KeyboardEventDelegate {
+protocol ReceiveViewModelProtocol: KeyboardEventDelegate, SelectTokenDelegate {
     var title: String { get }
     var receiveButtonTitle: String { get }
     var displayAmount: String { get set }
     var tokenString: String { get set }
+    var selectedToken: Token? { get set }
     var onAmountUpdate: ObjectClosure<String>? { get set }
     var onTokenUpdate: ObjectClosure<String>? { get set }
     var onFailGetDefaultToken: FailureClosure? { get set }

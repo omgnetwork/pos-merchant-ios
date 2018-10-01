@@ -11,24 +11,6 @@ import UIKit
 class SelectAccountTableViewController: BaseTableViewController {
     private var viewModel: SelectAccountViewModelProtocol = SelectAccountViewModel()
 
-    lazy var loadingView: UIView = {
-        let loader = UIActivityIndicatorView(style: .white)
-        loader.startAnimating()
-        loader.translatesAutoresizingMaskIntoConstraints = false
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44))
-        view.addSubview(loader)
-        [.centerX, .centerY].forEach({
-            view.addConstraint(NSLayoutConstraint(item: loader,
-                                                  attribute: $0,
-                                                  relatedBy: .equal,
-                                                  toItem: view,
-                                                  attribute: $0,
-                                                  multiplier: 1,
-                                                  constant: 0))
-        })
-        return view
-    }()
-
     class func initWithViewModel(_ viewModel: SelectAccountViewModelProtocol = SelectAccountViewModel())
         -> SelectAccountTableViewController? {
         guard let transactionsVC: SelectAccountTableViewController = Storyboard.selectAccount.viewControllerFromId() else { return nil }
@@ -41,12 +23,10 @@ class SelectAccountTableViewController: BaseTableViewController {
         self.title = self.viewModel.viewTitle
         self.refreshControl?.addTarget(self, action: #selector(self.reloadAccounts), for: .valueChanged)
         self.tableView.registerNib(tableViewCell: AccountTableViewCell.self)
-        self.tableView.tableFooterView = UIView()
         self.tableView.rowHeight = 64
         self.tableView.estimatedRowHeight = 64
         self.tableView.refreshControl = self.refreshControl
         self.reloadAccounts()
-        self.tableView.contentInsetAdjustmentBehavior = .never
     }
 
     override func configureViewModel() {

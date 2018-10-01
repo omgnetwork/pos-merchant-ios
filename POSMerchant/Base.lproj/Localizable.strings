@@ -43,3 +43,6 @@
 "receive.label.receive" = "Receive";
 "receive.button.receive" = "Receive";
 "receive.error.no_token" = "There is no token available.";
+
+// Select token
+"select_token.view.title" = "Select token";

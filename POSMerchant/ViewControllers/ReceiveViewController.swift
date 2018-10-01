@@ -10,10 +10,12 @@ import UIKit
 
 class ReceiveViewController: BaseViewController {
     private let keyboardSegueId = "keyboardSegueIdentifier"
+    private let selectTokenSegueId = "selectTokenSegueIdentifier"
     private var viewModel: ReceiveViewModelProtocol = ReceiveViewModel()
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var amountLabel: UILabel!
     @IBOutlet var tokenLabel: UILabel!
+    @IBOutlet var selectTokenButton: UIButton!
     @IBOutlet var receiveButton: UIButton!
 
     class func initWithViewModel(_ viewModel: ReceiveViewModelProtocol = ReceiveViewModel()) -> ReceiveViewController? {
@@ -34,6 +36,12 @@ class ReceiveViewController: BaseViewController {
         if segue.identifier == self.keyboardSegueId,
             let keyboardVC: KeyboardViewController = segue.destination as? KeyboardViewController {
             keyboardVC.viewModel = KeyboardViewModel(delegate: self.viewModel)
+        } else if segue.identifier == self.selectTokenSegueId,
+            let selectTokenTableVC: SelectTokenTableViewController =
+            (segue.destination as? BaseNavigationViewController)?.viewControllers.first as? SelectTokenTableViewController {
+            selectTokenTableVC.viewModel =
+                SelectTokenViewModel(delegate: self.viewModel,
+                                     selectedToken: self.viewModel.selectedToken!)
         }
     }
 
@@ -44,20 +52,26 @@ class ReceiveViewController: BaseViewController {
         }
         self.viewModel.onTokenUpdate = { [weak self] in
             self?.tokenLabel.text = $0
-            self?.updateReceiveButtonState()
+            self?.updateButtonsState()
         }
         self.viewModel.onFailGetDefaultToken = { [weak self] in
             self?.showError(withMessage: $0.message)
         }
     }
 
-    private func updateReceiveButtonState() {
-        self.receiveButton.isEnabled = self.viewModel.isReady
-        self.receiveButton.alpha = self.viewModel.isReady ? 1 : 0.5
+    private func updateButtonsState() {
+        [self.receiveButton, self.selectTokenButton].forEach({
+            $0!.isEnabled = self.viewModel.isReady
+            $0!.alpha = self.viewModel.isReady ? 1 : 0.5
+        })
     }
 }
 
 extension ReceiveViewController {
+    @IBAction func tapSelectTokenButton(_: UIButton) {
+        self.performSegue(withIdentifier: self.selectTokenSegueId, sender: nil)
+    }
+
     @IBAction func tapReceiveButton(_: UIButton) {
     }
 }

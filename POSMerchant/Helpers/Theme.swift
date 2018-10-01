@@ -37,7 +37,7 @@ struct Theme {
 
 enum Color: String {
     case black = "04070D"
-    case omiseGOBlue = "1A53F0"
+    case omiseGOBlue = "#1A56F0"
     case transactionDebitRed = "EF3526"
     case transactionCreditGreen = "06AB88"
     case greyBorder = "E4E7ED"

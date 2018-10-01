@@ -30,6 +30,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4O-he-hJ6">
                                         <rect key="frame" x="313" y="43.5" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="tapSelectTokenButton:" destination="HvR-GV-ZtP" eventType="touchUpInside" id="0YB-gO-5e2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +85,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rz7-Qf-EiO">
-                                <rect key="frame" x="16" y="298" width="398" height="343"/>
+                                <rect key="frame" x="16" y="199" width="343" height="343"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="290" id="3BP-Z3-BaI"/>
                                     <constraint firstAttribute="width" secondItem="rz7-Qf-EiO" secondAttribute="height" multiplier="1:1" id="WTW-V3-u9q"/>
@@ -109,7 +112,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kET-Rw-XwE">
                                 <rect key="frame" x="16" y="558" width="343" height="44"/>
-                                <color key="backgroundColor" red="0.1019607843" green="0.32549019610000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.10196078431372549" green="0.33725490196078434" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="2k0-uA-z6g"/>
                                 </constraints>
@@ -122,6 +125,9 @@
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapReceiveButton:" destination="HvR-GV-ZtP" eventType="touchUpInside" id="Pob-Fh-OIK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,13 +158,23 @@
                     <connections>
                         <outlet property="amountLabel" destination="wxl-rI-93Y" id="IcI-EZ-7Mt"/>
                         <outlet property="receiveButton" destination="kET-Rw-XwE" id="djx-vn-Pbd"/>
+                        <outlet property="selectTokenButton" destination="j4O-he-hJ6" id="jMV-Op-8rP"/>
                         <outlet property="titleLabel" destination="2v3-ti-z60" id="QDt-ss-LU6"/>
                         <outlet property="tokenLabel" destination="PYB-SD-Oj7" id="aH1-gC-shc"/>
+                        <segue destination="cMc-EH-NBa" kind="presentation" identifier="selectTokenSegueIdentifier" id="vuz-y5-A2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yB-uF-Jzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="362.94642857142856"/>
+        </scene>
+        <!--SelectToken-->
+        <scene sceneID="Dia-Ol-ZbL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectToken" id="cMc-EH-NBa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hW-kZ-FrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="970" y="337"/>
         </scene>
         <!--Keyboard-->
         <scene sceneID="4Rk-Ti-OMX">
@@ -166,7 +182,7 @@
                 <viewControllerPlaceholder storyboardName="Keyboard" id="td0-Ih-rDq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6VM-ZZ-uGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="363"/>
+            <point key="canvasLocation" x="970" y="381"/>
         </scene>
     </scenes>
 </document>

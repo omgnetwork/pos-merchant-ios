@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qda-oA-Lyb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select token-->
+        <scene sceneID="olp-tM-5z0">
+            <objects>
+                <tableViewController storyboardIdentifier="SelectTokenTableViewController" id="bJI-pa-2Yj" customClass="SelectTokenTableViewController" customModule="POSMerchant" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="F72-5s-tVm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.33725490196078434" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.1019607843" green="0.33725490200000002" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.058823529411764705" green="0.22745098039215686" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.10196078431372549" green="0.33725490196078434" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="bJI-pa-2Yj" id="Y8a-at-PWo"/>
+                            <outlet property="delegate" destination="bJI-pa-2Yj" id="OCD-W6-Zjl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select token" id="PDU-RE-2Cg"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yKC-yX-JLr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SzL-xg-jys" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="407" y="161"/>
+        </scene>
+        <!--Base Navigation View Controller-->
+        <scene sceneID="yFZ-fo-Url">
+            <objects>
+                <navigationController id="qda-oA-Lyb" customClass="BaseNavigationViewController" customModule="POSMerchant" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="7Cn-Mv-GMU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.10196078431372549" green="0.33725490196078434" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bJI-pa-2Yj" kind="relationship" relationship="rootViewController" id="IDx-cC-AVN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Eh-8q-5po" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-545" y="161"/>
+        </scene>
+    </scenes>
+</document>
