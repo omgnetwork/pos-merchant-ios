@@ -10,8 +10,8 @@ import UIKit
 
 class TransactionConfirmationViewController: BaseViewController {
     var viewModel: TransactionConfirmationViewModelProtocol!
-    private let showSuccessSegueId = "showSuccess"
-    private let showFailureSegueId = "showFailure"
+    private let showSuccessSegueId = "showSuccessSegueIdentifier"
+    private let showFailureSegueId = "showFailureSegueIdentifier"
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var tokenLabel: UILabel!
@@ -59,6 +59,14 @@ class TransactionConfirmationViewController: BaseViewController {
         self.viewModel.onFailGetUser = { [weak self] in
             self?.showError(withMessage: $0.localizedDescription)
         }
+        self.viewModel.onSuccessCreateTransaction = { [weak self] in
+            guard let weakself = self else { return }
+            weakself.performSegue(withIdentifier: weakself.showSuccessSegueId, sender: $0)
+        }
+        self.viewModel.onFailCreateTransaction = { [weak self] in
+            guard let weakself = self else { return }
+            weakself.performSegue(withIdentifier: weakself.showFailureSegueId, sender: $0)
+        }
     }
 
     private func updateButtonState() {
@@ -69,6 +77,7 @@ class TransactionConfirmationViewController: BaseViewController {
 
 extension TransactionConfirmationViewController {
     @IBAction func tapConfirmButton(_: UIButton) {
+        self.viewModel.performTransaction()
     }
 
     @IBAction func tapCancelButton(_: UIButton) {

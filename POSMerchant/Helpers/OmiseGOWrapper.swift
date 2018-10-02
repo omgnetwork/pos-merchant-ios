@@ -52,3 +52,18 @@ class WalletLoader: WalletLoaderProtocol {
         return Wallet.get(using: SessionManager.shared.httpClient, params: params, callback: callback)
     }
 }
+
+protocol TransactionGeneratorProtocol {
+    @discardableResult
+    func create(withParams params: TransactionCreateParams,
+                callback: @escaping Transaction.RetrieveRequestCallback) -> Transaction.RetrieveRequest?
+}
+
+/// This wrapper has been created for the sake of testing with dependency injection
+class TransactionGenerator: TransactionGeneratorProtocol {
+    @discardableResult
+    func create(withParams params: TransactionCreateParams,
+                callback: @escaping Transaction.RetrieveRequestCallback) -> Transaction.RetrieveRequest? {
+        return Transaction.create(using: SessionManager.shared.httpClient, params: params, callback: callback)
+    }
+}

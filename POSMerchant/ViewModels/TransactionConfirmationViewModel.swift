@@ -12,6 +12,8 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
     // Delegate closures
     var onSuccessGetUser: SuccessClosure?
     var onFailGetUser: FailureClosure?
+    var onSuccessCreateTransaction: ObjectClosure<Transaction>?
+    var onFailCreateTransaction: ObjectClosure<(TransactionBuilder, POSMerchantError)>?
     var onLoadStateChange: ObjectClosure<Bool>?
 
     let title: String
@@ -40,13 +42,16 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
     private let transactionBuilder: TransactionBuilder
     private let sessionManager: SessionManagerProtocol
     private let walletLoader: WalletLoaderProtocol
+    private let transactionGenerator: TransactionGeneratorProtocol
 
     required init(sessionManager: SessionManagerProtocol = SessionManager.shared,
                   walletLoader: WalletLoaderProtocol = WalletLoader(),
+                  transactionGenerator: TransactionGeneratorProtocol = TransactionGenerator(),
                   transactionBuilder: TransactionBuilder) {
         self.sessionManager = sessionManager
         self.walletLoader = walletLoader
         self.transactionBuilder = transactionBuilder
+        self.transactionGenerator = transactionGenerator
         self.amountDisplay = "\(transactionBuilder.amount) \(transactionBuilder.token.symbol)"
         switch transactionBuilder.type {
         case .receive:
@@ -72,6 +77,21 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
                 self?.onFailGetUser?(.omiseGO(error: error))
             default:
                 self?.onFailGetUser?(POSMerchantError.unexpected)
+            }
+        }
+    }
+
+    func performTransaction() {
+        self.isLoading = true
+        let params = self.transactionBuilder.params(forAccount: self.sessionManager.selectedAccount!,
+                                                    idemPotencyToken: UUID().uuidString)
+        self.transactionGenerator.create(withParams: params) { [weak self] result in
+            guard let weakself = self else { return }
+            switch result {
+            case let .success(data: transaction):
+                weakself.onSuccessCreateTransaction?(transaction)
+            case let .fail(error: error):
+                weakself.onFailCreateTransaction?((weakself.transactionBuilder, .omiseGO(error: error)))
             }
         }
     }

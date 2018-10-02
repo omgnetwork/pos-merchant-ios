@@ -146,8 +146,8 @@
                         <outlet property="tokenLabel" destination="LSn-8I-C88" id="DOf-Qg-geD"/>
                         <outlet property="userIdLabel" destination="r6j-ka-JrB" id="R2a-Ro-MIi"/>
                         <outlet property="usernameLabel" destination="X1N-DZ-wY8" id="7VO-XP-OC6"/>
-                        <segue destination="cnJ-6f-LSZ" kind="show" identifier="showSuccess" id="N3V-VS-pkm"/>
-                        <segue destination="9ZI-7E-MJh" kind="show" identifier="showFailure" id="a5k-X1-e9t"/>
+                        <segue destination="cnJ-6f-LSZ" kind="show" identifier="showSuccessSegueIdentifier" id="N3V-VS-pkm"/>
+                        <segue destination="9ZI-7E-MJh" kind="show" identifier="showFailureSegueIdentifier" id="a5k-X1-e9t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rg-pe-V0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
