@@ -58,9 +58,6 @@ class QRReaderViewController: BaseViewController {
         self.viewModel.onLoadStateChange = { [weak self] in
             $0 ? self?.showLoading() : self?.hideLoading()
         }
-        self.viewModel.onDecode = { [weak self] in
-            self?.dismiss(animated: true, completion: nil)
-        }
     }
 
     @IBAction func tapBackButton(_: Any) {

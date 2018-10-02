@@ -10,7 +10,6 @@ import AVFoundation
 
 protocol QRReaderViewModelProtocol {
     var onLoadStateChange: ObjectClosure<Bool>? { get set }
-    var onDecode: SuccessClosure? { get set }
     var delegate: QRReaderDelegate? { get set }
     var hint: String { get }
     var title: String { get }

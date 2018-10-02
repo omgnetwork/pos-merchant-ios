@@ -35,6 +35,11 @@
 		0306DCAA215A352500612953 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCA9215A352500612953 /* SigninViewModel.swift */; };
 		0306DCAC215A355800612953 /* SigninViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCAB215A355800612953 /* SigninViewModelProtocol.swift */; };
 		0306DCAE215A36C600612953 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCAD215A36C600612953 /* SigninViewController.swift */; };
+		0325B59321632CDF006850FF /* Transaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0325B59121632CDF006850FF /* Transaction.storyboard */; };
+		0325B59521633405006850FF /* TransactionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B59421633405006850FF /* TransactionConfirmationViewController.swift */; };
+		0325B59721633428006850FF /* TransactionConfirmationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B59621633428006850FF /* TransactionConfirmationViewModelProtocol.swift */; };
+		0325B5992163345E006850FF /* TransactionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B5982163345E006850FF /* TransactionConfirmationViewModel.swift */; };
+		0325B59B21635BF4006850FF /* TransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B59A21635BF4006850FF /* TransactionBuilder.swift */; };
 		033802A5215B9AAE00C2501F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802A4215B9AAE00C2501F /* WelcomeViewController.swift */; };
 		033802A7215B9ABC00C2501F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802A6215B9ABC00C2501F /* WelcomeViewModel.swift */; };
 		033802A9215B9AC600C2501F /* WelcomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802A8215B9AC600C2501F /* WelcomeViewModelProtocol.swift */; };
@@ -124,6 +129,11 @@
 		0306DCA9215A352500612953 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		0306DCAB215A355800612953 /* SigninViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModelProtocol.swift; sourceTree = "<group>"; };
 		0306DCAD215A36C600612953 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		0325B59221632CDF006850FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Transaction.storyboard; sourceTree = "<group>"; };
+		0325B59421633405006850FF /* TransactionConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewController.swift; sourceTree = "<group>"; };
+		0325B59621633428006850FF /* TransactionConfirmationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModelProtocol.swift; sourceTree = "<group>"; };
+		0325B5982163345E006850FF /* TransactionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModel.swift; sourceTree = "<group>"; };
+		0325B59A21635BF4006850FF /* TransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionBuilder.swift; sourceTree = "<group>"; };
 		033802A4215B9AAE00C2501F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		033802A6215B9ABC00C2501F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		033802A8215B9AC600C2501F /* WelcomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -296,6 +306,7 @@
 				033802DA215DDFA200C2501F /* SelectTokenViewModel.swift */,
 				033802E0215DEABE00C2501F /* BalanceCellViewModel.swift */,
 				033802EB2161EC8D00C2501F /* QRReaderViewModel.swift */,
+				0325B5982163345E006850FF /* TransactionConfirmationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -349,6 +360,7 @@
 				033802CD215CC95200C2501F /* KeyboardViewController.swift */,
 				033802D6215DDF7300C2501F /* SelectTokenTableViewController.swift */,
 				033802E72161EC6A00C2501F /* QRReaderViewController.swift */,
+				0325B59421633405006850FF /* TransactionConfirmationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -368,6 +380,7 @@
 				033802C4215CC0E000C2501F /* Keyboard.storyboard */,
 				033802D3215DDF4700C2501F /* SelectToken.storyboard */,
 				033802E42161EBD100C2501F /* QRReader.storyboard */,
+				0325B59121632CDF006850FF /* Transaction.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -380,6 +393,7 @@
 				0306DC9A215A290400612953 /* POSMerchantError.swift */,
 				03C94B4E215B48BC007DF271 /* Paginator.swift */,
 				033802EF2161F48700C2501F /* QRReader.swift */,
+				0325B59A21635BF4006850FF /* TransactionBuilder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -420,6 +434,7 @@
 				033802CF215CC96500C2501F /* KeyboardViewModelProtocol.swift */,
 				033802D8215DDF7F00C2501F /* SelectTokenViewModelProtocol.swift */,
 				033802E92161EC7D00C2501F /* QRReaderViewModelProtocol.swift */,
+				0325B59621633428006850FF /* TransactionConfirmationViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -540,6 +555,7 @@
 				03FB02F5215A0DDF001EF0D4 /* Localizable.strings in Resources */,
 				03FB02F7215A0DDF001EF0D4 /* Assets.xcassets in Resources */,
 				033802E62161EBD100C2501F /* QRReader.storyboard in Resources */,
+				0325B59321632CDF006850FF /* Transaction.storyboard in Resources */,
 				033802C3215CBEA000C2501F /* More.storyboard in Resources */,
 				033802DF215DEAB400C2501F /* BalanceTableViewCell.xib in Resources */,
 				0306DCA7215A334E00612953 /* LoadingView.xib in Resources */,
@@ -671,13 +687,16 @@
 				033802F02161F48700C2501F /* QRReader.swift in Sources */,
 				0306DC82215A25A100612953 /* Biometric.swift in Sources */,
 				03C94B45215B4229007DF271 /* SelectAccountTableViewController.swift in Sources */,
+				0325B5992163345E006850FF /* TransactionConfirmationViewModel.swift in Sources */,
 				033802B0215CA3DA00C2501F /* LoadingViewController.swift in Sources */,
 				0306DC81215A25A100612953 /* Theme.swift in Sources */,
 				0306DC9D215A2B2000612953 /* POSMerchantManager.swift in Sources */,
 				0306DC71215A255100612953 /* SessionManager.swift in Sources */,
+				0325B59521633405006850FF /* TransactionConfirmationViewController.swift in Sources */,
 				0306DCAC215A355800612953 /* SigninViewModelProtocol.swift in Sources */,
 				0306DC86215A25A100612953 /* Constant.swift in Sources */,
 				0306DC8E215A25A100612953 /* Extension.swift in Sources */,
+				0325B59721633428006850FF /* TransactionConfirmationViewModelProtocol.swift in Sources */,
 				03C94B49215B4292007DF271 /* SelectAccountViewModel.swift in Sources */,
 				0306DC84215A25A100612953 /* CustomView.swift in Sources */,
 				03C94B4B215B441F007DF271 /* AccountCellViewModel.swift in Sources */,
@@ -694,6 +713,7 @@
 				033802EE2161EEFC00C2501F /* QRReaderOverlayView.swift in Sources */,
 				0306DC89215A25A100612953 /* AppState.swift in Sources */,
 				03FB02C5215A0A95001EF0D4 /* AppDelegate.swift in Sources */,
+				0325B59B21635BF4006850FF /* TransactionBuilder.swift in Sources */,
 				033802EA2161EC7D00C2501F /* QRReaderViewModelProtocol.swift in Sources */,
 				0306DC85215A25A100612953 /* MBProgressHUDBuilder.swift in Sources */,
 				033802CE215CC95200C2501F /* KeyboardViewController.swift in Sources */,
@@ -745,6 +765,14 @@
 				0306DC94215A27D600612953 /* Base */,
 			);
 			name = Signin.storyboard;
+			sourceTree = "<group>";
+		};
+		0325B59121632CDF006850FF /* Transaction.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0325B59221632CDF006850FF /* Base */,
+			);
+			name = Transaction.storyboard;
 			sourceTree = "<group>";
 		};
 		033802AC215CA3BC00C2501F /* Loading.storyboard */ = {

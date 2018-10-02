@@ -50,3 +50,11 @@
 // QR reader
 "qr_reader.label.scan_to" = "Scan to";
 "qr_reader.label.hint" = "Allign QR code here";
+
+// Transaction confirmation
+"transaction_confirmation.receive" = "Receive";
+"transaction_confirmation.topup" = "Topup";
+"transaction_confirmation.from" = "from";
+"transaction_confirmation.to" = "to";
+"transaction_confirmation.button.confirm" = "Confirm";
+"transaction_confirmation.button.cancel" = "Cancel";

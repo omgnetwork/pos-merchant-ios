@@ -38,10 +38,10 @@ struct Theme {
 enum Color: String {
     case black = "04070D"
     case omiseGOBlue = "#1A56F0"
-    case transactionDebitRed = "EF3526"
     case transactionCreditGreen = "06AB88"
     case greyBorder = "E4E7ED"
     case greyUnderline = "C9D1E2"
+    case redError = "EF3526"
 
     func uiColor(withAlpha alpha: CGFloat? = 1.0) -> UIColor {
         return UIColor.color(fromHexString: self.rawValue, alpha: alpha)

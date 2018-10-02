@@ -22,6 +22,7 @@ class ReceiveViewModel: BaseViewModel, ReceiveViewModelProtocol {
     var onAmountUpdate: ObjectClosure<String>?
     var onTokenUpdate: ObjectClosure<String>?
     var onFailGetDefaultToken: FailureClosure?
+    var shouldProcessTransaction: ObjectClosure<TransactionBuilder>?
     var selectedToken: Token? {
         didSet {
             self.tokenString = self.selectedToken?.name ?? "-"
@@ -95,12 +96,20 @@ class ReceiveViewModel: BaseViewModel, ReceiveViewModelProtocol {
     }
 
     func didDecode(_ string: String) {
-        print(string)
+        let transactionBuilder = TransactionBuilder(type: .receive,
+                                                    amount: self.displayAmount,
+                                                    token: self.selectedToken!,
+                                                    address: string)
+        self.shouldProcessTransaction?(transactionBuilder)
     }
 
     func qrReaderStrings() -> (String, String) {
         let title = "\("qr_reader.label.scan_to".localized()) \("receive.label.receive".localized().lowercased())"
         let tokenString = "\(self.displayAmount) \(self.selectedToken!.symbol)"
         return (title, tokenString)
+    }
+
+    func resetAmount() {
+        self.displayAmount = "0"
     }
 }

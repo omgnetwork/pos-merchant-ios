@@ -37,3 +37,18 @@ class TokenLoader: TokenLoaderProtocol {
         return Wallet.listForAccount(using: SessionManager.shared.httpClient, params: params, callback: callback)
     }
 }
+
+protocol WalletLoaderProtocol {
+    @discardableResult
+    func get(withParams params: WalletGetParams,
+             callback: @escaping Wallet.RetrieveRequestCallback) -> Wallet.RetrieveRequest?
+}
+
+/// This wrapper has been created for the sake of testing with dependency injection
+class WalletLoader: WalletLoaderProtocol {
+    @discardableResult
+    func get(withParams params: WalletGetParams,
+             callback: @escaping Wallet.RetrieveRequestCallback) -> Wallet.RetrieveRequest? {
+        return Wallet.get(using: SessionManager.shared.httpClient, params: params, callback: callback)
+    }
+}

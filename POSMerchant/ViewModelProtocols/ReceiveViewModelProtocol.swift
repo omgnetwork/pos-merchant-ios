@@ -17,6 +17,8 @@ protocol ReceiveViewModelProtocol: KeyboardEventDelegate, SelectTokenDelegate, Q
     var onAmountUpdate: ObjectClosure<String>? { get set }
     var onTokenUpdate: ObjectClosure<String>? { get set }
     var onFailGetDefaultToken: FailureClosure? { get set }
+    var shouldProcessTransaction: ObjectClosure<TransactionBuilder>? { get set }
     var isReady: Bool { get }
     func qrReaderStrings() -> (String, String)
+    func resetAmount()
 }

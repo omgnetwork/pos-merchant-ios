@@ -28,3 +28,8 @@ struct Constant {
     // Pagination
     static let perPage = 20
 }
+
+enum TransactionType {
+    case receive
+    case topup
+}

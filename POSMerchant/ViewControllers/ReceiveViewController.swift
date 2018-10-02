@@ -12,6 +12,7 @@ class ReceiveViewController: BaseViewController {
     private let keyboardSegueId = "keyboardSegueIdentifier"
     private let selectTokenSegueId = "selectTokenSegueIdentifier"
     private let showScannerSegueId = "showScannerSegueIdentifier"
+    private let showTransactionConfirmationSegueId = "showTransactionConfirmationSegueId"
     private var viewModel: ReceiveViewModelProtocol = ReceiveViewModel()
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var amountLabel: UILabel!
@@ -33,7 +34,7 @@ class ReceiveViewController: BaseViewController {
         self.receiveButton.setTitle(self.viewModel.receiveButtonTitle, for: .normal)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == self.keyboardSegueId,
             let keyboardVC: KeyboardViewController = segue.destination as? KeyboardViewController {
             keyboardVC.viewModel = KeyboardViewModel(delegate: self.viewModel)
@@ -47,6 +48,11 @@ class ReceiveViewController: BaseViewController {
             let qrReaderVC: QRReaderViewController = segue.destination as? QRReaderViewController {
             let strings = self.viewModel.qrReaderStrings()
             qrReaderVC.viewModel = QRReaderViewModel(delegate: self.viewModel, title: strings.0, tokenString: strings.1)
+        } else if segue.identifier == self.showTransactionConfirmationSegueId,
+            let transactionConfirmationVC = segue.destination as? TransactionConfirmationViewController,
+            let transactionBuilder = sender as? TransactionBuilder {
+            transactionConfirmationVC.viewModel = TransactionConfirmationViewModel(transactionBuilder: transactionBuilder)
+            self.viewModel.resetAmount()
         }
     }
 
@@ -61,6 +67,13 @@ class ReceiveViewController: BaseViewController {
         }
         self.viewModel.onFailGetDefaultToken = { [weak self] in
             self?.showError(withMessage: $0.message)
+        }
+        self.viewModel.shouldProcessTransaction = { [weak self] transactionBuilder in
+            guard let weakself = self else { return }
+            weakself.dismiss(animated: true, completion: {
+                weakself.performSegue(withIdentifier: weakself.showTransactionConfirmationSegueId,
+                                      sender: transactionBuilder)
+            })
         }
     }
 

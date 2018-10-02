@@ -15,7 +15,6 @@ protocol QRReaderDelegate: class {
 
 class QRReaderViewModel: BaseViewModel, QRReaderViewModelProtocol {
     var onLoadStateChange: ObjectClosure<Bool>?
-    var onDecode: SuccessClosure?
 
     weak var delegate: QRReaderDelegate?
 
@@ -26,7 +25,6 @@ class QRReaderViewModel: BaseViewModel, QRReaderViewModelProtocol {
                 let generator = UIImpactFeedbackGenerator(style: .heavy)
                 generator.impactOccurred()
                 self?.delegate?.didDecode(value)
-                self?.onDecode?()
             }
         })
     }()
