@@ -11,8 +11,7 @@ import OmiseGO
 protocol TransactionConfirmationViewModelProtocol {
     var onSuccessGetUser: SuccessClosure? { get set }
     var onFailGetUser: FailureClosure? { get set }
-    var onSuccessCreateTransaction: ObjectClosure<Transaction>? { get set }
-    var onFailCreateTransaction: ObjectClosure<(TransactionBuilder, POSMerchantError)>? { get set }
+    var onCreateTransactionComplete: ObjectClosure<TransactionBuilder>? { get set }
     var onLoadStateChange: ObjectClosure<Bool>? { get set }
 
     var title: String { get }

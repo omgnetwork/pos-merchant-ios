@@ -81,6 +81,9 @@
 		03C94B4F215B48BC007DF271 /* Paginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B4E215B48BC007DF271 /* Paginator.swift */; };
 		03C94B53215B49D5007DF271 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B51215B49D5007DF271 /* AccountTableViewCell.swift */; };
 		03C94B54215B49D5007DF271 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C94B52215B49D5007DF271 /* AccountTableViewCell.xib */; };
+		03E0BB472164821800FCB154 /* TransactionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0BB462164821800FCB154 /* TransactionResultViewController.swift */; };
+		03E0BB492164881A00FCB154 /* TransactionResultViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0BB482164881A00FCB154 /* TransactionResultViewModelProtocol.swift */; };
+		03E0BB4B2164882900FCB154 /* TransactionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0BB4A2164882900FCB154 /* TransactionResultViewModel.swift */; };
 		03FB02C5215A0A95001EF0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB02C4215A0A95001EF0D4 /* AppDelegate.swift */; };
 		03FB02DA215A0A97001EF0D4 /* POSMerchantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB02D9215A0A97001EF0D4 /* POSMerchantTests.swift */; };
 		03FB02F5215A0DDF001EF0D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03FB02E7215A0DDE001EF0D4 /* Localizable.strings */; };
@@ -175,6 +178,9 @@
 		03C94B4E215B48BC007DF271 /* Paginator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paginator.swift; sourceTree = "<group>"; };
 		03C94B51215B49D5007DF271 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		03C94B52215B49D5007DF271 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		03E0BB462164821800FCB154 /* TransactionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewController.swift; sourceTree = "<group>"; };
+		03E0BB482164881A00FCB154 /* TransactionResultViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewModelProtocol.swift; sourceTree = "<group>"; };
+		03E0BB4A2164882900FCB154 /* TransactionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewModel.swift; sourceTree = "<group>"; };
 		03FB02C1215A0A95001EF0D4 /* POSMerchant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSMerchant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB02C4215A0A95001EF0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03FB02D0215A0A96001EF0D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -307,6 +313,7 @@
 				033802E0215DEABE00C2501F /* BalanceCellViewModel.swift */,
 				033802EB2161EC8D00C2501F /* QRReaderViewModel.swift */,
 				0325B5982163345E006850FF /* TransactionConfirmationViewModel.swift */,
+				03E0BB4A2164882900FCB154 /* TransactionResultViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -361,6 +368,7 @@
 				033802D6215DDF7300C2501F /* SelectTokenTableViewController.swift */,
 				033802E72161EC6A00C2501F /* QRReaderViewController.swift */,
 				0325B59421633405006850FF /* TransactionConfirmationViewController.swift */,
+				03E0BB462164821800FCB154 /* TransactionResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -435,6 +443,7 @@
 				033802D8215DDF7F00C2501F /* SelectTokenViewModelProtocol.swift */,
 				033802E92161EC7D00C2501F /* QRReaderViewModelProtocol.swift */,
 				0325B59621633428006850FF /* TransactionConfirmationViewModelProtocol.swift */,
+				03E0BB482164881A00FCB154 /* TransactionResultViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -673,6 +682,7 @@
 				033802D2215CC97700C2501F /* KeyboardViewModel.swift in Sources */,
 				033802A7215B9ABC00C2501F /* WelcomeViewModel.swift in Sources */,
 				0306DC8B215A25A100612953 /* Observable.swift in Sources */,
+				03E0BB492164881A00FCB154 /* TransactionResultViewModelProtocol.swift in Sources */,
 				0306DC8D215A25A100612953 /* Closure.swift in Sources */,
 				03C94B53215B49D5007DF271 /* AccountTableViewCell.swift in Sources */,
 				03C94B4D215B4852007DF271 /* AccountPaginator.swift in Sources */,
@@ -699,6 +709,7 @@
 				0325B59721633428006850FF /* TransactionConfirmationViewModelProtocol.swift in Sources */,
 				03C94B49215B4292007DF271 /* SelectAccountViewModel.swift in Sources */,
 				0306DC84215A25A100612953 /* CustomView.swift in Sources */,
+				03E0BB472164821800FCB154 /* TransactionResultViewController.swift in Sources */,
 				03C94B4B215B441F007DF271 /* AccountCellViewModel.swift in Sources */,
 				0306DC97215A28C100612953 /* Publisher.swift in Sources */,
 				0306DCAA215A352500612953 /* SigninViewModel.swift in Sources */,
@@ -709,6 +720,7 @@
 				033802B4215CA3F100C2501F /* LoadingViewModel.swift in Sources */,
 				033802B2215CA3EA00C2501F /* LoadingViewModelProtocol.swift in Sources */,
 				033802C8215CC32000C2501F /* ReceiveViewController.swift in Sources */,
+				03E0BB4B2164882900FCB154 /* TransactionResultViewModel.swift in Sources */,
 				033802CA215CC33400C2501F /* ReceiveViewModelProtocol.swift in Sources */,
 				033802EE2161EEFC00C2501F /* QRReaderOverlayView.swift in Sources */,
 				0306DC89215A25A100612953 /* AppState.swift in Sources */,

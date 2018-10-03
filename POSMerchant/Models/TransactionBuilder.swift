@@ -14,52 +14,37 @@ struct TransactionBuilder {
     let token: Token
     let address: String
 
+    var user: User?
+    var result: Response<Transaction>?
+
+    init(type: TransactionType, amount: String, token: Token, address: String) {
+        self.type = type
+        self.amount = amount
+        self.token = token
+        self.address = address
+    }
+
     func params(forAccount account: Account, idemPotencyToken: String) -> TransactionCreateParams {
         let formattedAmount = OMGNumberFormatter().number(from: self.amount,
                                                           subunitToUnit: self.token.subUnitToUnit)
-        let params: TransactionCreateParams
-        switch self.type {
-        case .receive:
-            params = TransactionCreateParams(fromAddress: self.address,
-                                             toAddress: nil,
-                                             amount: formattedAmount,
-                                             fromAmount: nil,
-                                             toAmount: nil,
-                                             fromTokenId: nil,
-                                             toTokenId: nil,
-                                             tokenId: self.token.id,
-                                             fromAccountId: nil,
-                                             toAccountId: account.id,
-                                             fromProviderUserId: nil,
-                                             toProviderUserId: nil,
-                                             fromUserId: nil,
-                                             toUserId: nil,
-                                             idempotencyToken: idemPotencyToken,
-                                             exchangeAccountId: nil,
-                                             exchangeAddress: nil,
-                                             metadata: [:],
-                                             encryptedMetadata: [:])
-        case .topup:
-            params = TransactionCreateParams(fromAddress: nil,
-                                             toAddress: self.address,
-                                             amount: formattedAmount,
-                                             fromAmount: nil,
-                                             toAmount: nil,
-                                             fromTokenId: nil,
-                                             toTokenId: nil,
-                                             tokenId: self.token.id,
-                                             fromAccountId: account.id,
-                                             toAccountId: nil,
-                                             fromProviderUserId: nil,
-                                             toProviderUserId: nil,
-                                             fromUserId: nil,
-                                             toUserId: nil,
-                                             idempotencyToken: idemPotencyToken,
-                                             exchangeAccountId: nil,
-                                             exchangeAddress: nil,
-                                             metadata: [:],
-                                             encryptedMetadata: [:])
-        }
-        return params
+        return TransactionCreateParams(fromAddress: self.type == .receive ? self.address : nil,
+                                       toAddress: self.type == .topup ? self.address : nil,
+                                       amount: formattedAmount,
+                                       fromAmount: nil,
+                                       toAmount: nil,
+                                       fromTokenId: nil,
+                                       toTokenId: nil,
+                                       tokenId: self.token.id,
+                                       fromAccountId: self.type == .topup ? account.id : nil,
+                                       toAccountId: self.type == .receive ? account.id : nil,
+                                       fromProviderUserId: nil,
+                                       toProviderUserId: nil,
+                                       fromUserId: nil,
+                                       toUserId: nil,
+                                       idempotencyToken: idemPotencyToken,
+                                       exchangeAccountId: nil,
+                                       exchangeAddress: nil,
+                                       metadata: [:],
+                                       encryptedMetadata: [:])
     }
 }

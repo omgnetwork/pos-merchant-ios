@@ -58,3 +58,12 @@
 "transaction_confirmation.to" = "to";
 "transaction_confirmation.button.confirm" = "Confirm";
 "transaction_confirmation.button.cancel" = "Cancel";
+
+// Transaction result
+"transaction_result.from" = "from";
+"transaction_result.to" = "to";
+"transaction_result.done" = "Done";
+"transaction_result.payment_successful" = "Payment successful";
+"transaction_result.topup_successful" = "Topup successful";
+"transaction_result.payment_failed" = "Payment failed";
+"transaction_result.topup_failed" = "Topup failed";

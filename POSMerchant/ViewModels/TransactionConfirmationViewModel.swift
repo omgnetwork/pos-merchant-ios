@@ -12,8 +12,7 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
     // Delegate closures
     var onSuccessGetUser: SuccessClosure?
     var onFailGetUser: FailureClosure?
-    var onSuccessCreateTransaction: ObjectClosure<Transaction>?
-    var onFailCreateTransaction: ObjectClosure<(TransactionBuilder, POSMerchantError)>?
+    var onCreateTransactionComplete: ObjectClosure<TransactionBuilder>?
     var onLoadStateChange: ObjectClosure<Bool>?
 
     let title: String
@@ -32,6 +31,7 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
     private var user: User? {
         didSet {
             guard let user = user else { return }
+            self.transactionBuilder.user = user
             self.isReady = true
             self.username = user.email ?? "-"
             self.userId = user.id
@@ -39,7 +39,7 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
         }
     }
 
-    private let transactionBuilder: TransactionBuilder
+    private var transactionBuilder: TransactionBuilder
     private let sessionManager: SessionManagerProtocol
     private let walletLoader: WalletLoaderProtocol
     private let transactionGenerator: TransactionGeneratorProtocol
@@ -87,12 +87,8 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
                                                     idemPotencyToken: UUID().uuidString)
         self.transactionGenerator.create(withParams: params) { [weak self] result in
             guard let weakself = self else { return }
-            switch result {
-            case let .success(data: transaction):
-                weakself.onSuccessCreateTransaction?(transaction)
-            case let .fail(error: error):
-                weakself.onFailCreateTransaction?((weakself.transactionBuilder, .omiseGO(error: error)))
-            }
+            weakself.transactionBuilder.result = result
+            weakself.onCreateTransactionComplete?(weakself.transactionBuilder)
         }
     }
 }
