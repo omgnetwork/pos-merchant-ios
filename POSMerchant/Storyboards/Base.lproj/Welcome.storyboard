@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EPp-o1-AO2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="a0U-kq-UMg">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" id="EPp-o1-AO2" customClass="WelcomeViewController" customModule="POSMerchant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uV0-Rt-FaY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZ9-rX-VbR">
+                                <rect key="frame" x="0.0" y="110" width="375" height="367.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v6r-eU-U3A">
+                                        <rect key="frame" x="137.5" y="147" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="ejx-vb-xoI"/>
+                                            <constraint firstAttribute="width" constant="100" id="toB-Hv-0nL"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1I-gb-Mua">
+                                        <rect key="frame" x="16" y="60" width="343" height="47"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are in X account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snb-T6-TXr">
+                                        <rect key="frame" x="16" y="287" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <color key="textColor" red="0.23529411764705882" green="0.25490196078431371" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="snb-T6-TXr" secondAttribute="trailing" constant="16" id="1PR-6y-cQ0"/>
+                                    <constraint firstItem="v6r-eU-U3A" firstAttribute="top" secondItem="u1I-gb-Mua" secondAttribute="bottom" constant="40" id="EE6-Zc-2LN"/>
+                                    <constraint firstItem="u1I-gb-Mua" firstAttribute="top" secondItem="QZ9-rX-VbR" secondAttribute="top" constant="60" id="ESR-H1-a4Z"/>
+                                    <constraint firstItem="snb-T6-TXr" firstAttribute="top" secondItem="v6r-eU-U3A" secondAttribute="bottom" constant="40" id="QS0-yI-CTR"/>
+                                    <constraint firstAttribute="bottom" secondItem="snb-T6-TXr" secondAttribute="bottom" constant="60" id="a7G-4f-cBL"/>
+                                    <constraint firstItem="u1I-gb-Mua" firstAttribute="leading" secondItem="QZ9-rX-VbR" secondAttribute="leading" constant="16" id="eTf-C2-UY3"/>
+                                    <constraint firstItem="snb-T6-TXr" firstAttribute="leading" secondItem="QZ9-rX-VbR" secondAttribute="leading" constant="16" id="iP7-ar-its"/>
+                                    <constraint firstAttribute="trailing" secondItem="u1I-gb-Mua" secondAttribute="trailing" constant="16" id="qDh-b3-8jJ"/>
+                                    <constraint firstItem="v6r-eU-U3A" firstAttribute="centerX" secondItem="QZ9-rX-VbR" secondAttribute="centerX" id="rNU-Aw-Vil"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QZ9-rX-VbR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1ol-LX-sRk" secondAttribute="top" id="466-9Y-ZeZ"/>
+                            <constraint firstItem="1ol-LX-sRk" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QZ9-rX-VbR" secondAttribute="bottom" id="MWI-38-eRx"/>
+                            <constraint firstItem="QZ9-rX-VbR" firstAttribute="centerY" secondItem="uV0-Rt-FaY" secondAttribute="centerY" constant="-40" id="gGz-Yf-j1l"/>
+                            <constraint firstAttribute="trailing" secondItem="QZ9-rX-VbR" secondAttribute="trailing" id="ysB-nG-XTQ"/>
+                            <constraint firstItem="QZ9-rX-VbR" firstAttribute="leading" secondItem="uV0-Rt-FaY" secondAttribute="leading" id="ywj-Dl-CCP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1ol-LX-sRk"/>
+                    </view>
+                    <connections>
+                        <outlet property="accountContainerView" destination="QZ9-rX-VbR" id="eQC-XZ-jxT"/>
+                        <outlet property="accountHintLabel" destination="snb-T6-TXr" id="xC9-gt-aTY"/>
+                        <outlet property="accountImageView" destination="v6r-eU-U3A" id="Mgx-4x-BJA"/>
+                        <outlet property="welcomeLabel" destination="u1I-gb-Mua" id="S7u-6o-dxV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C36-BT-2Pu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+</document>

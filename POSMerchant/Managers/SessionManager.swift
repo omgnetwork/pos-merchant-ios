@@ -10,15 +10,16 @@ import OmiseGO
 
 protocol SessionManagerProtocol: Observable {
     var httpClient: HTTPAdminAPI! { get set }
-    var currentUser: User? { get set }
     var selectedAccount: Account? { get set }
     var isBiometricAvailable: Bool { get }
+    var didShowWelcome: Bool { get set }
     func disableBiometricAuth()
     func selectCurrentAccount(_ account: Account)
     func enableBiometricAuth(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func bioLogin(withPromptMessage message: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func logout(_ force: Bool, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
+    func loadCurrentAccount(withFailureClosure failure: @escaping FailureOMGClosure)
 }
 
 class SessionManager: Publisher, SessionManagerProtocol {
@@ -28,13 +29,6 @@ class SessionManager: Publisher, SessionManagerProtocol {
             if oldValue != self.state {
                 self.notify(event: .onAppStateUpdate(state: self.state))
             }
-        }
-    }
-
-    var currentUser: User? {
-        didSet {
-            self.updateState()
-            self.notify(event: .onUserUpdate(user: self.currentUser))
         }
     }
 
@@ -49,6 +43,12 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     var isBiometricAvailable: Bool {
         return self.userDefaultsWrapper.getBool(forKey: .biometricEnabled)
+    }
+
+    var didShowWelcome: Bool = false {
+        didSet {
+            self.updateState()
+        }
     }
 
     private let keychainWrapper = KeychainWrapper()
@@ -114,7 +114,6 @@ class SessionManager: Publisher, SessionManagerProtocol {
             switch response {
             case let .fail(error: error): failure(.omiseGO(error: error))
             case let .success(data: authenticationToken):
-                self.currentUser = authenticationToken.user
                 self.keychainWrapper.storeValue(value: authenticationToken.token, forKey: .authenticationToken)
                 self.keychainWrapper.storeValue(value: authenticationToken.user.id, forKey: .userId)
                 self.userDefaultsWrapper.storeValue(value: params.email, forKey: .email)
@@ -141,9 +140,31 @@ class SessionManager: Publisher, SessionManagerProtocol {
         }
     }
 
+    func loadCurrentAccount(withFailureClosure failure: @escaping FailureOMGClosure) {
+        guard let accountId = self.userDefaultsWrapper.getValue(forKey: .accountId) else {
+            self.updateState()
+            return
+        }
+        let params = AccountGetParams(id: accountId)
+        Account.get(using: self.httpClient, params: params) { response in
+            switch response {
+            case let .success(data: account):
+                self.selectedAccount = account
+            case let .fail(error: error):
+                failure(error)
+            }
+        }
+    }
+
     private func updateState() {
-        if self.isLoggedIn() {
-            self.state = (self.currentUser == nil || self.selectedAccount == nil) ? .loading : .loggedIn
+        if self.isLoggedIn() && self.userDefaultsWrapper.getValue(forKey: .accountId) != nil {
+            if self.selectedAccount == nil {
+                self.state = .loading
+            } else if self.didShowWelcome == false {
+                self.state = .welcome
+            } else {
+                self.state = .loggedIn
+            }
         } else {
             self.state = .loggedOut
         }
@@ -154,6 +175,6 @@ class SessionManager: Publisher, SessionManagerProtocol {
         self.keychainWrapper.clearValue(forKey: .authenticationToken)
         self.keychainWrapper.clearValue(forKey: .userId)
         self.selectedAccount = nil
-        self.currentUser = nil
+        self.didShowWelcome = false
     }
 }

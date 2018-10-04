@@ -22,7 +22,7 @@
 		0306DC8D215A25A100612953 /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC7E215A25A100612953 /* Closure.swift */; };
 		0306DC8E215A25A100612953 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC7F215A25A100612953 /* Extension.swift */; };
 		0306DC8F215A25A100612953 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC80215A25A100612953 /* Storyboard.swift */; };
-		0306DC92215A27C900612953 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0306DC90215A27C900612953 /* Loading.storyboard */; };
+		0306DC92215A27C900612953 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0306DC90215A27C900612953 /* Welcome.storyboard */; };
 		0306DC95215A27D600612953 /* Signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0306DC93215A27D600612953 /* Signin.storyboard */; };
 		0306DC97215A28C100612953 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC96215A28C100612953 /* Publisher.swift */; };
 		0306DC99215A28D900612953 /* AppEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC98215A28D900612953 /* AppEvent.swift */; };
@@ -35,6 +35,14 @@
 		0306DCAA215A352500612953 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCA9215A352500612953 /* SigninViewModel.swift */; };
 		0306DCAC215A355800612953 /* SigninViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCAB215A355800612953 /* SigninViewModelProtocol.swift */; };
 		0306DCAE215A36C600612953 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCAD215A36C600612953 /* SigninViewController.swift */; };
+		033802A5215B9AAE00C2501F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802A4215B9AAE00C2501F /* WelcomeViewController.swift */; };
+		033802A7215B9ABC00C2501F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802A6215B9ABC00C2501F /* WelcomeViewModel.swift */; };
+		033802A9215B9AC600C2501F /* WelcomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802A8215B9AC600C2501F /* WelcomeViewModelProtocol.swift */; };
+		033802AE215CA3BC00C2501F /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033802AC215CA3BC00C2501F /* Loading.storyboard */; };
+		033802B0215CA3DA00C2501F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802AF215CA3DA00C2501F /* LoadingViewController.swift */; };
+		033802B2215CA3EA00C2501F /* LoadingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802B1215CA3EA00C2501F /* LoadingViewModelProtocol.swift */; };
+		033802B4215CA3F100C2501F /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802B3215CA3F100C2501F /* LoadingViewModel.swift */; };
+		033802B7215CAFEF00C2501F /* Tmp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033802B5215CAFEF00C2501F /* Tmp.storyboard */; };
 		03C94B41215B4109007DF271 /* AccountSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C94B3F215B4109007DF271 /* AccountSelection.storyboard */; };
 		03C94B43215B4179007DF271 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */; };
 		03C94B45215B4229007DF271 /* SelectAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */; };
@@ -80,7 +88,7 @@
 		0306DC7E215A25A100612953 /* Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closure.swift; sourceTree = "<group>"; };
 		0306DC7F215A25A100612953 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		0306DC80215A25A100612953 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
-		0306DC91215A27C900612953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Loading.storyboard; sourceTree = "<group>"; };
+		0306DC91215A27C900612953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Welcome.storyboard; sourceTree = "<group>"; };
 		0306DC94215A27D600612953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signin.storyboard; sourceTree = "<group>"; };
 		0306DC96215A28C100612953 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		0306DC98215A28D900612953 /* AppEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvent.swift; sourceTree = "<group>"; };
@@ -93,6 +101,14 @@
 		0306DCA9215A352500612953 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		0306DCAB215A355800612953 /* SigninViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModelProtocol.swift; sourceTree = "<group>"; };
 		0306DCAD215A36C600612953 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		033802A4215B9AAE00C2501F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		033802A6215B9ABC00C2501F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		033802A8215B9AC600C2501F /* WelcomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelProtocol.swift; sourceTree = "<group>"; };
+		033802AD215CA3BC00C2501F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Loading.storyboard; sourceTree = "<group>"; };
+		033802AF215CA3DA00C2501F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		033802B1215CA3EA00C2501F /* LoadingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModelProtocol.swift; sourceTree = "<group>"; };
+		033802B3215CA3F100C2501F /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		033802B6215CAFEF00C2501F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tmp.storyboard; sourceTree = "<group>"; };
 		03C94B40215B4109007DF271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AccountSelection.storyboard; sourceTree = "<group>"; };
 		03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountTableViewController.swift; sourceTree = "<group>"; };
@@ -221,9 +237,11 @@
 			isa = PBXGroup;
 			children = (
 				0306DCA0215A32C400612953 /* BaseViewModel.swift */,
+				033802B3215CA3F100C2501F /* LoadingViewModel.swift */,
 				0306DCA9215A352500612953 /* SigninViewModel.swift */,
 				03C94B48215B4292007DF271 /* SelectAccountViewModel.swift */,
 				03C94B4A215B441F007DF271 /* AccountCellViewModel.swift */,
+				033802A6215B9ABC00C2501F /* WelcomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -268,6 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				0306DCA2215A32F000612953 /* BaseViewController.swift */,
+				033802AF215CA3DA00C2501F /* LoadingViewController.swift */,
+				033802A4215B9AAE00C2501F /* WelcomeViewController.swift */,
 				0306DCAD215A36C600612953 /* SigninViewController.swift */,
 				03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */,
 				03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */,
@@ -279,9 +299,11 @@
 			isa = PBXGroup;
 			children = (
 				03FB02ED215A0DDF001EF0D4 /* LaunchScreen.storyboard */,
-				0306DC90215A27C900612953 /* Loading.storyboard */,
+				033802AC215CA3BC00C2501F /* Loading.storyboard */,
+				0306DC90215A27C900612953 /* Welcome.storyboard */,
 				0306DC93215A27D600612953 /* Signin.storyboard */,
 				03C94B3F215B4109007DF271 /* AccountSelection.storyboard */,
+				033802B5215CAFEF00C2501F /* Tmp.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -325,8 +347,10 @@
 		03FB02F4215A0DDF001EF0D4 /* ViewModelProtocols */ = {
 			isa = PBXGroup;
 			children = (
+				033802B1215CA3EA00C2501F /* LoadingViewModelProtocol.swift */,
 				0306DCAB215A355800612953 /* SigninViewModelProtocol.swift */,
 				03C94B46215B4259007DF271 /* SelectAccountViewModelProtocol.swift */,
+				033802A8215B9AC600C2501F /* WelcomeViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -436,6 +460,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033802B7215CAFEF00C2501F /* Tmp.storyboard in Resources */,
+				033802AE215CA3BC00C2501F /* Loading.storyboard in Resources */,
 				0306DC95215A27D600612953 /* Signin.storyboard in Resources */,
 				03C94B54215B49D5007DF271 /* AccountTableViewCell.xib in Resources */,
 				03FB02F5215A0DDF001EF0D4 /* Localizable.strings in Resources */,
@@ -443,7 +469,7 @@
 				0306DCA7215A334E00612953 /* LoadingView.xib in Resources */,
 				03FB02F6215A0DDF001EF0D4 /* LaunchScreen.storyboard in Resources */,
 				03C94B41215B4109007DF271 /* AccountSelection.storyboard in Resources */,
-				0306DC92215A27C900612953 /* Loading.storyboard in Resources */,
+				0306DC92215A27C900612953 /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,13 +578,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0306DC8C215A25A100612953 /* UserDefaultsWrapper.swift in Sources */,
+				033802A7215B9ABC00C2501F /* WelcomeViewModel.swift in Sources */,
 				0306DC8B215A25A100612953 /* Observable.swift in Sources */,
 				0306DC8D215A25A100612953 /* Closure.swift in Sources */,
 				03C94B53215B49D5007DF271 /* AccountTableViewCell.swift in Sources */,
 				03C94B4D215B4852007DF271 /* AccountPaginator.swift in Sources */,
 				0306DC8F215A25A100612953 /* Storyboard.swift in Sources */,
+				033802A5215B9AAE00C2501F /* WelcomeViewController.swift in Sources */,
+				033802A9215B9AC600C2501F /* WelcomeViewModelProtocol.swift in Sources */,
 				0306DC82215A25A100612953 /* Biometric.swift in Sources */,
 				03C94B45215B4229007DF271 /* SelectAccountTableViewController.swift in Sources */,
+				033802B0215CA3DA00C2501F /* LoadingViewController.swift in Sources */,
 				0306DC81215A25A100612953 /* Theme.swift in Sources */,
 				0306DC9D215A2B2000612953 /* POSMerchantManager.swift in Sources */,
 				0306DC71215A255100612953 /* SessionManager.swift in Sources */,
@@ -574,6 +604,8 @@
 				0306DCA3215A32F000612953 /* BaseViewController.swift in Sources */,
 				0306DCAE215A36C600612953 /* SigninViewController.swift in Sources */,
 				0306DC83215A25A100612953 /* BaseViewControllerProtocols.swift in Sources */,
+				033802B4215CA3F100C2501F /* LoadingViewModel.swift in Sources */,
+				033802B2215CA3EA00C2501F /* LoadingViewModelProtocol.swift in Sources */,
 				0306DC89215A25A100612953 /* AppState.swift in Sources */,
 				03FB02C5215A0A95001EF0D4 /* AppDelegate.swift in Sources */,
 				0306DC85215A25A100612953 /* MBProgressHUDBuilder.swift in Sources */,
@@ -607,12 +639,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0306DC90215A27C900612953 /* Loading.storyboard */ = {
+		0306DC90215A27C900612953 /* Welcome.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0306DC91215A27C900612953 /* Base */,
 			);
-			name = Loading.storyboard;
+			name = Welcome.storyboard;
 			sourceTree = "<group>";
 		};
 		0306DC93215A27D600612953 /* Signin.storyboard */ = {
@@ -621,6 +653,22 @@
 				0306DC94215A27D600612953 /* Base */,
 			);
 			name = Signin.storyboard;
+			sourceTree = "<group>";
+		};
+		033802AC215CA3BC00C2501F /* Loading.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				033802AD215CA3BC00C2501F /* Base */,
+			);
+			name = Loading.storyboard;
+			sourceTree = "<group>";
+		};
+		033802B5215CAFEF00C2501F /* Tmp.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				033802B6215CAFEF00C2501F /* Base */,
+			);
+			name = Tmp.storyboard;
 			sourceTree = "<group>";
 		};
 		03C94B3F215B4109007DF271 /* AccountSelection.storyboard */ = {

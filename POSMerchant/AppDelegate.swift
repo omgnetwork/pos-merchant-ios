@@ -28,9 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .loggedOut?:
             self.window?.rootViewController = Storyboard.signin.storyboard.instantiateInitialViewController()
         case .loading?:
-            self.window?.rootViewController = Storyboard.signin.storyboard.instantiateInitialViewController()
+            self.window?.rootViewController = Storyboard.loading.storyboard.instantiateInitialViewController()
+        case .welcome?:
+            self.window?.rootViewController = Storyboard.welcome.storyboard.instantiateInitialViewController()
         case .loggedIn?:
-            self.window?.rootViewController = Storyboard.signin.storyboard.instantiateInitialViewController()
+            self.window?.rootViewController = Storyboard.tmp.storyboard.instantiateInitialViewController()
         default: break
         }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FAh-aQ-NWU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6GB-nZ-GGw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,20 +10,61 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="zcU-b5-Tez">
+        <!--Loading View Controller-->
+        <scene sceneID="lR1-xN-CK5">
             <objects>
-                <viewController id="FAh-aQ-NWU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BQX-3C-0Z4">
+                <viewController storyboardIdentifier="LoadingViewController" id="6GB-nZ-GGw" customClass="LoadingViewController" customModule="POSMerchant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UY6-gG-3gW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="bqH-48-cYk"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GO_1" translatesAutoresizingMaskIntoConstraints="NO" id="BK3-Gu-sgf">
+                                <rect key="frame" x="125.5" y="271.5" width="124" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="ieI-80-122"/>
+                                    <constraint firstAttribute="height" constant="124" id="scY-wj-nAq"/>
+                                </constraints>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOi-tA-fbE">
+                                <rect key="frame" x="16" y="559" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="j0w-Ao-MOQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" red="0.1019607843" green="0.32549019610000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapRetryButton:" destination="6GB-nZ-GGw" eventType="touchUpInside" id="c6p-Oj-jKX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oOi-tA-fbE" firstAttribute="leading" secondItem="iX8-OT-lj5" secondAttribute="leading" constant="16" id="KuZ-JO-Ga2"/>
+                            <constraint firstItem="BK3-Gu-sgf" firstAttribute="centerY" secondItem="UY6-gG-3gW" secondAttribute="centerY" id="dXF-Wa-f4P"/>
+                            <constraint firstItem="iX8-OT-lj5" firstAttribute="bottom" secondItem="oOi-tA-fbE" secondAttribute="bottom" constant="64" id="l1c-pb-VNS"/>
+                            <constraint firstItem="iX8-OT-lj5" firstAttribute="trailing" secondItem="oOi-tA-fbE" secondAttribute="trailing" constant="16" id="nKo-uq-Top"/>
+                            <constraint firstItem="BK3-Gu-sgf" firstAttribute="centerX" secondItem="UY6-gG-3gW" secondAttribute="centerX" id="ncB-iL-Nms"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iX8-OT-lj5"/>
                     </view>
+                    <connections>
+                        <outlet property="loadingImageView" destination="BK3-Gu-sgf" id="n0O-oa-3JC"/>
+                        <outlet property="retryButton" destination="oOi-tA-fbE" id="HVl-iD-Xi2"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="weA-Oz-NLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6d-bh-7Bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="171"/>
+            <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GO_1" width="174" height="174"/>
+    </resources>
 </document>
