@@ -63,7 +63,6 @@ class ReceiveViewController: BaseViewController {
         }
         self.viewModel.onTokenUpdate = { [weak self] in
             self?.tokenLabel.text = $0
-            self?.updateButtonsState()
         }
         self.viewModel.onFailGetDefaultToken = { [weak self] in
             self?.showError(withMessage: $0.message)
@@ -75,13 +74,14 @@ class ReceiveViewController: BaseViewController {
                                       sender: transactionBuilder)
             })
         }
-    }
-
-    private func updateButtonsState() {
-        [self.receiveButton, self.selectTokenButton].forEach({
-            $0!.isEnabled = self.viewModel.isReady
-            $0!.alpha = self.viewModel.isReady ? 1 : 0.5
-        })
+        self.viewModel.onReadyStateChange = { [weak self] in
+            self?.selectTokenButton!.isEnabled = $0
+            self?.selectTokenButton!.alpha = $0 ? 1 : 0.5
+        }
+        self.viewModel.onAmountValidationChange = { [weak self] in
+            self?.receiveButton!.isEnabled = $0
+            self?.receiveButton!.alpha = $0 ? 1 : 0.5
+        }
     }
 }
 

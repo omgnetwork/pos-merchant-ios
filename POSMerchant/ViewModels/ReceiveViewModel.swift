@@ -15,6 +15,7 @@ class ReceiveViewModel: BaseViewModel, ReceiveViewModelProtocol {
     var displayAmount: String {
         didSet {
             self.onAmountUpdate?(self.displayAmount)
+            self.checkIfReady()
         }
     }
 
@@ -22,15 +23,28 @@ class ReceiveViewModel: BaseViewModel, ReceiveViewModelProtocol {
     var onAmountUpdate: ObjectClosure<String>?
     var onTokenUpdate: ObjectClosure<String>?
     var onFailGetDefaultToken: FailureClosure?
+    var onReadyStateChange: ObjectClosure<Bool>?
+    var onAmountValidationChange: ObjectClosure<Bool>?
     var shouldProcessTransaction: ObjectClosure<TransactionBuilder>?
     var selectedToken: Token? {
         didSet {
             self.tokenString = self.selectedToken?.name ?? "-"
             self.onTokenUpdate?(self.tokenString)
+            self.checkIfReady()
         }
     }
 
-    var isReady: Bool { return self.selectedToken != nil }
+    var isReady: Bool = false {
+        didSet {
+            self.onReadyStateChange?(isReady)
+        }
+    }
+
+    var isAmountValid: Bool = false {
+        didSet {
+            self.onAmountValidationChange?(isAmountValid)
+        }
+    }
 
     let tokenLoader: TokenLoaderProtocol
     let sessionManager: SessionManagerProtocol
@@ -111,5 +125,15 @@ class ReceiveViewModel: BaseViewModel, ReceiveViewModelProtocol {
 
     func resetAmount() {
         self.displayAmount = "0"
+    }
+
+    private func checkIfReady() {
+        guard let token = self.selectedToken else {
+            self.isReady = false
+            self.isAmountValid = false
+            return
+        }
+        self.isReady = true
+        self.isAmountValid = OMGNumberFormatter().number(from: self.displayAmount, subunitToUnit: token.subUnitToUnit) != 0
     }
 }
