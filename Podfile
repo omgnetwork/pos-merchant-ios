@@ -14,7 +14,7 @@ target 'POSMerchant' do
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
   pod 'AlamofireImage'
-  pod 'OmiseGO/Admin', path: '../omisego-ios'
+  pod 'OmiseGO/Admin', git: 'https://github.com/omisego/ios-sdk.git'
 
   target 'POSMerchantTests' do
     inherit! :search_paths
