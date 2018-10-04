@@ -7,6 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0306DC71215A255100612953 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC70215A255100612953 /* SessionManager.swift */; };
+		0306DC81215A25A100612953 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC72215A25A100612953 /* Theme.swift */; };
+		0306DC82215A25A100612953 /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC73215A25A100612953 /* Biometric.swift */; };
+		0306DC83215A25A100612953 /* BaseViewControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC74215A25A100612953 /* BaseViewControllerProtocols.swift */; };
+		0306DC84215A25A100612953 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC75215A25A100612953 /* CustomView.swift */; };
+		0306DC85215A25A100612953 /* MBProgressHUDBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC76215A25A100612953 /* MBProgressHUDBuilder.swift */; };
+		0306DC86215A25A100612953 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC77215A25A100612953 /* Constant.swift */; };
+		0306DC88215A25A100612953 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC79215A25A100612953 /* KeychainWrapper.swift */; };
+		0306DC89215A25A100612953 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC7A215A25A100612953 /* AppState.swift */; };
+		0306DC8A215A25A100612953 /* OmiseGOWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC7B215A25A100612953 /* OmiseGOWrapper.swift */; };
+		0306DC8B215A25A100612953 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC7C215A25A100612953 /* Observable.swift */; };
+		0306DC8C215A25A100612953 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC7D215A25A100612953 /* UserDefaultsWrapper.swift */; };
+		0306DC8D215A25A100612953 /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC7E215A25A100612953 /* Closure.swift */; };
+		0306DC8E215A25A100612953 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC7F215A25A100612953 /* Extension.swift */; };
+		0306DC8F215A25A100612953 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC80215A25A100612953 /* Storyboard.swift */; };
+		0306DC92215A27C900612953 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0306DC90215A27C900612953 /* Loading.storyboard */; };
+		0306DC95215A27D600612953 /* Signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0306DC93215A27D600612953 /* Signin.storyboard */; };
+		0306DC97215A28C100612953 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC96215A28C100612953 /* Publisher.swift */; };
+		0306DC99215A28D900612953 /* AppEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC98215A28D900612953 /* AppEvent.swift */; };
+		0306DC9B215A290400612953 /* POSMerchantError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC9A215A290400612953 /* POSMerchantError.swift */; };
+		0306DC9D215A2B2000612953 /* POSMerchantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC9C215A2B2000612953 /* POSMerchantManager.swift */; };
+		0306DCA1215A32C400612953 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCA0215A32C400612953 /* BaseViewModel.swift */; };
+		0306DCA3215A32F000612953 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCA2215A32F000612953 /* BaseViewController.swift */; };
+		0306DCA7215A334E00612953 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0306DCA5215A334E00612953 /* LoadingView.xib */; };
+		0306DCA8215A334E00612953 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCA6215A334E00612953 /* LoadingView.swift */; };
+		0306DCAA215A352500612953 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCA9215A352500612953 /* SigninViewModel.swift */; };
+		0306DCAC215A355800612953 /* SigninViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCAB215A355800612953 /* SigninViewModelProtocol.swift */; };
+		0306DCAE215A36C600612953 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DCAD215A36C600612953 /* SigninViewController.swift */; };
 		03FB02C5215A0A95001EF0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB02C4215A0A95001EF0D4 /* AppDelegate.swift */; };
 		03FB02DA215A0A97001EF0D4 /* POSMerchantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB02D9215A0A97001EF0D4 /* POSMerchantTests.swift */; };
 		03FB02F5215A0DDF001EF0D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03FB02E7215A0DDE001EF0D4 /* Localizable.strings */; };
@@ -27,6 +55,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0306DC70215A255100612953 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		0306DC72215A25A100612953 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		0306DC73215A25A100612953 /* Biometric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biometric.swift; sourceTree = "<group>"; };
+		0306DC74215A25A100612953 /* BaseViewControllerProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocols.swift; sourceTree = "<group>"; };
+		0306DC75215A25A100612953 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		0306DC76215A25A100612953 /* MBProgressHUDBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBProgressHUDBuilder.swift; sourceTree = "<group>"; };
+		0306DC77215A25A100612953 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0306DC79215A25A100612953 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		0306DC7A215A25A100612953 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		0306DC7B215A25A100612953 /* OmiseGOWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmiseGOWrapper.swift; sourceTree = "<group>"; };
+		0306DC7C215A25A100612953 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		0306DC7D215A25A100612953 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		0306DC7E215A25A100612953 /* Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closure.swift; sourceTree = "<group>"; };
+		0306DC7F215A25A100612953 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		0306DC80215A25A100612953 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		0306DC91215A27C900612953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Loading.storyboard; sourceTree = "<group>"; };
+		0306DC94215A27D600612953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signin.storyboard; sourceTree = "<group>"; };
+		0306DC96215A28C100612953 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		0306DC98215A28D900612953 /* AppEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvent.swift; sourceTree = "<group>"; };
+		0306DC9A215A290400612953 /* POSMerchantError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSMerchantError.swift; sourceTree = "<group>"; };
+		0306DC9C215A2B2000612953 /* POSMerchantManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSMerchantManager.swift; sourceTree = "<group>"; };
+		0306DCA0215A32C400612953 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		0306DCA2215A32F000612953 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0306DCA5215A334E00612953 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		0306DCA6215A334E00612953 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		0306DCA9215A352500612953 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
+		0306DCAB215A355800612953 /* SigninViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModelProtocol.swift; sourceTree = "<group>"; };
+		0306DCAD215A36C600612953 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		03FB02C1215A0A95001EF0D4 /* POSMerchant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSMerchant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB02C4215A0A95001EF0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03FB02D0215A0A96001EF0D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0306DCA4215A334E00612953 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				0306DCA5215A334E00612953 /* LoadingView.xib */,
+				0306DCA6215A334E00612953 /* LoadingView.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		03FB02B8215A0A95001EF0D4 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +182,7 @@
 		03FB02E4215A0DDE001EF0D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0306DCA4215A334E00612953 /* Others */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,6 +190,8 @@
 		03FB02E5215A0DDE001EF0D4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0306DCA0215A32C400612953 /* BaseViewModel.swift */,
+				0306DCA9215A352500612953 /* SigninViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -139,6 +207,20 @@
 		03FB02E9215A0DDF001EF0D4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0306DC7A215A25A100612953 /* AppState.swift */,
+				0306DC74215A25A100612953 /* BaseViewControllerProtocols.swift */,
+				0306DC73215A25A100612953 /* Biometric.swift */,
+				0306DC7E215A25A100612953 /* Closure.swift */,
+				0306DC77215A25A100612953 /* Constant.swift */,
+				0306DC75215A25A100612953 /* CustomView.swift */,
+				0306DC7F215A25A100612953 /* Extension.swift */,
+				0306DC79215A25A100612953 /* KeychainWrapper.swift */,
+				0306DC76215A25A100612953 /* MBProgressHUDBuilder.swift */,
+				0306DC7C215A25A100612953 /* Observable.swift */,
+				0306DC7B215A25A100612953 /* OmiseGOWrapper.swift */,
+				0306DC80215A25A100612953 /* Storyboard.swift */,
+				0306DC72215A25A100612953 /* Theme.swift */,
+				0306DC7D215A25A100612953 /* UserDefaultsWrapper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -153,6 +235,8 @@
 		03FB02EB215A0DDF001EF0D4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0306DCA2215A32F000612953 /* BaseViewController.swift */,
+				0306DCAD215A36C600612953 /* SigninViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -161,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				03FB02ED215A0DDF001EF0D4 /* LaunchScreen.storyboard */,
+				0306DC90215A27C900612953 /* Loading.storyboard */,
+				0306DC93215A27D600612953 /* Signin.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -168,6 +254,9 @@
 		03FB02EF215A0DDF001EF0D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0306DC96215A28C100612953 /* Publisher.swift */,
+				0306DC98215A28D900612953 /* AppEvent.swift */,
+				0306DC9A215A290400612953 /* POSMerchantError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,6 +264,8 @@
 		03FB02F0215A0DDF001EF0D4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				0306DC70215A255100612953 /* SessionManager.swift */,
+				0306DC9C215A2B2000612953 /* POSMerchantManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -197,6 +288,7 @@
 		03FB02F4215A0DDF001EF0D4 /* ViewModelProtocols */ = {
 			isa = PBXGroup;
 			children = (
+				0306DCAB215A355800612953 /* SigninViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -306,9 +398,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0306DC95215A27D600612953 /* Signin.storyboard in Resources */,
 				03FB02F5215A0DDF001EF0D4 /* Localizable.strings in Resources */,
 				03FB02F7215A0DDF001EF0D4 /* Assets.xcassets in Resources */,
+				0306DCA7215A334E00612953 /* LoadingView.xib in Resources */,
 				03FB02F6215A0DDF001EF0D4 /* LaunchScreen.storyboard in Resources */,
+				0306DC92215A27C900612953 /* Loading.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +513,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0306DC8C215A25A100612953 /* UserDefaultsWrapper.swift in Sources */,
+				0306DC8B215A25A100612953 /* Observable.swift in Sources */,
+				0306DC8D215A25A100612953 /* Closure.swift in Sources */,
+				0306DC8F215A25A100612953 /* Storyboard.swift in Sources */,
+				0306DC82215A25A100612953 /* Biometric.swift in Sources */,
+				0306DC81215A25A100612953 /* Theme.swift in Sources */,
+				0306DC9D215A2B2000612953 /* POSMerchantManager.swift in Sources */,
+				0306DC71215A255100612953 /* SessionManager.swift in Sources */,
+				0306DCAC215A355800612953 /* SigninViewModelProtocol.swift in Sources */,
+				0306DC86215A25A100612953 /* Constant.swift in Sources */,
+				0306DC8E215A25A100612953 /* Extension.swift in Sources */,
+				0306DC84215A25A100612953 /* CustomView.swift in Sources */,
+				0306DC97215A28C100612953 /* Publisher.swift in Sources */,
+				0306DCAA215A352500612953 /* SigninViewModel.swift in Sources */,
+				0306DC9B215A290400612953 /* POSMerchantError.swift in Sources */,
+				0306DCA3215A32F000612953 /* BaseViewController.swift in Sources */,
+				0306DCAE215A36C600612953 /* SigninViewController.swift in Sources */,
+				0306DC83215A25A100612953 /* BaseViewControllerProtocols.swift in Sources */,
+				0306DC89215A25A100612953 /* AppState.swift in Sources */,
 				03FB02C5215A0A95001EF0D4 /* AppDelegate.swift in Sources */,
+				0306DC85215A25A100612953 /* MBProgressHUDBuilder.swift in Sources */,
+				0306DCA1215A32C400612953 /* BaseViewModel.swift in Sources */,
+				0306DC88215A25A100612953 /* KeychainWrapper.swift in Sources */,
+				0306DC99215A28D900612953 /* AppEvent.swift in Sources */,
+				0306DC8A215A25A100612953 /* OmiseGOWrapper.swift in Sources */,
+				0306DCA8215A334E00612953 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +561,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0306DC90215A27C900612953 /* Loading.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0306DC91215A27C900612953 /* Base */,
+			);
+			name = Loading.storyboard;
+			sourceTree = "<group>";
+		};
+		0306DC93215A27D600612953 /* Signin.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0306DC94215A27D600612953 /* Base */,
+			);
+			name = Signin.storyboard;
+			sourceTree = "<group>";
+		};
 		03FB02E7215A0DDE001EF0D4 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -583,7 +719,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = POSMerchant/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,7 +738,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = POSMerchant/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
