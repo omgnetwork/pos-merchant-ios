@@ -13,11 +13,21 @@ target 'POSMerchant' do
   pod 'Toaster'
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
+  pod 'AlamofireImage'
   pod 'OmiseGO/Admin', path: '../omisego-ios'
 
   target 'POSMerchantTests' do
     inherit! :search_paths
     # Pods for testing
   end
+end
 
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == 'Toaster'
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '4.0'
+      end
+    end
+  end
 end

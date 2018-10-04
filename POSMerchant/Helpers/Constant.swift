@@ -11,6 +11,7 @@ import Foundation
 enum UserDefaultKey: String {
     case email = "com.omisego.pos-merchant.email"
     case biometricEnabled = "com.omisego.pos-merchant.biometric_enabled"
+    case accountId = "com.omisego.pos-merchant.selected_account_id"
 }
 
 enum KeychainKey: String {

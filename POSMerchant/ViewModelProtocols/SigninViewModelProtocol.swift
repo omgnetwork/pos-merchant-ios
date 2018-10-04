@@ -11,6 +11,7 @@ import UIKit
 protocol SigninViewModelProtocol {
     var updateEmailValidation: ViewModelValidationClosure? { get set }
     var updatePasswordValidation: ViewModelValidationClosure? { get set }
+    var onSuccessfulLogin: SuccessClosure? { get set }
     var onFailedLogin: FailureClosure? { get set }
     var onLoadStateChange: ObjectClosure<Bool>? { get set }
     var emailPlaceholder: String { get }
