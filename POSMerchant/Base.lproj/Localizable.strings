@@ -44,10 +44,16 @@
 "tab.topup.title" = "Top-up";
 "tab.more.title" = "More";
 
+// Keypad input
+"keypad_input.error.no_token" = "There is no token available.";
+
 // Receive
-"receive.label.receive" = "Receive";
-"receive.button.receive" = "Receive";
-"receive.error.no_token" = "There is no token available.";
+"receive.label.title" = "Receive";
+"receive.button.action" = "Receive";
+
+// Top up
+"topup.label.title" = "Top-up";
+"topup.button.action" = "Top-up";
 
 // Select token
 "select_token.view.title" = "Select token";

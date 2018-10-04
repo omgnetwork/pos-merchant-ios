@@ -50,13 +50,12 @@
 		033802B2215CA3EA00C2501F /* LoadingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802B1215CA3EA00C2501F /* LoadingViewModelProtocol.swift */; };
 		033802B4215CA3F100C2501F /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802B3215CA3F100C2501F /* LoadingViewModel.swift */; };
 		033802BA215CBDFC00C2501F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033802B8215CBDFC00C2501F /* TabBar.storyboard */; };
-		033802BD215CBE7400C2501F /* Receive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033802BB215CBE7400C2501F /* Receive.storyboard */; };
+		033802BD215CBE7400C2501F /* KeypadInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033802BB215CBE7400C2501F /* KeypadInput.storyboard */; };
 		033802C0215CBE8F00C2501F /* Topup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033802BE215CBE8F00C2501F /* Topup.storyboard */; };
 		033802C3215CBEA000C2501F /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033802C1215CBEA000C2501F /* More.storyboard */; };
 		033802C6215CC0E000C2501F /* Keyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033802C4215CC0E000C2501F /* Keyboard.storyboard */; };
-		033802C8215CC32000C2501F /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802C7215CC32000C2501F /* ReceiveViewController.swift */; };
-		033802CA215CC33400C2501F /* ReceiveViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802C9215CC33400C2501F /* ReceiveViewModelProtocol.swift */; };
-		033802CC215CC34600C2501F /* ReceiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802CB215CC34600C2501F /* ReceiveViewModel.swift */; };
+		033802CA215CC33400C2501F /* KeypadInputViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802C9215CC33400C2501F /* KeypadInputViewModelProtocol.swift */; };
+		033802CC215CC34600C2501F /* KeypadInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802CB215CC34600C2501F /* KeypadInputViewModel.swift */; };
 		033802CE215CC95200C2501F /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802CD215CC95200C2501F /* KeyboardViewController.swift */; };
 		033802D0215CC96500C2501F /* KeyboardViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802CF215CC96500C2501F /* KeyboardViewModelProtocol.swift */; };
 		033802D2215CC97700C2501F /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802D1215CC97700C2501F /* KeyboardViewModel.swift */; };
@@ -73,6 +72,11 @@
 		033802EC2161EC8D00C2501F /* QRReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802EB2161EC8D00C2501F /* QRReaderViewModel.swift */; };
 		033802EE2161EEFC00C2501F /* QRReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802ED2161EEFC00C2501F /* QRReaderOverlayView.swift */; };
 		033802F02161F48700C2501F /* QRReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802EF2161F48700C2501F /* QRReader.swift */; };
+		03467AB32165E9F700A33064 /* KeypadInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03467AB22165E9F700A33064 /* KeypadInputViewController.swift */; };
+		03467AB52165EA9A00A33064 /* ReceiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03467AB42165EA9A00A33064 /* ReceiveViewModel.swift */; };
+		03467AB72165EF6A00A33064 /* TopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03467AB62165EF6A00A33064 /* TopUpViewModel.swift */; };
+		03467ABB2165F38C00A33064 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03467ABA2165F38C00A33064 /* ReceiveViewController.swift */; };
+		03467ABD2165F3A000A33064 /* TopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03467ABC2165F3A000A33064 /* TopupViewController.swift */; };
 		03C94B41215B4109007DF271 /* AccountSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C94B3F215B4109007DF271 /* AccountSelection.storyboard */; };
 		03C94B43215B4179007DF271 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */; };
 		03C94B45215B4229007DF271 /* SelectAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */; };
@@ -149,13 +153,12 @@
 		033802B1215CA3EA00C2501F /* LoadingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModelProtocol.swift; sourceTree = "<group>"; };
 		033802B3215CA3F100C2501F /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		033802B9215CBDFC00C2501F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBar.storyboard; sourceTree = "<group>"; };
-		033802BC215CBE7400C2501F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Receive.storyboard; sourceTree = "<group>"; };
+		033802BC215CBE7400C2501F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/KeypadInput.storyboard; sourceTree = "<group>"; };
 		033802BF215CBE8F00C2501F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Topup.storyboard; sourceTree = "<group>"; };
 		033802C2215CBEA000C2501F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/More.storyboard; sourceTree = "<group>"; };
 		033802C5215CC0E000C2501F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Keyboard.storyboard; sourceTree = "<group>"; };
-		033802C7215CC32000C2501F /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
-		033802C9215CC33400C2501F /* ReceiveViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewModelProtocol.swift; sourceTree = "<group>"; };
-		033802CB215CC34600C2501F /* ReceiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewModel.swift; sourceTree = "<group>"; };
+		033802C9215CC33400C2501F /* KeypadInputViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadInputViewModelProtocol.swift; sourceTree = "<group>"; };
+		033802CB215CC34600C2501F /* KeypadInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadInputViewModel.swift; sourceTree = "<group>"; };
 		033802CD215CC95200C2501F /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		033802CF215CC96500C2501F /* KeyboardViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModelProtocol.swift; sourceTree = "<group>"; };
 		033802D1215CC97700C2501F /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +175,11 @@
 		033802EB2161EC8D00C2501F /* QRReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRReaderViewModel.swift; sourceTree = "<group>"; };
 		033802ED2161EEFC00C2501F /* QRReaderOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRReaderOverlayView.swift; sourceTree = "<group>"; };
 		033802EF2161F48700C2501F /* QRReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRReader.swift; sourceTree = "<group>"; };
+		03467AB22165E9F700A33064 /* KeypadInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadInputViewController.swift; sourceTree = "<group>"; };
+		03467AB42165EA9A00A33064 /* ReceiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewModel.swift; sourceTree = "<group>"; };
+		03467AB62165EF6A00A33064 /* TopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpViewModel.swift; sourceTree = "<group>"; };
+		03467ABA2165F38C00A33064 /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
+		03467ABC2165F3A000A33064 /* TopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupViewController.swift; sourceTree = "<group>"; };
 		03C94B40215B4109007DF271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AccountSelection.storyboard; sourceTree = "<group>"; };
 		03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountTableViewController.swift; sourceTree = "<group>"; };
@@ -311,7 +319,9 @@
 				03C94B48215B4292007DF271 /* SelectAccountViewModel.swift */,
 				03C94B4A215B441F007DF271 /* AccountCellViewModel.swift */,
 				033802A6215B9ABC00C2501F /* WelcomeViewModel.swift */,
-				033802CB215CC34600C2501F /* ReceiveViewModel.swift */,
+				033802CB215CC34600C2501F /* KeypadInputViewModel.swift */,
+				03467AB42165EA9A00A33064 /* ReceiveViewModel.swift */,
+				03467AB62165EF6A00A33064 /* TopUpViewModel.swift */,
 				033802D1215CC97700C2501F /* KeyboardViewModel.swift */,
 				033802DA215DDFA200C2501F /* SelectTokenViewModel.swift */,
 				033802E0215DEABE00C2501F /* BalanceCellViewModel.swift */,
@@ -368,13 +378,15 @@
 				0306DCAD215A36C600612953 /* SigninViewController.swift */,
 				03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */,
 				03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */,
-				033802C7215CC32000C2501F /* ReceiveViewController.swift */,
 				033802CD215CC95200C2501F /* KeyboardViewController.swift */,
 				033802D6215DDF7300C2501F /* SelectTokenTableViewController.swift */,
 				033802E72161EC6A00C2501F /* QRReaderViewController.swift */,
 				0325B59421633405006850FF /* TransactionConfirmationViewController.swift */,
 				03E0BB462164821800FCB154 /* TransactionResultViewController.swift */,
 				032BACAA2165CE7E00D63EBC /* TabBarViewController.swift */,
+				03467AB22165E9F700A33064 /* KeypadInputViewController.swift */,
+				03467ABA2165F38C00A33064 /* ReceiveViewController.swift */,
+				03467ABC2165F3A000A33064 /* TopupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -388,7 +400,7 @@
 				0306DC93215A27D600612953 /* Signin.storyboard */,
 				03C94B3F215B4109007DF271 /* AccountSelection.storyboard */,
 				033802B8215CBDFC00C2501F /* TabBar.storyboard */,
-				033802BB215CBE7400C2501F /* Receive.storyboard */,
+				033802BB215CBE7400C2501F /* KeypadInput.storyboard */,
 				033802BE215CBE8F00C2501F /* Topup.storyboard */,
 				033802C1215CBEA000C2501F /* More.storyboard */,
 				033802C4215CC0E000C2501F /* Keyboard.storyboard */,
@@ -444,7 +456,7 @@
 				0306DCAB215A355800612953 /* SigninViewModelProtocol.swift */,
 				03C94B46215B4259007DF271 /* SelectAccountViewModelProtocol.swift */,
 				033802A8215B9AC600C2501F /* WelcomeViewModelProtocol.swift */,
-				033802C9215CC33400C2501F /* ReceiveViewModelProtocol.swift */,
+				033802C9215CC33400C2501F /* KeypadInputViewModelProtocol.swift */,
 				033802CF215CC96500C2501F /* KeyboardViewModelProtocol.swift */,
 				033802D8215DDF7F00C2501F /* SelectTokenViewModelProtocol.swift */,
 				033802E92161EC7D00C2501F /* QRReaderViewModelProtocol.swift */,
@@ -563,7 +575,7 @@
 				033802AE215CA3BC00C2501F /* Loading.storyboard in Resources */,
 				033802D5215DDF4700C2501F /* SelectToken.storyboard in Resources */,
 				0306DC95215A27D600612953 /* Signin.storyboard in Resources */,
-				033802BD215CBE7400C2501F /* Receive.storyboard in Resources */,
+				033802BD215CBE7400C2501F /* KeypadInput.storyboard in Resources */,
 				03C94B54215B49D5007DF271 /* AccountTableViewCell.xib in Resources */,
 				033802C0215CBE8F00C2501F /* Topup.storyboard in Resources */,
 				033802C6215CC0E000C2501F /* Keyboard.storyboard in Resources */,
@@ -686,6 +698,7 @@
 			files = (
 				032BACAD2165CE9F00D63EBC /* TabBarViewModel.swift in Sources */,
 				0306DC8C215A25A100612953 /* UserDefaultsWrapper.swift in Sources */,
+				03467AB72165EF6A00A33064 /* TopUpViewModel.swift in Sources */,
 				033802D2215CC97700C2501F /* KeyboardViewModel.swift in Sources */,
 				033802A7215B9ABC00C2501F /* WelcomeViewModel.swift in Sources */,
 				0306DC8B215A25A100612953 /* Observable.swift in Sources */,
@@ -696,10 +709,11 @@
 				0306DC8F215A25A100612953 /* Storyboard.swift in Sources */,
 				033802D0215CC96500C2501F /* KeyboardViewModelProtocol.swift in Sources */,
 				033802A5215B9AAE00C2501F /* WelcomeViewController.swift in Sources */,
+				03467ABB2165F38C00A33064 /* ReceiveViewController.swift in Sources */,
 				033802A9215B9AC600C2501F /* WelcomeViewModelProtocol.swift in Sources */,
 				033802DE215DEAB400C2501F /* BalanceTableViewCell.swift in Sources */,
 				033802E1215DEABE00C2501F /* BalanceCellViewModel.swift in Sources */,
-				033802CC215CC34600C2501F /* ReceiveViewModel.swift in Sources */,
+				033802CC215CC34600C2501F /* KeypadInputViewModel.swift in Sources */,
 				033802D9215DDF7F00C2501F /* SelectTokenViewModelProtocol.swift in Sources */,
 				033802F02161F48700C2501F /* QRReader.swift in Sources */,
 				0306DC82215A25A100612953 /* Biometric.swift in Sources */,
@@ -715,27 +729,29 @@
 				0306DC8E215A25A100612953 /* Extension.swift in Sources */,
 				0325B59721633428006850FF /* TransactionConfirmationViewModelProtocol.swift in Sources */,
 				03C94B49215B4292007DF271 /* SelectAccountViewModel.swift in Sources */,
+				03467AB32165E9F700A33064 /* KeypadInputViewController.swift in Sources */,
 				0306DC84215A25A100612953 /* CustomView.swift in Sources */,
 				03E0BB472164821800FCB154 /* TransactionResultViewController.swift in Sources */,
 				032BACAB2165CE7E00D63EBC /* TabBarViewController.swift in Sources */,
 				03C94B4B215B441F007DF271 /* AccountCellViewModel.swift in Sources */,
 				0306DC97215A28C100612953 /* Publisher.swift in Sources */,
 				0306DCAA215A352500612953 /* SigninViewModel.swift in Sources */,
+				03467ABD2165F3A000A33064 /* TopupViewController.swift in Sources */,
 				0306DC9B215A290400612953 /* POSMerchantError.swift in Sources */,
 				0306DCA3215A32F000612953 /* BaseViewController.swift in Sources */,
 				0306DCAE215A36C600612953 /* SigninViewController.swift in Sources */,
 				0306DC83215A25A100612953 /* BaseViewControllerProtocols.swift in Sources */,
 				033802B4215CA3F100C2501F /* LoadingViewModel.swift in Sources */,
 				033802B2215CA3EA00C2501F /* LoadingViewModelProtocol.swift in Sources */,
-				033802C8215CC32000C2501F /* ReceiveViewController.swift in Sources */,
 				03E0BB4B2164882900FCB154 /* TransactionResultViewModel.swift in Sources */,
-				033802CA215CC33400C2501F /* ReceiveViewModelProtocol.swift in Sources */,
+				033802CA215CC33400C2501F /* KeypadInputViewModelProtocol.swift in Sources */,
 				033802EE2161EEFC00C2501F /* QRReaderOverlayView.swift in Sources */,
 				0306DC89215A25A100612953 /* AppState.swift in Sources */,
 				03FB02C5215A0A95001EF0D4 /* AppDelegate.swift in Sources */,
 				0325B59B21635BF4006850FF /* TransactionBuilder.swift in Sources */,
 				033802EA2161EC7D00C2501F /* QRReaderViewModelProtocol.swift in Sources */,
 				0306DC85215A25A100612953 /* MBProgressHUDBuilder.swift in Sources */,
+				03467AB52165EA9A00A33064 /* ReceiveViewModel.swift in Sources */,
 				033802CE215CC95200C2501F /* KeyboardViewController.swift in Sources */,
 				0306DCA1215A32C400612953 /* BaseViewModel.swift in Sources */,
 				0306DC88215A25A100612953 /* KeychainWrapper.swift in Sources */,
@@ -811,12 +827,12 @@
 			name = TabBar.storyboard;
 			sourceTree = "<group>";
 		};
-		033802BB215CBE7400C2501F /* Receive.storyboard */ = {
+		033802BB215CBE7400C2501F /* KeypadInput.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				033802BC215CBE7400C2501F /* Base */,
 			);
-			name = Receive.storyboard;
+			name = KeypadInput.storyboard;
 			sourceTree = "<group>";
 		};
 		033802BE215CBE8F00C2501F /* Topup.storyboard */ = {

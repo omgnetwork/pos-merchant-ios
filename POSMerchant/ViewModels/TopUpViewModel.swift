@@ -1,5 +1,5 @@
 //
-//  ReceiveViewModel.swift
+//  TopUpViewModel.swift
 //  POSMerchant
 //
 //  Created by Mederic Petit on 4/10/18.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class ReceiveViewModel: KeypadInputViewModel {
+class TopUpViewModel: KeypadInputViewModel {
     override var title: String {
-        return "receive.label.title".localized()
+        return "topup.label.title".localized()
     }
 
     override var buttonTitle: String {
-        return "receive.button.action".localized()
+        return "topup.button.action".localized()
     }
 
     override func didDecode(_ string: String) {
-        let transactionBuilder = TransactionBuilder(type: .receive,
+        let transactionBuilder = TransactionBuilder(type: .topup,
                                                     amount: self.displayAmount,
                                                     token: self.selectedToken!,
                                                     address: string)
@@ -26,7 +26,7 @@ class ReceiveViewModel: KeypadInputViewModel {
     }
 
     override func qrReaderStrings() -> (String, String) {
-        let title = "\("qr_reader.label.scan_to".localized()) \("receive.label.title".localized().lowercased())"
+        let title = "\("qr_reader.label.scan_to".localized()) \("topup.label.title".localized().lowercased())"
         let tokenString = "\(self.displayAmount) \(self.selectedToken!.symbol)"
         return (title, tokenString)
     }

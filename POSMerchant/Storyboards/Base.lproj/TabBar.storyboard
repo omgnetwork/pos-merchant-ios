@@ -38,26 +38,27 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mf4-2P-8LH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="521"/>
+            <point key="canvasLocation" x="132" y="551"/>
         </scene>
-        <!--Receive-->
+        <!--ReceiveNavigationViewController-->
         <scene sceneID="Jaz-mL-cdf">
             <objects>
-                <viewControllerPlaceholder storyboardName="Receive" id="O69-qN-4Zf" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="KeypadInput" referencedIdentifier="ReceiveNavigationViewController" id="O69-qN-4Zf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="3jW-iz-gaD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1D7-q4-zP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="200"/>
+            <point key="canvasLocation" x="269" y="184"/>
         </scene>
-        <!--Topup-->
+        <!--TopupNavigationViewController-->
         <scene sceneID="JD1-vw-NOQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Topup" id="xtq-2B-9PX" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="KeypadInput" referencedIdentifier="TopupNavigationViewController" id="xtq-2B-9PX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="Rho-JP-m1V"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0X-KJ-cvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="261" y="373"/>
         </scene>
     </scenes>
 </document>

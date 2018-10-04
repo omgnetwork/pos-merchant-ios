@@ -1,5 +1,5 @@
 //
-//  ReceiveViewModelProtocol.swift
+//  KeypadInputViewModelProtocol.swift
 //  POSMerchant
 //
 //  Created by Mederic Petit on 27/9/18.
@@ -8,9 +8,9 @@
 
 import OmiseGO
 
-protocol ReceiveViewModelProtocol: KeyboardEventDelegate, SelectTokenDelegate, QRReaderDelegate {
+protocol KeypadInputViewModelProtocol: KeyboardEventDelegate, SelectTokenDelegate, QRReaderDelegate {
     var title: String { get }
-    var receiveButtonTitle: String { get }
+    var buttonTitle: String { get }
     var displayAmount: String { get }
     var tokenString: String { get }
     var selectedToken: Token? { get }
@@ -20,6 +20,7 @@ protocol ReceiveViewModelProtocol: KeyboardEventDelegate, SelectTokenDelegate, Q
     var onReadyStateChange: ObjectClosure<Bool>? { get set }
     var onAmountValidationChange: ObjectClosure<Bool>? { get set }
     var shouldProcessTransaction: ObjectClosure<TransactionBuilder>? { get set }
-    func qrReaderStrings() -> (String, String)
+
     func resetAmount()
+    func qrReaderStrings() -> (String, String)
 }
