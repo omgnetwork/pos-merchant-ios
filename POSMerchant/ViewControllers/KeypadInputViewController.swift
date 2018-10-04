@@ -32,6 +32,10 @@ class KeypadInputViewController: BaseViewController {
         self.amountLabel.text = self.viewModel.displayAmount
         self.tokenLabel.text = self.viewModel.tokenString
         self.actionButton.setTitle(self.viewModel.buttonTitle, for: .normal)
+        self.selectTokenButton!.isEnabled = self.viewModel.isReady
+        self.selectTokenButton!.alpha = self.viewModel.isReady ? 1 : 0.5
+        self.actionButton!.isEnabled = self.viewModel.isAmountValid
+        self.actionButton!.alpha = self.viewModel.isAmountValid ? 1 : 0.5
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

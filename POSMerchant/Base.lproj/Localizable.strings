@@ -78,3 +78,16 @@
 "transaction_result.topup_successful" = "Topup successful";
 "transaction_result.payment_failed" = "Payment failed";
 "transaction_result.topup_failed" = "Topup failed";
+
+// More
+"more.view.title" = "More";
+"more.label.transactions" = "Transactions";
+"more.label.account" = "Account";
+"more.label.signout" = "Sign out";
+
+// TouchID confirmation
+"touch_id_confirmation.view.title" = "Confirm your password";
+"touch_id_confirmation.text_field.placeholder.password" = "Password";
+"touch_id_confirmation.button.title.enable" = "Enable";
+"touch_id_confirmation.error.validation.password" = "Password should be at least 8 characters long";
+"touch_id_confirmation.label.hint" = "Please confirm your password in order to enable";
