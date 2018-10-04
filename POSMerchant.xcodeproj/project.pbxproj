@@ -40,6 +40,8 @@
 		0325B59721633428006850FF /* TransactionConfirmationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B59621633428006850FF /* TransactionConfirmationViewModelProtocol.swift */; };
 		0325B5992163345E006850FF /* TransactionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B5982163345E006850FF /* TransactionConfirmationViewModel.swift */; };
 		0325B59B21635BF4006850FF /* TransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B59A21635BF4006850FF /* TransactionBuilder.swift */; };
+		032BACAB2165CE7E00D63EBC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032BACAA2165CE7E00D63EBC /* TabBarViewController.swift */; };
+		032BACAD2165CE9F00D63EBC /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032BACAC2165CE9F00D63EBC /* TabBarViewModel.swift */; };
 		033802A5215B9AAE00C2501F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802A4215B9AAE00C2501F /* WelcomeViewController.swift */; };
 		033802A7215B9ABC00C2501F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802A6215B9ABC00C2501F /* WelcomeViewModel.swift */; };
 		033802A9215B9AC600C2501F /* WelcomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802A8215B9AC600C2501F /* WelcomeViewModelProtocol.swift */; };
@@ -137,6 +139,8 @@
 		0325B59621633428006850FF /* TransactionConfirmationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModelProtocol.swift; sourceTree = "<group>"; };
 		0325B5982163345E006850FF /* TransactionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModel.swift; sourceTree = "<group>"; };
 		0325B59A21635BF4006850FF /* TransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionBuilder.swift; sourceTree = "<group>"; };
+		032BACAA2165CE7E00D63EBC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		032BACAC2165CE9F00D63EBC /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		033802A4215B9AAE00C2501F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		033802A6215B9ABC00C2501F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		033802A8215B9AC600C2501F /* WelcomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 				033802EB2161EC8D00C2501F /* QRReaderViewModel.swift */,
 				0325B5982163345E006850FF /* TransactionConfirmationViewModel.swift */,
 				03E0BB4A2164882900FCB154 /* TransactionResultViewModel.swift */,
+				032BACAC2165CE9F00D63EBC /* TabBarViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				033802E72161EC6A00C2501F /* QRReaderViewController.swift */,
 				0325B59421633405006850FF /* TransactionConfirmationViewController.swift */,
 				03E0BB462164821800FCB154 /* TransactionResultViewController.swift */,
+				032BACAA2165CE7E00D63EBC /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -678,6 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032BACAD2165CE9F00D63EBC /* TabBarViewModel.swift in Sources */,
 				0306DC8C215A25A100612953 /* UserDefaultsWrapper.swift in Sources */,
 				033802D2215CC97700C2501F /* KeyboardViewModel.swift in Sources */,
 				033802A7215B9ABC00C2501F /* WelcomeViewModel.swift in Sources */,
@@ -710,6 +717,7 @@
 				03C94B49215B4292007DF271 /* SelectAccountViewModel.swift in Sources */,
 				0306DC84215A25A100612953 /* CustomView.swift in Sources */,
 				03E0BB472164821800FCB154 /* TransactionResultViewController.swift in Sources */,
+				032BACAB2165CE7E00D63EBC /* TabBarViewController.swift in Sources */,
 				03C94B4B215B441F007DF271 /* AccountCellViewModel.swift in Sources */,
 				0306DC97215A28C100612953 /* Publisher.swift in Sources */,
 				0306DCAA215A352500612953 /* SigninViewModel.swift in Sources */,

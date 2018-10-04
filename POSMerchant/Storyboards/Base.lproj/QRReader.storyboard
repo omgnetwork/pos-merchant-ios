@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Token" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04n-jh-5Vb">
-                                                <rect key="frame" x="16" y="82" width="343" height="78.5"/>
+                                                <rect key="frame" x="16" y="102" width="343" height="58.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -48,17 +48,22 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="fqT-W7-hIe">
-                                                <rect key="frame" x="16" y="28" width="343" height="46"/>
+                                                <rect key="frame" x="16" y="28" width="343" height="66"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan to receive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVE-LC-CIn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="46"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="66"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n61-vm-6gU">
-                                                        <rect key="frame" x="0.0" y="8" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <rect key="frame" x="0.0" y="8" width="44" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="44" id="aOv-7k-ZGG"/>
+                                                            <constraint firstAttribute="height" constant="50" id="ueg-fk-Svi"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="Back"/>
                                                         <connections>
                                                             <action selector="tapBackButton:" destination="JH7-0e-rOp" eventType="touchUpInside" id="FhJ-eC-d5M"/>
                                                         </connections>
@@ -130,4 +135,7 @@
             <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Back" width="22" height="13"/>
+    </resources>
 </document>

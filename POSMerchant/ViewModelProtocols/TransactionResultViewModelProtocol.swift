@@ -16,4 +16,6 @@ protocol TransactionResultViewModelProtocol {
     var userId: String { get }
     var error: String { get }
     var done: String { get }
+    var statusImage: UIImage { get }
+    var statusImageColor: UIColor { get }
 }

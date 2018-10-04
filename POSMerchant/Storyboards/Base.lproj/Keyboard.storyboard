@@ -30,8 +30,9 @@
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8s-LF-LrI">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="7">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumber:" destination="nXM-6G-vrT" eventType="touchUpInside" id="7Ms-1a-Z9w"/>
@@ -52,8 +53,9 @@
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNx-LR-LWe">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="8">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumber:" destination="nXM-6G-vrT" eventType="touchUpInside" id="3r3-CD-f3Y"/>
@@ -74,8 +76,9 @@
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04k-4h-gY7">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="9">
-                                                            <color key="titleColor" red="0.35686274509803922" green="0.38431372549019605" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumber:" destination="nXM-6G-vrT" eventType="touchUpInside" id="5iP-Bv-aHl"/>
@@ -101,8 +104,9 @@
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIb-ff-oDu">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="93.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="4">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumber:" destination="nXM-6G-vrT" eventType="touchUpInside" id="Drb-bq-4KB"/>
@@ -123,8 +127,9 @@
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUZ-uA-f41">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="93.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="5">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumber:" destination="nXM-6G-vrT" eventType="touchUpInside" id="MYk-5K-xgA"/>
@@ -145,8 +150,9 @@
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkn-Ha-6GF">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="93.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="6">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumber:" destination="nXM-6G-vrT" eventType="touchUpInside" id="S0X-UI-6GW"/>
@@ -172,8 +178,9 @@
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noI-C2-PGp">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="1">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumber:" destination="nXM-6G-vrT" eventType="touchUpInside" id="RsQ-3s-ScG"/>
@@ -194,8 +201,9 @@
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSX-FA-uZl">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="2">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumber:" destination="nXM-6G-vrT" eventType="touchUpInside" id="Ao6-Kj-RIW"/>
@@ -216,8 +224,9 @@
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmw-Vi-D0Y">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="3">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumber:" destination="nXM-6G-vrT" eventType="touchUpInside" id="PY1-aD-e99"/>
@@ -243,8 +252,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wi-tr-tig">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="93.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title=".">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapDecimalSeparatorButton:" destination="nXM-6G-vrT" eventType="touchUpInside" id="KUY-GP-dCf"/>
@@ -265,8 +275,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rc-kg-oja">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="93.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="0">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumber:" destination="nXM-6G-vrT" eventType="touchUpInside" id="tOE-mo-pYR"/>
@@ -286,9 +297,9 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwV-X1-ufw">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="93.5"/>
-                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
-                                                        <state key="normal" title="&lt;">
-                                                            <color key="titleColor" red="0.35686274509999999" green="0.38431372549999998" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="tintColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" image="Delete">
+                                                            <color key="titleColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapNumberButton:" destination="nXM-6G-vrT" eventType="touchUpInside" id="GNa-Tb-wMN"/>
@@ -329,4 +340,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Delete" width="30" height="22"/>
+    </resources>
 </document>

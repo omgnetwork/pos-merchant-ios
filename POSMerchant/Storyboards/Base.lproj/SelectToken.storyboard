@@ -25,8 +25,16 @@
                             <outlet property="delegate" destination="bJI-pa-2Yj" id="OCD-W6-Zjl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select token" id="PDU-RE-2Cg"/>
+                    <navigationItem key="navigationItem" title="Select token" id="PDU-RE-2Cg">
+                        <barButtonItem key="rightBarButtonItem" image="cross_icon_big" id="4lS-ts-5If">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="tapCloseButton:" destination="bJI-pa-2Yj" id="Qfd-81-2AR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yKC-yX-JLr">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                 </tableViewController>
@@ -58,4 +66,7 @@
             <point key="canvasLocation" x="-545" y="161"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cross_icon_big" width="24" height="24"/>
+    </resources>
 </document>

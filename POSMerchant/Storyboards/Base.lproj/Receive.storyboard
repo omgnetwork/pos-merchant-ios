@@ -28,8 +28,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4O-he-hJ6">
-                                        <rect key="frame" x="313" y="43.5" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="319" y="33.5" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.12941176470588234" green="0.46274509803921571" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="C9u-88-5JC"/>
+                                            <constraint firstAttribute="width" constant="40" id="wWs-9F-Uw8"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="Token"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="tapSelectTokenButton:" destination="HvR-GV-ZtP" eventType="touchUpInside" id="0YB-gO-5e2"/>
                                         </connections>
@@ -219,4 +230,7 @@
             <point key="canvasLocation" x="-1151" y="458"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Token" width="15" height="15"/>
+    </resources>
 </document>

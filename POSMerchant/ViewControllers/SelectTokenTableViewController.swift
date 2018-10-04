@@ -62,6 +62,12 @@ class SelectTokenTableViewController: BaseTableViewController {
 }
 
 extension SelectTokenTableViewController {
+    @IBAction func tapCloseButton(_: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension SelectTokenTableViewController {
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return self.viewModel.numberOfRow()
     }

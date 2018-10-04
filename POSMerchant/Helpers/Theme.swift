@@ -42,6 +42,7 @@ enum Color: String {
     case greyBorder = "E4E7ED"
     case greyUnderline = "C9D1E2"
     case redError = "EF3526"
+    case lightBlue = "2176FF"
 
     func uiColor(withAlpha alpha: CGFloat? = 1.0) -> UIColor {
         return UIColor.color(fromHexString: self.rawValue, alpha: alpha)

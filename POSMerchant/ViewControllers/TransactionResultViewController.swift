@@ -18,6 +18,7 @@ class TransactionResultViewController: BaseViewController {
     @IBOutlet var userIdLabel: UILabel!
     @IBOutlet var doneButton: UIButton!
     @IBOutlet var errorLabel: UILabel!
+    @IBOutlet var statusImageView: UIImageView!
 
     class func initWithViewModel(_ viewModel: TransactionResultViewModelProtocol) -> TransactionResultViewController? {
         guard let transactionResultVC: TransactionResultViewController =
@@ -35,6 +36,8 @@ class TransactionResultViewController: BaseViewController {
         self.userIdLabel.text = self.viewModel.userId
         self.errorLabel.text = self.viewModel.error
         self.doneButton.setTitle(self.viewModel.done, for: .normal)
+        self.statusImageView.image = self.viewModel.statusImage
+        self.statusImageView.tintColor = self.viewModel.statusImageColor
     }
 
     override func configureViewModel() {

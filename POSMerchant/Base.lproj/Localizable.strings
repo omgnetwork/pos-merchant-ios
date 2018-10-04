@@ -39,6 +39,11 @@
 "welcome.label.you_are_in" = "You are in";
 "welcome.label.account" = "Account";
 
+// Tab bar
+"tab.receive.title" = "Receive";
+"tab.topup.title" = "Top-up";
+"tab.more.title" = "More";
+
 // Receive
 "receive.label.receive" = "Receive";
 "receive.button.receive" = "Receive";
