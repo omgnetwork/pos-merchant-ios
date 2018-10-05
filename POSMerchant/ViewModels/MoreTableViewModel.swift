@@ -18,6 +18,7 @@ class MoreTableViewModel: BaseViewModel, MoreTableViewModelProtocol {
     var onLoadStateChange: ObjectClosure<Bool>?
     var shouldShowEnableConfirmationView: EmptyClosure?
     var onBioStateChange: ObjectClosure<Bool>?
+    var onAccountUpdate: EmptyClosure?
 
     var switchState: Bool {
         didSet {
@@ -73,6 +74,9 @@ extension MoreTableViewModel: Observer {
         switch event {
         case let .onBioStateUpdate(enabled: enabled):
             self.switchState = enabled
+        case .onSelectedAccountUpdate:
+            self.accountValueLabelText = self.sessionManager.selectedAccount?.name ?? ""
+            self.onAccountUpdate?()
         default: break
         }
     }

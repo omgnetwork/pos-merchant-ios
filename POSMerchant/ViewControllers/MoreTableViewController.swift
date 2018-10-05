@@ -54,6 +54,9 @@ class MoreTableViewController: BaseTableViewController {
         self.viewModel.onBioStateChange = { [weak self] isEnabled in
             self?.touchFaceIdSwitch.isOn = isEnabled
         }
+        self.viewModel.onAccountUpdate = { [weak self] in
+            self?.accountValueLabel.text = self?.viewModel.accountValueLabelText
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
