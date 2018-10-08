@@ -73,10 +73,8 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
             switch result {
             case let .success(data: wallet) where wallet.user != nil:
                 self?.user = wallet.user
-            case let .fail(error: error):
-                self?.onFailGetUser?(.omiseGO(error: error))
             default:
-                self?.onFailGetUser?(POSMerchantError.unexpected)
+                self?.onFailGetUser?(POSMerchantError.message(message: "transaction_confirmation.qrcode_error".localized()))
             }
         }
     }

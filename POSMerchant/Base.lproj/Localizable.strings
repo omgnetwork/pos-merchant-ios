@@ -69,6 +69,7 @@
 "transaction_confirmation.to" = "to";
 "transaction_confirmation.button.confirm" = "Confirm";
 "transaction_confirmation.button.cancel" = "Cancel";
+"transaction_confirmation.qrcode_error" = "The scanned QR code doesn't seem to be valid, please try again.";
 
 // Transaction result
 "transaction_result.from" = "from";
