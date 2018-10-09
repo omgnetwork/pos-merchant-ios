@@ -24,6 +24,7 @@ protocol MoreTableViewModelProtocol {
     var isBiometricAvailable: Bool { get }
     var touchFaceIdLabelText: String { get }
     var accountValueLabelText: String { get }
+    var currentVersion: String { get }
 
     func toggleSwitch(newValue isEnabled: Bool)
     func logout()
