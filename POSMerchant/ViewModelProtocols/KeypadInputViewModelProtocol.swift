@@ -21,6 +21,7 @@ protocol KeypadInputViewModelProtocol: KeyboardEventDelegate, SelectTokenDelegat
     var onFailGetDefaultToken: FailureClosure? { get set }
     var onReadyStateChange: ObjectClosure<Bool>? { get set }
     var onAmountValidationChange: ObjectClosure<Bool>? { get set }
+    var onInvalidQRCodeFormat: FailureClosure? { get set }
     var shouldProcessTransaction: ObjectClosure<TransactionBuilder>? { get set }
 
     func resetAmount()

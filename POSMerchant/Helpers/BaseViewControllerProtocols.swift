@@ -14,12 +14,12 @@ protocol Configurable {
     func configureViewModel()
 }
 
-protocol Loadable {
+protocol Loadable: class {
     var loading: MBProgressHUD? { get set }
 }
 
 extension Loadable where Self: UIViewController {
-    mutating func showLoading() {
+    func showLoading() {
         self.loading = MBProgressHUDBuilder.build(for: self)
     }
 

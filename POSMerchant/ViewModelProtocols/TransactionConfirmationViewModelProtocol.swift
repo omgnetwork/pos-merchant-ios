@@ -8,26 +8,29 @@
 
 import OmiseGO
 
-protocol TransactionConfirmationViewModelProtocol {
-    var onSuccessGetUser: SuccessClosure? { get set }
-    var onFailGetUser: FailureClosure? { get set }
-    var onCreateTransactionComplete: ObjectClosure<TransactionBuilder>? { get set }
+protocol TransactionConfirmationViewModelProtocol: WaitingForUserConfirmationViewControllerDelegate {
+    var onSuccessGetTransactionRequest: SuccessClosure? { get set }
+    var onFailGetTransactionRequest: FailureClosure? { get set }
     var onLoadStateChange: ObjectClosure<Bool>? { get set }
+    var onCompletedConsumption: ObjectClosure<TransactionBuilder>? { get set }
+    var onPendingConsumptionConfirmation: EmptyClosure? { get set }
 
     var title: String { get }
     var direction: String { get }
     var amountDisplay: String { get }
     var confirm: String { get }
     var cancel: String { get }
-    var isReady: Bool { get set }
-    var username: String { get set }
-    var userId: String { get set }
+    var isReady: Bool { get }
+    var username: String { get }
+    var userId: String { get }
+    var userExpectedAmountDisplay: String { get }
 
     init(sessionManager: SessionManagerProtocol,
          walletLoader: WalletLoaderProtocol,
-         transactionGenerator: TransactionGeneratorProtocol,
+         transactionConsumptionGenerator: TransactionConsumptionGeneratorProtocol,
          transactionBuilder: TransactionBuilder)
 
-    func loadUser()
+    func loadTransactionRequest()
     func performTransaction()
+    func stopListening()
 }

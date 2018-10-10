@@ -18,10 +18,12 @@ class ReceiveViewModel: KeypadInputViewModel {
     }
 
     override func didDecode(_ string: String) {
-        let transactionBuilder = TransactionBuilder(type: .receive,
-                                                    amount: self.displayAmount,
-                                                    token: self.selectedToken!,
-                                                    address: string)
+        guard let transactionBuilder = TransactionBuilder(type: .receive,
+                                                          amount: self.displayAmount,
+                                                          token: self.selectedToken!,
+                                                          decodedString: string) else {
+            self.onInvalidQRCodeFormat?(.message(message: "keypad_input.error.invalid_qr_code".localized()))
+            return }
         self.shouldProcessTransaction?(transactionBuilder)
     }
 

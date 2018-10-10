@@ -10,6 +10,7 @@ import OmiseGO
 
 protocol SessionManagerProtocol: Observable {
     var httpClient: HTTPAdminAPI! { get set }
+    var socketClient: SocketClient! { get set }
     var selectedAccount: Account? { get set }
     var isBiometricAvailable: Bool { get }
     var didShowWelcome: Bool { get set }
@@ -40,6 +41,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
     }
 
     var httpClient: HTTPAdminAPI!
+    var socketClient: SocketClient!
 
     var isBiometricAvailable: Bool {
         return self.userDefaultsWrapper.getBool(forKey: .biometricEnabled)
@@ -56,20 +58,8 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     override init() {
         super.init()
-        self.setupHttpClient()
+        self.setupOmiseGOClients()
         self.updateState()
-    }
-
-    func setupHttpClient() {
-        let httpConfig: AdminConfiguration
-        if let authenticationToken = self.keychainWrapper.getValue(forKey: .authenticationToken),
-            let userId = self.keychainWrapper.getValue(forKey: .userId) {
-            let credentials = AdminCredential(userId: userId, authenticationToken: authenticationToken)
-            httpConfig = AdminConfiguration(baseURL: Constant.baseURL, credentials: credentials, debugLog: false)
-        } else {
-            httpConfig = AdminConfiguration(baseURL: Constant.baseURL, debugLog: false)
-        }
-        self.httpClient = HTTPAdminAPI(config: httpConfig)
     }
 
     func isLoggedIn() -> Bool {
@@ -117,6 +107,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
                 self.keychainWrapper.storeValue(value: authenticationToken.token, forKey: .authenticationToken)
                 self.keychainWrapper.storeValue(value: authenticationToken.user.id, forKey: .userId)
                 self.userDefaultsWrapper.storeValue(value: params.email, forKey: .email)
+                self.socketClient.updateConfiguration(self.retriveConfigurationFromStorage())
                 success()
             }
         }
@@ -126,7 +117,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
         if force {
             self.disableBiometricAuth()
             self.clearTokens()
-            self.setupHttpClient()
+            self.setupOmiseGOClients()
         } else {
             self.httpClient.logout { response in
                 switch response {
@@ -153,6 +144,22 @@ class SessionManager: Publisher, SessionManagerProtocol {
             case let .fail(error: error):
                 failure(error)
             }
+        }
+    }
+
+    private func setupOmiseGOClients() {
+        let config = self.retriveConfigurationFromStorage()
+        self.httpClient = HTTPAdminAPI(config: config)
+        self.socketClient = SocketClient(config: config, delegate: nil)
+    }
+
+    private func retriveConfigurationFromStorage() -> AdminConfiguration {
+        if let authenticationToken = self.keychainWrapper.getValue(forKey: .authenticationToken),
+            let userId = self.keychainWrapper.getValue(forKey: .userId) {
+            let credentials = AdminCredential(userId: userId, authenticationToken: authenticationToken)
+            return AdminConfiguration(baseURL: Constant.baseURL, credentials: credentials, debugLog: false)
+        } else {
+            return AdminConfiguration(baseURL: Constant.baseURL, debugLog: false)
         }
     }
 

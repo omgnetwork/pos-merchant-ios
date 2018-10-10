@@ -86,6 +86,10 @@ class KeypadInputViewController: BaseViewController {
             self?.actionButton!.isEnabled = $0
             self?.actionButton!.alpha = $0 ? 1 : 0.5
         }
+        self.viewModel.onInvalidQRCodeFormat = { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+            self?.showError(withMessage: $0.message)
+        }
     }
 }
 
