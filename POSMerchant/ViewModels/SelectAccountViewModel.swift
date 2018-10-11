@@ -9,6 +9,15 @@
 import OmiseGO
 import UIKit
 
+enum SelectAccountMode {
+    case currentAccount
+    case exchangeAccount
+}
+
+protocol SelectAccountViewModelDelegate: class {
+    func didSelectAccount(account: Account, forMode mode: SelectAccountMode)
+}
+
 class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
     // Delegate closures
     var appendNewResultClosure: ObjectClosure<[IndexPath]>?
@@ -16,7 +25,11 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
     var onFailLoadAccounts: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
 
+    weak var delegate: SelectAccountViewModelDelegate?
+
     let viewTitle: String = "select_account.view.title".localized()
+
+    let mode: SelectAccountMode
 
     private var accountCellViewModels: [AccountCellViewModel]! = [] {
         didSet {
@@ -31,9 +44,13 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
     var paginator: AccountPaginator!
     private let sessionManager: SessionManagerProtocol
 
-    init(accountLoader: AccountLoaderProtocol = AccountLoader(),
-         sessionManager: SessionManagerProtocol = SessionManager.shared) {
+    required init(accountLoader: AccountLoaderProtocol = AccountLoader(),
+                  sessionManager: SessionManagerProtocol = SessionManager.shared,
+                  mode: SelectAccountMode = .currentAccount,
+                  delegate: SelectAccountViewModelDelegate? = nil) {
         self.sessionManager = sessionManager
+        self.mode = mode
+        self.delegate = delegate
         super.init()
         self.paginator = AccountPaginator(accountLoader: accountLoader,
                                           successClosure: { [weak self] accounts in
@@ -59,8 +76,12 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
 
     private func process(accounts: [Account]) {
         var newCellViewModels: [AccountCellViewModel] = []
+        let exchangeAccountId = UserDefaultsWrapper().getValue(forKey: .exchangeAccountId)
         accounts.forEach({
-            newCellViewModels.append(AccountCellViewModel(account: $0, isSelected: $0 == self.sessionManager.selectedAccount))
+            let isSelected: Bool = self.mode == .currentAccount ?
+                $0.id == self.sessionManager.selectedAccount?.id :
+                $0.id == exchangeAccountId
+            newCellViewModels.append(AccountCellViewModel(account: $0, isSelected: isSelected))
         })
         var indexPaths: [IndexPath] = []
         for row in
@@ -83,7 +104,12 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
     }
 
     private func updateSelection() {
-        self.accountCellViewModels.forEach({ $0.isSelected = $0.account == self.sessionManager.selectedAccount })
+        let exchangeAccountId = UserDefaultsWrapper().getValue(forKey: .exchangeAccountId)
+        self.accountCellViewModels.forEach({
+            $0.isSelected = self.mode == .currentAccount ?
+                $0.account.id == self.sessionManager.selectedAccount?.id :
+                $0.account.id == exchangeAccountId
+        })
         self.reloadTableViewClosure?()
     }
 }
@@ -102,7 +128,15 @@ extension SelectAccountViewModel {
     }
 
     func selectAccount(atIndexPath indexPath: IndexPath) {
-        self.sessionManager.selectCurrentAccount(self.accountCellViewModels[indexPath.row].account)
+        guard let account = self.accountCellViewModels[indexPath.row].account else { return }
+        switch self.mode {
+        case .currentAccount:
+            self.sessionManager.selectCurrentAccount(account)
+        case .exchangeAccount:
+            UserDefaultsWrapper().storeValue(value: account.id, forKey: .exchangeAccountId)
+            UserDefaultsWrapper().storeValue(value: account.name, forKey: .exchangeAccountName)
+        }
+        self.delegate?.didSelectAccount(account: account, forMode: self.mode)
         self.updateSelection()
     }
 }

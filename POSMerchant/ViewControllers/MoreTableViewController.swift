@@ -10,16 +10,20 @@ import UIKit
 
 class MoreTableViewController: BaseTableViewController {
     let accountsSegueIdentifier = "showAccountsViewController"
+    let exchangeAccountsSegueIdentifier = "showExchangeAccountsViewController"
     let transactionsSegueIdentifier = "showTransactionsViewController"
     let touchIdConfirmationSegueIdentifier = "showTouchIdConfirmationViewController"
 
     @IBOutlet var transactionLabel: UILabel!
     @IBOutlet var accountLabel: UILabel!
     @IBOutlet var accountValueLabel: UILabel!
+    @IBOutlet var exchangeAccountLabel: UILabel!
+    @IBOutlet var exchangeAccountValueLabel: UILabel!
     @IBOutlet var touchFaceIdLabel: UILabel!
     @IBOutlet var touchFaceIdSwitch: UISwitch!
     @IBOutlet var signOutLabel: UILabel!
     @IBOutlet var versionLabel: UILabel!
+    @IBOutlet var versionValueLabel: UILabel!
 
     private var viewModel: MoreTableViewModelProtocol = MoreTableViewModel()
 
@@ -35,10 +39,13 @@ class MoreTableViewController: BaseTableViewController {
         self.transactionLabel.text = self.viewModel.transactionLabelText
         self.accountLabel.text = self.viewModel.accountLabelText
         self.accountValueLabel.text = self.viewModel.accountValueLabelText
+        self.exchangeAccountLabel.text = self.viewModel.exchangeAccountLabelText
+        self.exchangeAccountValueLabel.text = self.viewModel.exchangeAccountValueLabelText
         self.touchFaceIdLabel.text = self.viewModel.touchFaceIdLabelText
         self.touchFaceIdSwitch.isOn = self.viewModel.switchState
         self.signOutLabel.text = self.viewModel.signOutLabelText
-        self.versionLabel.text = self.viewModel.currentVersion
+        self.versionLabel.text = self.viewModel.versionLabelText
+        self.versionValueLabel.text = self.viewModel.currentVersion
     }
 
     override func configureViewModel() {
@@ -58,6 +65,19 @@ class MoreTableViewController: BaseTableViewController {
         }
         self.viewModel.onAccountUpdate = { [weak self] in
             self?.accountValueLabel.text = self?.viewModel.accountValueLabelText
+        }
+        self.viewModel.onExchangeAccountUpdate = { [weak self] in
+            self?.exchangeAccountValueLabel.text = self?.viewModel.exchangeAccountValueLabelText
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+        if segue.identifier == self.exchangeAccountsSegueIdentifier,
+            let vc = segue.destination as? SelectAccountTableViewController {
+            vc.viewModel = SelectAccountViewModel(mode: .exchangeAccount, delegate: self.viewModel)
+        } else if segue.identifier == self.accountsSegueIdentifier,
+            let vc = segue.destination as? SelectAccountTableViewController {
+            vc.viewModel = SelectAccountViewModel(mode: .currentAccount, delegate: self.viewModel)
         }
     }
 
@@ -82,9 +102,11 @@ extension MoreTableViewController {
         switch (indexPath.section, indexPath.row) {
         case (0, 0): // accounts
             self.performSegue(withIdentifier: self.accountsSegueIdentifier, sender: nil)
-        case (0, 1): // transactions
+        case (0, 1): // exchange account
+            self.performSegue(withIdentifier: self.exchangeAccountsSegueIdentifier, sender: nil)
+        case (0, 2): // transactions
             self.performSegue(withIdentifier: self.transactionsSegueIdentifier, sender: nil)
-        case (1, 0): // Sign out
+        case (2, 0): // Sign out
             self.viewModel.logout()
         default:
             break
@@ -95,6 +117,15 @@ extension MoreTableViewController {
         switch (indexPath.section, indexPath.row) {
         case (0, 2) where !self.viewModel.isBiometricAvailable: return 0
         default: return super.tableView(tableView, heightForRowAt: indexPath)
+        }
+    }
+
+    override func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0: return self.viewModel.settingsSectionTitle
+        case 1: return self.viewModel.infoSectionTitle
+        default:
+            return nil
         }
     }
 }

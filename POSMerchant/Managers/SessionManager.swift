@@ -141,10 +141,19 @@ class SessionManager: Publisher, SessionManagerProtocol {
             switch response {
             case let .success(data: account):
                 self.selectedAccount = account
+                self.setDefaultExchangeAccount(withAccount: account)
             case let .fail(error: error):
                 failure(error)
             }
         }
+    }
+
+    private func setDefaultExchangeAccount(withAccount account: Account) {
+        guard self.userDefaultsWrapper.getValue(forKey: .exchangeAccountId) == nil else {
+            return
+        }
+        self.userDefaultsWrapper.storeValue(value: account.id, forKey: .exchangeAccountId)
+        self.userDefaultsWrapper.storeValue(value: account.name, forKey: .exchangeAccountName)
     }
 
     private func setupOmiseGOClients() {
@@ -179,6 +188,8 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     private func clearTokens() {
         self.userDefaultsWrapper.clearValue(forKey: .accountId)
+        self.userDefaultsWrapper.clearValue(forKey: .exchangeAccountId)
+        self.userDefaultsWrapper.clearValue(forKey: .exchangeAccountName)
         self.keychainWrapper.clearValue(forKey: .authenticationToken)
         self.keychainWrapper.clearValue(forKey: .userId)
         self.selectedAccount = nil

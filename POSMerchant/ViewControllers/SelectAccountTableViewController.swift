@@ -9,9 +9,9 @@
 import UIKit
 
 class SelectAccountTableViewController: BaseTableViewController {
-    private var viewModel: SelectAccountViewModelProtocol = SelectAccountViewModel()
+    var viewModel: SelectAccountViewModelProtocol!
 
-    class func initWithViewModel(_ viewModel: SelectAccountViewModelProtocol = SelectAccountViewModel())
+    class func initWithViewModel(_ viewModel: SelectAccountViewModelProtocol)
         -> SelectAccountTableViewController? {
         guard let transactionsVC: SelectAccountTableViewController = Storyboard.selectAccount.viewControllerFromId() else { return nil }
         transactionsVC.viewModel = viewModel

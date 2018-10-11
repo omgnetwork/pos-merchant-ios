@@ -90,7 +90,11 @@
 "more.view.title" = "More";
 "more.label.transactions" = "Transactions";
 "more.label.account" = "Account";
+"more.label.exchange_account" = "Exchange account";
 "more.label.signout" = "Sign out";
+"more.section.settings" = "Settings";
+"more.section.info" = "Info";
+"more.label.version" = "Version";
 
 // TouchID confirmation
 "touch_id_confirmation.view.title" = "Confirm your password";

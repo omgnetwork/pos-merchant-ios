@@ -54,6 +54,14 @@ class SigninViewController: BaseViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+        if segue.identifier == self.showAccountSelectionSegueIdentifier,
+            let navVC = segue.destination as? UINavigationController,
+            let vc = navVC.viewControllers.first as? SelectAccountTableViewController {
+            vc.viewModel = SelectAccountViewModel(mode: .currentAccount)
+        }
+    }
+
     private func setupBioLoginButton() {
         guard self.viewModel.isBiometricAvailable else {
             self.bioLoginButton.isHidden = true

@@ -12,6 +12,8 @@ enum UserDefaultKey: String {
     case email = "com.omisego.pos-merchant.email"
     case biometricEnabled = "com.omisego.pos-merchant.biometric_enabled"
     case accountId = "com.omisego.pos-merchant.selected_account_id"
+    case exchangeAccountId = "com.omisego.pos-merchant.exchange_account_id"
+    case exchangeAccountName = "com.omisego.pos-merchant.exchange_account_name"
 }
 
 enum KeychainKey: String {
@@ -23,6 +25,7 @@ enum KeychainKey: String {
 struct Constant {
     static let urlScheme = "pos-merchant://"
 
+//    static let baseURL = "http://192.168.1.42:4000"
     static let baseURL = "https://coffeego.omisego.io"
 
     // Pagination

@@ -38,6 +38,6 @@ struct TransactionBuilder {
                                             amount: formattedAmount,
                                             idempotencyToken: idemPotencyToken,
                                             tokenId: self.token.id,
-                                            exchangeAccountId: account.id)
+                                            exchangeAccountId: UserDefaultsWrapper().getValue(forKey: .exchangeAccountId))
     }
 }

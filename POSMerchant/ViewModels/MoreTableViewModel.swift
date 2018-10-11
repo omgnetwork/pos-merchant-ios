@@ -6,20 +6,26 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import UIKit
+import OmiseGO
 
 class MoreTableViewModel: BaseViewModel, MoreTableViewModelProtocol {
     let title = "more.view.title".localized()
     let transactionLabelText = "more.label.transactions".localized()
     let accountLabelText = "more.label.account".localized()
     let signOutLabelText = "more.label.signout".localized()
-    let currentVersion = "v \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "")"
+    let exchangeAccountLabelText = "more.label.exchange_account".localized()
+    let currentVersion = "v\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "")"
+
+    let settingsSectionTitle = "more.section.settings".localized()
+    let infoSectionTitle = "more.section.info".localized()
+    let versionLabelText = "more.label.version".localized()
 
     var onFailLogout: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
     var shouldShowEnableConfirmationView: EmptyClosure?
     var onBioStateChange: ObjectClosure<Bool>?
     var onAccountUpdate: EmptyClosure?
+    var onExchangeAccountUpdate: EmptyClosure?
 
     var switchState: Bool {
         didSet {
@@ -41,6 +47,10 @@ class MoreTableViewModel: BaseViewModel, MoreTableViewModelProtocol {
 
     lazy var accountValueLabelText: String = {
         self.sessionManager.selectedAccount?.name ?? ""
+    }()
+
+    lazy var exchangeAccountValueLabelText: String = {
+        UserDefaultsWrapper().getValue(forKey: .exchangeAccountName) ?? ""
     }()
 
     private let sessionManager: SessionManagerProtocol
@@ -68,6 +78,17 @@ class MoreTableViewModel: BaseViewModel, MoreTableViewModelProtocol {
     func stopObserving() {
         self.sessionManager.removeObserver(observer: self)
     }
+
+    func didSelectAccount(account: Account, forMode mode: SelectAccountMode) {
+        switch mode {
+        case .exchangeAccount:
+            self.exchangeAccountValueLabelText = account.name
+            self.onExchangeAccountUpdate?()
+        case .currentAccount:
+            self.accountValueLabelText = self.sessionManager.selectedAccount?.name ?? ""
+            self.onAccountUpdate?()
+        }
+    }
 }
 
 extension MoreTableViewModel: Observer {
@@ -75,9 +96,6 @@ extension MoreTableViewModel: Observer {
         switch event {
         case let .onBioStateUpdate(enabled: enabled):
             self.switchState = enabled
-        case .onSelectedAccountUpdate:
-            self.accountValueLabelText = self.sessionManager.selectedAccount?.name ?? ""
-            self.onAccountUpdate?()
         default: break
         }
     }
