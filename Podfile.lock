@@ -13,7 +13,7 @@ PODS:
     - Starscream (~> 3.0)
   - SipHash (1.2.2)
   - SkyFloatingLabelTextField (3.6.0)
-  - Starscream (3.0.5)
+  - Starscream (3.0.6)
   - Toaster (2.1.1)
   - TPKeyboardAvoiding (1.3.2)
 
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - BigInt
   - KeychainAccess
   - MBProgressHUD
-  - OmiseGO/Admin (from `https://github.com/omisego/ios-sdk.git`)
+  - OmiseGO/Admin (from `https://github.com/omisego/ios-sdk.git`, branch `101-transaction-request`)
   - SkyFloatingLabelTextField
   - Toaster
   - TPKeyboardAvoiding
@@ -43,11 +43,12 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   OmiseGO:
+    :branch: 101-transaction-request
     :git: https://github.com/omisego/ios-sdk.git
 
 CHECKOUT OPTIONS:
   OmiseGO:
-    :commit: e3c3cd7dc35fdaa708111d0ce0db2f0d48d49349
+    :commit: 44c19aabe95768071efd51416eae36860e161481
     :git: https://github.com/omisego/ios-sdk.git
 
 SPEC CHECKSUMS:
@@ -59,10 +60,10 @@ SPEC CHECKSUMS:
   OmiseGO: ae5b3c451ad1535293365a0285d7d784b8d20221
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
-  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: 1d04db34594dac77229204f15c0150db2abc4642
+PODFILE CHECKSUM: 0e28711abf51c4844b6000bd81145dd357911bd4
 
 COCOAPODS: 1.6.0.beta.1
