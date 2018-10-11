@@ -107,7 +107,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
                 self.keychainWrapper.storeValue(value: authenticationToken.token, forKey: .authenticationToken)
                 self.keychainWrapper.storeValue(value: authenticationToken.user.id, forKey: .userId)
                 self.userDefaultsWrapper.storeValue(value: params.email, forKey: .email)
-                self.socketClient.updateConfiguration(self.retriveConfigurationFromStorage())
+                self.socketClient.updateConfiguration(self.retrieveConfigurationFromStorage())
                 success()
             }
         }
@@ -157,12 +157,12 @@ class SessionManager: Publisher, SessionManagerProtocol {
     }
 
     private func setupOmiseGOClients() {
-        let config = self.retriveConfigurationFromStorage()
+        let config = self.retrieveConfigurationFromStorage()
         self.httpClient = HTTPAdminAPI(config: config)
         self.socketClient = SocketClient(config: config, delegate: nil)
     }
 
-    private func retriveConfigurationFromStorage() -> AdminConfiguration {
+    private func retrieveConfigurationFromStorage() -> AdminConfiguration {
         if let authenticationToken = self.keychainWrapper.getValue(forKey: .authenticationToken),
             let userId = self.keychainWrapper.getValue(forKey: .userId) {
             let credentials = AdminCredential(userId: userId, authenticationToken: authenticationToken)
