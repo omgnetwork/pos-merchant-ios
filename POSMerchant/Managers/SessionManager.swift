@@ -69,6 +69,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
     func selectCurrentAccount(_ account: Account) {
         self.userDefaultsWrapper.storeValue(value: account.id, forKey: .accountId)
         self.selectedAccount = account
+        self.setDefaultExchangeAccount(withAccount: account)
     }
 
     func disableBiometricAuth() {
