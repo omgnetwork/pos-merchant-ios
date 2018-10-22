@@ -91,6 +91,15 @@
 		0354DE1121673D7C009D9E7B /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354DE0F21673D7C009D9E7B /* TransactionTableViewCell.swift */; };
 		0354DE1221673D7C009D9E7B /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354DE1021673D7C009D9E7B /* TransactionTableViewCell.xib */; };
 		0354DE1421673DBF009D9E7B /* TransactionPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354DE1321673DBF009D9E7B /* TransactionPaginator.swift */; };
+		0372A1E4217DAC6700742033 /* transaction_consumption.json in Resources */ = {isa = PBXBuildFile; fileRef = 0372A1AC217DAC6700742033 /* transaction_consumption.json */; };
+		0372A1E5217DAC6700742033 /* transactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0372A1AD217DAC6700742033 /* transactions.json */; };
+		0372A1E6217DAC6700742033 /* pagination.json in Resources */ = {isa = PBXBuildFile; fileRef = 0372A1AE217DAC6700742033 /* pagination.json */; };
+		0372A1E7217DAC6700742033 /* transaction_request.json in Resources */ = {isa = PBXBuildFile; fileRef = 0372A1AF217DAC6700742033 /* transaction_request.json */; };
+		0372A1F8217DBA0000742033 /* LoadingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372A1F7217DBA0000742033 /* LoadingViewModelTests.swift */; };
+		0372A1FA217DBA8A00742033 /* TestSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372A1F9217DBA8A00742033 /* TestSessionManager.swift */; };
+		0372A1FC217DBD3200742033 /* TestSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372A1FB217DBD3200742033 /* TestSocketClient.swift */; };
+		0372A1FE217DC5E200742033 /* LoadingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372A1FD217DC5E200742033 /* LoadingViewControllerTests.swift */; };
+		0372A200217DC60600742033 /* TestLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372A1FF217DC60600742033 /* TestLoadingViewModel.swift */; };
 		03C94B41215B4109007DF271 /* AccountSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C94B3F215B4109007DF271 /* AccountSelection.storyboard */; };
 		03C94B43215B4179007DF271 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */; };
 		03C94B45215B4229007DF271 /* SelectAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */; };
@@ -105,7 +114,6 @@
 		03E0BB492164881A00FCB154 /* TransactionResultViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0BB482164881A00FCB154 /* TransactionResultViewModelProtocol.swift */; };
 		03E0BB4B2164882900FCB154 /* TransactionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0BB4A2164882900FCB154 /* TransactionResultViewModel.swift */; };
 		03FB02C5215A0A95001EF0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB02C4215A0A95001EF0D4 /* AppDelegate.swift */; };
-		03FB02DA215A0A97001EF0D4 /* POSMerchantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB02D9215A0A97001EF0D4 /* POSMerchantTests.swift */; };
 		03FB02F5215A0DDF001EF0D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03FB02E7215A0DDE001EF0D4 /* Localizable.strings */; };
 		03FB02F6215A0DDF001EF0D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB02ED215A0DDF001EF0D4 /* LaunchScreen.storyboard */; };
 		03FB02F7215A0DDF001EF0D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03FB02F3215A0DDF001EF0D4 /* Assets.xcassets */; };
@@ -208,6 +216,15 @@
 		0354DE0F21673D7C009D9E7B /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		0354DE1021673D7C009D9E7B /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		0354DE1321673DBF009D9E7B /* TransactionPaginator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPaginator.swift; sourceTree = "<group>"; };
+		0372A1AC217DAC6700742033 /* transaction_consumption.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transaction_consumption.json; sourceTree = "<group>"; };
+		0372A1AD217DAC6700742033 /* transactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transactions.json; sourceTree = "<group>"; };
+		0372A1AE217DAC6700742033 /* pagination.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pagination.json; sourceTree = "<group>"; };
+		0372A1AF217DAC6700742033 /* transaction_request.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transaction_request.json; sourceTree = "<group>"; };
+		0372A1F7217DBA0000742033 /* LoadingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModelTests.swift; sourceTree = "<group>"; };
+		0372A1F9217DBA8A00742033 /* TestSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSessionManager.swift; sourceTree = "<group>"; };
+		0372A1FB217DBD3200742033 /* TestSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSocketClient.swift; sourceTree = "<group>"; };
+		0372A1FD217DC5E200742033 /* LoadingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewControllerTests.swift; sourceTree = "<group>"; };
+		0372A1FF217DC60600742033 /* TestLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoadingViewModel.swift; sourceTree = "<group>"; };
 		03C94B40215B4109007DF271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AccountSelection.storyboard; sourceTree = "<group>"; };
 		03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountTableViewController.swift; sourceTree = "<group>"; };
@@ -225,7 +242,6 @@
 		03FB02C4215A0A95001EF0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03FB02D0215A0A96001EF0D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03FB02D5215A0A97001EF0D4 /* POSMerchantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POSMerchantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03FB02D9215A0A97001EF0D4 /* POSMerchantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSMerchantTests.swift; sourceTree = "<group>"; };
 		03FB02DB215A0A97001EF0D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03FB02E8215A0DDE001EF0D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
 		03FB02EE215A0DDF001EF0D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -266,6 +282,57 @@
 				033802ED2161EEFC00C2501F /* QRReaderOverlayView.swift */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		0372A184217DAC6700742033 /* TestMocks */ = {
+			isa = PBXGroup;
+			children = (
+				0372A1F9217DBA8A00742033 /* TestSessionManager.swift */,
+				0372A1FB217DBD3200742033 /* TestSocketClient.swift */,
+				0372A1FF217DC60600742033 /* TestLoadingViewModel.swift */,
+			);
+			path = TestMocks;
+			sourceTree = "<group>";
+		};
+		0372A197217DAC6700742033 /* Paginators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Paginators;
+			sourceTree = "<group>";
+		};
+		0372A199217DAC6700742033 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0372A1FD217DC5E200742033 /* LoadingViewControllerTests.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0372A1A8217DAC6700742033 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				0372A1AC217DAC6700742033 /* transaction_consumption.json */,
+				0372A1AD217DAC6700742033 /* transactions.json */,
+				0372A1AE217DAC6700742033 /* pagination.json */,
+				0372A1AF217DAC6700742033 /* transaction_request.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		0372A1B0217DAC6700742033 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0372A1B3217DAC6700742033 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				0372A1F7217DBA0000742033 /* LoadingViewModelTests.swift */,
+			);
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		03C94B50215B49C2007DF271 /* Cells */ = {
@@ -325,7 +392,12 @@
 		03FB02D8215A0A97001EF0D4 /* POSMerchantTests */ = {
 			isa = PBXGroup;
 			children = (
-				03FB02D9215A0A97001EF0D4 /* POSMerchantTests.swift */,
+				0372A1A8217DAC6700742033 /* Fixtures */,
+				0372A197217DAC6700742033 /* Paginators */,
+				0372A184217DAC6700742033 /* TestMocks */,
+				0372A199217DAC6700742033 /* ViewControllers */,
+				0372A1B3217DAC6700742033 /* ViewModelTests */,
+				0372A1B0217DAC6700742033 /* Views */,
 				03FB02DB215A0A97001EF0D4 /* Info.plist */,
 			);
 			path = POSMerchantTests;
@@ -585,6 +657,7 @@
 					};
 					03FB02D4215A0A97001EF0D4 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						TestTargetID = 03FB02C0215A0A95001EF0D4;
 					};
 				};
@@ -639,6 +712,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0372A1E4217DAC6700742033 /* transaction_consumption.json in Resources */,
+				0372A1E7217DAC6700742033 /* transaction_request.json in Resources */,
+				0372A1E6217DAC6700742033 /* pagination.json in Resources */,
+				0372A1E5217DAC6700742033 /* transactions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,7 +905,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03FB02DA215A0A97001EF0D4 /* POSMerchantTests.swift in Sources */,
+				0372A1FA217DBA8A00742033 /* TestSessionManager.swift in Sources */,
+				0372A1FC217DBD3200742033 /* TestSocketClient.swift in Sources */,
+				0372A1FE217DC5E200742033 /* LoadingViewControllerTests.swift in Sources */,
+				0372A200217DC60600742033 /* TestLoadingViewModel.swift in Sources */,
+				0372A1F8217DBA0000742033 /* LoadingViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1118,6 +1199,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = POSMerchantTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1127,6 +1209,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.omisego.POSMerchantTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/POSMerchant.app/POSMerchant";
@@ -1139,6 +1222,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = POSMerchantTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
