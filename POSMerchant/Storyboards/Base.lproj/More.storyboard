@@ -161,30 +161,12 @@
                         <outlet property="transactionLabel" destination="Nex-G1-7X1" id="oYE-GI-Nxo"/>
                         <segue destination="xq1-PC-868" kind="show" identifier="showTouchIdConfirmationViewController" id="tJC-1l-AQp"/>
                         <segue destination="Fda-PQ-DOH" kind="show" identifier="showTransactionsViewController" id="2g8-mQ-0gr"/>
-                        <segue destination="qgO-zS-tDu" kind="show" identifier="showAccountsViewController" id="MHd-BV-tOf"/>
+                        <segue destination="iv1-5T-scF" kind="show" identifier="showAccountsViewController" id="eOD-W5-RzN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pC9-an-dFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-391.19999999999999" y="61.619190404797607"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="F2S-O5-kLO">
-            <objects>
-                <tableViewController id="qgO-zS-tDu" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ItQ-wT-1GQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="qgO-zS-tDu" id="UV2-ml-lLY"/>
-                            <outlet property="delegate" destination="qgO-zS-tDu" id="wzH-yZ-fyZ"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dfL-wS-VnG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="942" y="339"/>
         </scene>
         <!--TouchID Confirmation View Controller-->
         <scene sceneID="GHu-K3-Xdf">
@@ -337,6 +319,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAs-M7-R4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="942" y="-352"/>
+        </scene>
+        <!--SelectAccountTableViewController-->
+        <scene sceneID="AXa-xk-oHL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AccountSelection" referencedIdentifier="SelectAccountTableViewController" id="iv1-5T-scF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dzn-cr-CN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="185"/>
         </scene>
     </scenes>
     <resources>

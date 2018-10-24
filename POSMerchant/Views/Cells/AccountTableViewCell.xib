@@ -62,6 +62,7 @@
                     <constraint firstItem="6ke-xq-uvZ" firstAttribute="bottom" secondItem="0GJ-4R-3md" secondAttribute="bottom" id="dfA-7f-QDF"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="tintColor" red="0.6705882352941176" green="0.69803921568627447" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatarImageView" destination="0GJ-4R-3md" id="KbN-Vl-B3l"/>

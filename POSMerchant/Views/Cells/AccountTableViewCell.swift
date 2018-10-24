@@ -23,6 +23,7 @@ class AccountTableViewCell: UITableViewCell {
             self.shortNameLabel.text = self.accountCellViewModel.shortName
             self.avatarImageView.layer.borderColor = Color.greyBorder.cgColor()
             self.avatarImageView.layer.borderWidth = 1
+            self.accessoryType = self.accountCellViewModel.isSelected ? .checkmark : .none
         }
     }
 

@@ -60,7 +60,7 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
     private func process(accounts: [Account]) {
         var newCellViewModels: [AccountCellViewModel] = []
         accounts.forEach({
-            newCellViewModels.append(AccountCellViewModel(account: $0))
+            newCellViewModels.append(AccountCellViewModel(account: $0, isSelected: $0 == self.sessionManager.selectedAccount))
         })
         var indexPaths: [IndexPath] = []
         for row in
@@ -81,6 +81,11 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
         default: self.onFailLoadAccounts?(error)
         }
     }
+
+    private func updateSelection() {
+        self.accountCellViewModels.forEach({ $0.isSelected = $0.account == self.sessionManager.selectedAccount })
+        self.reloadTableViewClosure?()
+    }
 }
 
 extension SelectAccountViewModel {
@@ -98,5 +103,6 @@ extension SelectAccountViewModel {
 
     func selectAccount(atIndexPath indexPath: IndexPath) {
         self.sessionManager.selectCurrentAccount(self.accountCellViewModels[indexPath.row].account)
+        self.updateSelection()
     }
 }

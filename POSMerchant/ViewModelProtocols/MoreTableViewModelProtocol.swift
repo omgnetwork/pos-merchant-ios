@@ -18,6 +18,7 @@ protocol MoreTableViewModelProtocol {
     var onLoadStateChange: ObjectClosure<Bool>? { get set }
     var shouldShowEnableConfirmationView: EmptyClosure? { get set }
     var onBioStateChange: ObjectClosure<Bool>? { get set }
+    var onAccountUpdate: EmptyClosure? { get set }
 
     var switchState: Bool { get set }
     var isBiometricAvailable: Bool { get }

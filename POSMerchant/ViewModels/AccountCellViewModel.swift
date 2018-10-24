@@ -15,10 +15,12 @@ class AccountCellViewModel: BaseViewModel {
     let name: String
     let imageURL: URL?
     let shortName: String
+    var isSelected: Bool
 
-    init(account: Account) {
+    init(account: Account, isSelected: Bool) {
         self.account = account
         self.name = account.name
+        self.isSelected = isSelected
         if let urlStr = account.avatar.small {
             self.imageURL = URL(string: urlStr)
         } else {
