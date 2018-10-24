@@ -6,9 +6,9 @@ PODS:
     - SipHash (~> 1.2)
   - KeychainAccess (3.1.2)
   - MBProgressHUD (1.1.0)
-  - OmiseGO/Admin (1.1.0-beta1):
+  - OmiseGO/Admin (1.1.0-beta2):
     - OmiseGO/Core
-  - OmiseGO/Core (1.1.0-beta1):
+  - OmiseGO/Core (1.1.0-beta2):
     - BigInt (~> 3.1)
     - Starscream (~> 3.0)
   - SipHash (1.2.2)
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - BigInt
   - KeychainAccess
   - MBProgressHUD
-  - OmiseGO/Admin (from `https://github.com/omisego/ios-sdk.git`, branch `101-transaction-request`)
+  - OmiseGO/Admin (= 1.1.0-beta2)
   - SkyFloatingLabelTextField
   - Toaster
   - TPKeyboardAvoiding
@@ -35,21 +35,12 @@ SPEC REPOS:
     - BigInt
     - KeychainAccess
     - MBProgressHUD
+    - OmiseGO
     - SipHash
     - SkyFloatingLabelTextField
     - Starscream
     - Toaster
     - TPKeyboardAvoiding
-
-EXTERNAL SOURCES:
-  OmiseGO:
-    :branch: 101-transaction-request
-    :git: https://github.com/omisego/ios-sdk.git
-
-CHECKOUT OPTIONS:
-  OmiseGO:
-    :commit: 4854fba440a4aae3eda0d2f07157c292d977121d
-    :git: https://github.com/omisego/ios-sdk.git
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -57,13 +48,13 @@ SPEC CHECKSUMS:
   BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  OmiseGO: d0e97b58270017ebd9ab3c689178b8d7c5fc2941
+  OmiseGO: 1548d22049d99e650cba3dd3843d9ebf2af53d36
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: 0e28711abf51c4844b6000bd81145dd357911bd4
+PODFILE CHECKSUM: 82f0d9bcdb9ec19aa4f57df100ccfb2c34778f72
 
 COCOAPODS: 1.5.3

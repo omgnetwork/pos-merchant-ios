@@ -23,9 +23,6 @@ enum KeychainKey: String {
 }
 
 struct Constant {
-    static let urlScheme = "pos-merchant://"
-
-//    static let baseURL = "http://192.168.1.42:4000"
     static let baseURL = "https://coffeego.omisego.io"
 
     // Pagination
