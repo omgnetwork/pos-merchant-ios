@@ -302,10 +302,10 @@
             </objects>
             <point key="canvasLocation" x="942" y="1199"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Transactions View Controller-->
         <scene sceneID="gqt-v6-NGf">
             <objects>
-                <tableViewController id="Fda-PQ-DOH" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Fda-PQ-DOH" customClass="TransactionsViewController" customModule="POSMerchant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uXq-Qt-tlz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -315,10 +315,13 @@
                             <outlet property="delegate" destination="Fda-PQ-DOH" id="tgr-0x-KeV"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="cPb-0l-qA5">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAs-M7-R4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="-352"/>
+            <point key="canvasLocation" x="1127" y="-362"/>
         </scene>
         <!--SelectAccountTableViewController-->
         <scene sceneID="AXa-xk-oHL">

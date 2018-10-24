@@ -91,3 +91,9 @@
 "touch_id_confirmation.button.title.enable" = "Enable";
 "touch_id_confirmation.error.validation.password" = "Password should be at least 8 characters long";
 "touch_id_confirmation.label.hint" = "Please confirm your password in order to enable";
+
+// Transactions
+"transactions.view.title" = "Transactions";
+"transactions.label.status.success" = "Success";
+"transactions.label.status.failure" = "failure";
+"transactions.label.genesis" = "Genesis";
