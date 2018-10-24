@@ -124,8 +124,8 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     func logout(_ force: Bool, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
         if force {
-            self.clearTokens()
             self.disableBiometricAuth()
+            self.clearTokens()
             self.setupHttpClient()
         } else {
             self.httpClient.logout { response in

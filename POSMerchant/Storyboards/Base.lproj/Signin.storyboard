@@ -18,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6v-1W-EJh">
+                                <rect key="frame" x="16" y="627.5" width="343" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.23529411759999999" green="0.25490196079999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAy-7n-vqC" customClass="TPKeyboardAvoidingScrollView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
@@ -153,10 +159,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="JJM-Vm-7QD" firstAttribute="bottom" secondItem="u6v-1W-EJh" secondAttribute="bottom" constant="16" id="5p5-aX-Aty"/>
+                            <constraint firstItem="JJM-Vm-7QD" firstAttribute="trailing" secondItem="u6v-1W-EJh" secondAttribute="trailing" constant="16" id="9Ku-wf-a6I"/>
                             <constraint firstAttribute="trailing" secondItem="uAy-7n-vqC" secondAttribute="trailing" id="FUa-ev-ou0"/>
                             <constraint firstItem="vbm-sg-vpa" firstAttribute="leading" secondItem="JJM-Vm-7QD" secondAttribute="leading" constant="32" id="HYV-sj-ahz"/>
                             <constraint firstItem="JJM-Vm-7QD" firstAttribute="bottom" secondItem="uAy-7n-vqC" secondAttribute="bottom" id="KPc-pV-mg1"/>
                             <constraint firstItem="JJM-Vm-7QD" firstAttribute="trailing" secondItem="vbm-sg-vpa" secondAttribute="trailing" constant="32" id="QiP-YU-FFD"/>
+                            <constraint firstItem="u6v-1W-EJh" firstAttribute="leading" secondItem="JJM-Vm-7QD" secondAttribute="leading" constant="16" id="Ynt-Cl-lSJ"/>
                             <constraint firstItem="uAy-7n-vqC" firstAttribute="top" secondItem="JJM-Vm-7QD" secondAttribute="top" id="hOZ-9A-r6j"/>
                             <constraint firstItem="uAy-7n-vqC" firstAttribute="leading" secondItem="JJM-Vm-7QD" secondAttribute="leading" id="ulM-b2-w0w"/>
                         </constraints>
@@ -169,6 +178,7 @@
                         <outlet property="loginButton" destination="HXh-9X-yOL" id="jJV-To-EwL"/>
                         <outlet property="passwordTextField" destination="Fgd-1t-JvS" id="H9R-Xn-taZ"/>
                         <outlet property="scrollView" destination="uAy-7n-vqC" id="nch-TF-LbI"/>
+                        <outlet property="versionLabel" destination="u6v-1W-EJh" id="lm0-z4-qUP"/>
                         <segue destination="Wfw-8z-RnZ" kind="presentation" identifier="showAccountSelectionSegue" id="N5f-Za-H3Y"/>
                     </connections>
                 </viewController>
@@ -186,7 +196,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="omisego_logo_black" width="130" height="45"/>
+        <image name="omisego_logo_black" width="130" height="45.5"/>
         <image name="touch_id_icon" width="17" height="17"/>
     </resources>
 </document>

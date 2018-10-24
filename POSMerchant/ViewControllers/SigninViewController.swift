@@ -17,6 +17,7 @@ class SigninViewController: BaseViewController {
     @IBOutlet var passwordTextField: OMGFloatingTextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var bioLoginButton: UIButton!
+    @IBOutlet var versionLabel: UILabel!
 
     class func initWithViewModel(_ viewModel: SigninViewModelProtocol = SigninViewModel()) -> SigninViewController? {
         guard let signinVC: SigninViewController = Storyboard.signin.viewControllerFromId() else { return nil }
@@ -29,6 +30,7 @@ class SigninViewController: BaseViewController {
         self.emailTextField.placeholder = self.viewModel.emailPlaceholder
         self.passwordTextField.placeholder = self.viewModel.passwordPlaceholder
         self.loginButton.setTitle(self.viewModel.loginButtonTitle, for: .normal)
+        self.versionLabel.text = self.viewModel.currentVersion
         self.setupBioLoginButton()
     }
 

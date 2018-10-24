@@ -13,6 +13,7 @@ class MoreTableViewModel: BaseViewModel, MoreTableViewModelProtocol {
     let transactionLabelText = "more.label.transactions".localized()
     let accountLabelText = "more.label.account".localized()
     let signOutLabelText = "more.label.signout".localized()
+    let currentVersion = "v \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "")"
 
     var onFailLogout: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?

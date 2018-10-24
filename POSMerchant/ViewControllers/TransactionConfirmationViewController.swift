@@ -36,6 +36,8 @@ class TransactionConfirmationViewController: BaseViewController {
         self.userIdLabel.text = self.viewModel.userId
         self.confirmButton.setTitle(self.viewModel.confirm, for: .normal)
         self.cancelButton.setTitle(self.viewModel.cancel, for: .normal)
+        self.confirmButton.isEnabled = self.viewModel.isReady
+        self.confirmButton.alpha = self.viewModel.isReady ? 1 : 0.5
 
         self.viewModel.loadUser()
     }
@@ -57,6 +59,7 @@ class TransactionConfirmationViewController: BaseViewController {
         }
         self.viewModel.onFailGetUser = { [weak self] in
             self?.showError(withMessage: $0.localizedDescription)
+            self?.navigationController?.popViewController(animated: true)
         }
         self.viewModel.onCreateTransactionComplete = { [weak self] in
             guard let weakself = self else { return }

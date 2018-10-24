@@ -19,6 +19,7 @@ class MoreTableViewController: BaseTableViewController {
     @IBOutlet var touchFaceIdLabel: UILabel!
     @IBOutlet var touchFaceIdSwitch: UISwitch!
     @IBOutlet var signOutLabel: UILabel!
+    @IBOutlet var versionLabel: UILabel!
 
     private var viewModel: MoreTableViewModelProtocol = MoreTableViewModel()
 
@@ -37,6 +38,7 @@ class MoreTableViewController: BaseTableViewController {
         self.touchFaceIdLabel.text = self.viewModel.touchFaceIdLabelText
         self.touchFaceIdSwitch.isOn = self.viewModel.switchState
         self.signOutLabel.text = self.viewModel.signOutLabelText
+        self.versionLabel.text = self.viewModel.currentVersion
     }
 
     override func configureViewModel() {
@@ -76,16 +78,6 @@ extension MoreTableViewController {
 }
 
 extension MoreTableViewController {
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        switch (indexPath.section, indexPath.row) {
-        case (1, 0) where !self.viewModel.isBiometricAvailable: // Email
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        default: break
-        }
-        return cell
-    }
-
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (0, 0): // accounts
@@ -101,7 +93,7 @@ extension MoreTableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch (indexPath.section, indexPath.row) {
-        case (1, 1) where !self.viewModel.isBiometricAvailable: return 0
+        case (0, 2) where !self.viewModel.isBiometricAvailable: return 0
         default: return super.tableView(tableView, heightForRowAt: indexPath)
         }
     }
