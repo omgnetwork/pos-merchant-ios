@@ -13,8 +13,14 @@ protocol SelectAccountViewModelProtocol {
     var reloadTableViewClosure: EmptyClosure? { get set }
     var onFailLoadAccounts: FailureClosure? { get set }
     var onLoadStateChange: ObjectClosure<Bool>? { get set }
+    var delegate: SelectAccountViewModelDelegate? { get set }
 
     var viewTitle: String { get }
+
+    init(accountLoader: AccountLoaderProtocol,
+         sessionManager: SessionManagerProtocol,
+         mode: SelectAccountMode,
+         delegate: SelectAccountViewModelDelegate?)
 
     func reloadAccounts()
     func getNextAccounts()

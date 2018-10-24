@@ -30,21 +30,20 @@ class TransactionResultViewModel: BaseViewModel, TransactionResultViewModelProto
         self.username = transactionBuilder.user!.email ?? "-"
         self.userId = transactionBuilder.user!.id
         self.done = "transaction_result.done".localized()
-        switch transactionBuilder.result! {
-        case .success:
-            self.statusImage = UIImage(named: "Completed")!
-            self.statusImageColor = Color.lightBlue.uiColor()
-            self.status = self.transactionBuilder.type == .receive ?
-                "transaction_result.payment_successful".localized() :
-                "transaction_result.topup_successful".localized()
-            self.error = ""
-        case let .fail(error: error):
+        if let error = transactionBuilder.error {
             self.statusImage = UIImage(named: "Failed")!
             self.statusImageColor = Color.redError.uiColor()
             self.status = self.transactionBuilder.type == .receive ?
                 "transaction_result.payment_failed".localized() :
                 "transaction_result.topup_failed".localized()
             self.error = error.message
+        } else {
+            self.statusImage = UIImage(named: "Completed")!
+            self.statusImageColor = Color.lightBlue.uiColor()
+            self.status = self.transactionBuilder.type == .receive ?
+                "transaction_result.payment_successful".localized() :
+                "transaction_result.topup_successful".localized()
+            self.error = ""
         }
     }
 }

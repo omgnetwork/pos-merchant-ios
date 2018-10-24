@@ -45,6 +45,7 @@
 "tab.more.title" = "More";
 
 // Keypad input
+"keypad_input.error.invalid_qr_code" = "The scanned QR code is not valid for this version of the application.";
 "keypad_input.error.no_token" = "There is no token available.";
 
 // Receive
@@ -69,7 +70,12 @@
 "transaction_confirmation.to" = "to";
 "transaction_confirmation.button.confirm" = "Confirm";
 "transaction_confirmation.button.cancel" = "Cancel";
-"transaction_confirmation.qrcode_error" = "The scanned QR code doesn't seem to be valid, please try again.";
+"transaction_confirmation.error.invalid_qr_code" = "The scanned QR code doesn't seem to be valid, please try again.";
+"transaction_cofirmation.error.user_rejected" = "The transaction has been cancelled";
+
+// Pending confirmation
+
+"waiting_confirmation.label.hint" = "Waiting for user's confirmation";
 
 // Transaction result
 "transaction_result.from" = "from";
@@ -84,7 +90,11 @@
 "more.view.title" = "More";
 "more.label.transactions" = "Transactions";
 "more.label.account" = "Account";
+"more.label.exchange_account" = "Exchange account";
 "more.label.signout" = "Sign out";
+"more.section.settings" = "Settings";
+"more.section.info" = "Info";
+"more.label.version" = "Version";
 
 // TouchID confirmation
 "touch_id_confirmation.view.title" = "Confirm your password";

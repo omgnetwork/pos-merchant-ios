@@ -10,9 +10,10 @@ import OmiseGO
 
 class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationViewModelProtocol {
     // Delegate closures
-    var onSuccessGetUser: SuccessClosure?
-    var onFailGetUser: FailureClosure?
-    var onCreateTransactionComplete: ObjectClosure<TransactionBuilder>?
+    var onSuccessGetTransactionRequest: SuccessClosure?
+    var onFailGetTransactionRequest: FailureClosure?
+    var onCompletedConsumption: ObjectClosure<TransactionBuilder>?
+    var onPendingConsumptionConfirmation: EmptyClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
 
     let title: String
@@ -22,36 +23,39 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
     let cancel = "transaction_confirmation.button.cancel".localized()
     var username: String = "-"
     var userId: String = "-"
+    var userExpectedAmountDisplay: String = ""
     var isReady: Bool = false
 
     private var isLoading: Bool = false {
         didSet { self.onLoadStateChange?(isLoading) }
     }
 
-    private var user: User? {
+    private var listenedConsumption: TransactionConsumption?
+
+    private var transactionRequest: TransactionRequest? {
         didSet {
-            guard let user = user else { return }
-            self.transactionBuilder.user = user
+            guard let transactionRequest = transactionRequest else { return }
+            self.transactionBuilder.user = transactionRequest.user
             self.isReady = true
-            self.username = user.email ?? "-"
-            self.userId = user.id
-            self.onSuccessGetUser?()
+            self.username = transactionRequest.user?.email ?? "-"
+            self.userId = transactionRequest.user?.id ?? "-"
+            self.onSuccessGetTransactionRequest?()
         }
     }
 
     private var transactionBuilder: TransactionBuilder
     private let sessionManager: SessionManagerProtocol
     private let walletLoader: WalletLoaderProtocol
-    private let transactionGenerator: TransactionGeneratorProtocol
+    private let transactionConsumptionGenerator: TransactionConsumptionGeneratorProtocol
 
     required init(sessionManager: SessionManagerProtocol = SessionManager.shared,
                   walletLoader: WalletLoaderProtocol = WalletLoader(),
-                  transactionGenerator: TransactionGeneratorProtocol = TransactionGenerator(),
+                  transactionConsumptionGenerator: TransactionConsumptionGeneratorProtocol = TransactionConsumptionGenerator(),
                   transactionBuilder: TransactionBuilder) {
         self.sessionManager = sessionManager
         self.walletLoader = walletLoader
         self.transactionBuilder = transactionBuilder
-        self.transactionGenerator = transactionGenerator
+        self.transactionConsumptionGenerator = transactionConsumptionGenerator
         self.amountDisplay = "\(transactionBuilder.amount) \(transactionBuilder.token.symbol)"
         switch transactionBuilder.type {
         case .receive:
@@ -64,17 +68,19 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
         super.init()
     }
 
-    func loadUser() {
+    func loadTransactionRequest() {
         self.isLoading = true
-        let params = WalletGetParams(address: self.transactionBuilder.address)
-
-        self.walletLoader.get(withParams: params) { [weak self] result in
+        TransactionRequest.get(using: self.sessionManager.httpClient,
+                               formattedId: self.transactionBuilder.transactionRequestFormattedId) { [weak self] result in
             self?.isLoading = false
             switch result {
-            case let .success(data: wallet) where wallet.user != nil:
-                self?.user = wallet.user
+            case let .success(data: transactionRequest) where
+                transactionRequest.user != nil:
+                self?.transactionRequest = transactionRequest
             default:
-                self?.onFailGetUser?(POSMerchantError.message(message: "transaction_confirmation.qrcode_error".localized()))
+                self?.onFailGetTransactionRequest?(
+                    POSMerchantError.message(message: "transaction_confirmation.error.invalid_qr_code".localized())
+                )
             }
         }
     }
@@ -83,10 +89,63 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
         self.isLoading = true
         let params = self.transactionBuilder.params(forAccount: self.sessionManager.selectedAccount!,
                                                     idemPotencyToken: UUID().uuidString)
-        self.transactionGenerator.create(withParams: params) { [weak self] result in
+        self.transactionConsumptionGenerator.consume(withParams: params) { [weak self] result in
             guard let weakself = self else { return }
-            weakself.transactionBuilder.result = result
-            weakself.onCreateTransactionComplete?(weakself.transactionBuilder)
+            weakself.isLoading = false
+            switch result {
+            case let .success(data: consumption) where consumption.transactionRequest.requireConfirmation:
+                weakself.listenedConsumption = consumption
+                consumption.startListeningEvents(withClient: weakself.sessionManager.socketClient, eventDelegate: self)
+                weakself.onPendingConsumptionConfirmation?()
+            case let .success(data: consumption):
+                weakself.transactionBuilder.transactionConsumption = consumption
+                weakself.listenedConsumption = consumption
+                weakself.onCompletedConsumption?(weakself.transactionBuilder)
+            case let .fail(error: error):
+                weakself.transactionBuilder.error = .omiseGO(error: error)
+                weakself.onCompletedConsumption?(weakself.transactionBuilder)
+            }
         }
+    }
+
+    func stopListening() {
+        self.listenedConsumption?.stopListening(withClient: self.sessionManager.socketClient)
+    }
+
+    func waitingForUserConfirmationDidCancel() {
+        self.isLoading = true
+        self.listenedConsumption?.reject(using: self.sessionManager.httpClient, callback: { [weak self] _ in
+            self?.isLoading = false
+        })
+    }
+}
+
+extension TransactionConfirmationViewModel: TransactionConsumptionEventDelegate {
+    func onSuccessfulTransactionConsumptionFinalized(_ transactionConsumption: TransactionConsumption) {
+        self.transactionBuilder.transactionConsumption = transactionConsumption
+        switch transactionConsumption.status {
+        case .rejected:
+            self.transactionBuilder.error = POSMerchantError.message(message: "transaction_cofirmation.error.user_rejected".localized())
+        default: break
+        }
+        self.onCompletedConsumption?(self.transactionBuilder)
+    }
+
+    func onFailedTransactionConsumptionFinalized(_ transactionConsumption: TransactionConsumption, error: APIError) {
+        self.transactionBuilder.transactionConsumption = transactionConsumption
+        self.transactionBuilder.error = .omiseGO(error: .api(apiError: error))
+        self.onCompletedConsumption?(self.transactionBuilder)
+    }
+
+    func didStartListening() {
+        print("Did start listening")
+    }
+
+    func didStopListening() {
+        print("Did stop listening")
+    }
+
+    func onError(_ error: APIError) {
+        print(error)
     }
 }

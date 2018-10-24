@@ -72,6 +72,7 @@
 		033802EC2161EC8D00C2501F /* QRReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802EB2161EC8D00C2501F /* QRReaderViewModel.swift */; };
 		033802EE2161EEFC00C2501F /* QRReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802ED2161EEFC00C2501F /* QRReaderOverlayView.swift */; };
 		033802F02161F48700C2501F /* QRReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802EF2161F48700C2501F /* QRReader.swift */; };
+		0341BCB5216DE56F001928FE /* WaitingForUserConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0341BCB4216DE56F001928FE /* WaitingForUserConfirmationViewController.swift */; };
 		03467AB32165E9F700A33064 /* KeypadInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03467AB22165E9F700A33064 /* KeypadInputViewController.swift */; };
 		03467AB52165EA9A00A33064 /* ReceiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03467AB42165EA9A00A33064 /* ReceiveViewModel.swift */; };
 		03467AB72165EF6A00A33064 /* TopUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03467AB62165EF6A00A33064 /* TopUpViewModel.swift */; };
@@ -188,6 +189,7 @@
 		033802EB2161EC8D00C2501F /* QRReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRReaderViewModel.swift; sourceTree = "<group>"; };
 		033802ED2161EEFC00C2501F /* QRReaderOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRReaderOverlayView.swift; sourceTree = "<group>"; };
 		033802EF2161F48700C2501F /* QRReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRReader.swift; sourceTree = "<group>"; };
+		0341BCB4216DE56F001928FE /* WaitingForUserConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForUserConfirmationViewController.swift; sourceTree = "<group>"; };
 		03467AB22165E9F700A33064 /* KeypadInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadInputViewController.swift; sourceTree = "<group>"; };
 		03467AB42165EA9A00A33064 /* ReceiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewModel.swift; sourceTree = "<group>"; };
 		03467AB62165EF6A00A33064 /* TopUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpViewModel.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				0354DDFB2166175E009D9E7B /* MoreTableViewController.swift */,
 				0354DDFD216617BD009D9E7B /* TouchIDConfirmationViewController.swift */,
 				0354DE0721673D00009D9E7B /* TransactionsViewController.swift */,
+				0341BCB4216DE56F001928FE /* WaitingForUserConfirmationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -697,7 +700,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-POSMerchant/Pods-POSMerchant-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-POSMerchant/Pods-POSMerchant-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
@@ -726,7 +729,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-POSMerchant/Pods-POSMerchant-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-POSMerchant/Pods-POSMerchant-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -780,6 +783,7 @@
 				03E0BB472164821800FCB154 /* TransactionResultViewController.swift in Sources */,
 				032BACAB2165CE7E00D63EBC /* TabBarViewController.swift in Sources */,
 				03C94B4B215B441F007DF271 /* AccountCellViewModel.swift in Sources */,
+				0341BCB5216DE56F001928FE /* WaitingForUserConfirmationViewController.swift in Sources */,
 				0306DC97215A28C100612953 /* Publisher.swift in Sources */,
 				0306DCAA215A352500612953 /* SigninViewModel.swift in Sources */,
 				03467ABD2165F3A000A33064 /* TopupViewController.swift in Sources */,

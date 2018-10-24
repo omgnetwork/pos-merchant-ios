@@ -41,6 +41,7 @@ class KeypadInputViewModel: BaseViewModel, KeypadInputViewModelProtocol {
     var onReadyStateChange: ObjectClosure<Bool>?
     var onAmountValidationChange: ObjectClosure<Bool>?
     var shouldProcessTransaction: ObjectClosure<TransactionBuilder>?
+    var onInvalidQRCodeFormat: FailureClosure?
     var selectedToken: Token? {
         didSet {
             self.tokenString = self.selectedToken?.name ?? "-"
