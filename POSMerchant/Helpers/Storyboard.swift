@@ -14,7 +14,7 @@ enum Storyboard {
     case signin
     case selectAccount
     case tabBar
-    case receive
+    case keypadInput
     case topup
     case more
     case keyboard
@@ -29,7 +29,7 @@ enum Storyboard {
         case .signin: return "Signin"
         case .selectAccount: return "SelectAccount"
         case .tabBar: return "TabBar"
-        case .receive: return "Receive"
+        case .keypadInput: return "KeypadInput"
         case .topup: return "Topup"
         case .more: return "More"
         case .keyboard: return "Keyboard"
