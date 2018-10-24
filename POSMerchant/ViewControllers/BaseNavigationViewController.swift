@@ -12,7 +12,7 @@ class BaseNavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let backImage = UIImage(named: "back_arrow")
+        let backImage = UIImage(named: "Back")
         self.navigationBar.backIndicatorImage = backImage
         self.navigationBar.backIndicatorTransitionMaskImage = backImage
     }

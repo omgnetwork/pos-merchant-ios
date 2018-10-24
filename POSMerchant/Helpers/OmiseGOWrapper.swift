@@ -9,6 +9,7 @@
 import OmiseGO
 
 protocol AccountLoaderProtocol {
+    @discardableResult
     func list(withParams params: PaginatedListParams<Account>,
               callback: @escaping Account.PaginatedListRequestCallback) -> Account.PaginatedListRequest?
 }
@@ -19,5 +20,50 @@ class AccountLoader: AccountLoaderProtocol {
     func list(withParams params: PaginatedListParams<Account>,
               callback: @escaping Account.PaginatedListRequestCallback) -> Account.PaginatedListRequest? {
         return Account.list(using: SessionManager.shared.httpClient, params: params, callback: callback)
+    }
+}
+
+protocol TokenLoaderProtocol {
+    @discardableResult
+    func listForAccount(withParams params: WalletListForAccountParams,
+                        callback: @escaping Wallet.PaginatedListRequestCallback) -> Wallet.PaginatedListRequest?
+}
+
+/// This wrapper has been created for the sake of testing with dependency injection
+class TokenLoader: TokenLoaderProtocol {
+    @discardableResult
+    func listForAccount(withParams params: WalletListForAccountParams,
+                        callback: @escaping Wallet.PaginatedListRequestCallback) -> Wallet.PaginatedListRequest? {
+        return Wallet.listForAccount(using: SessionManager.shared.httpClient, params: params, callback: callback)
+    }
+}
+
+protocol WalletLoaderProtocol {
+    @discardableResult
+    func get(withParams params: WalletGetParams,
+             callback: @escaping Wallet.RetrieveRequestCallback) -> Wallet.RetrieveRequest?
+}
+
+/// This wrapper has been created for the sake of testing with dependency injection
+class WalletLoader: WalletLoaderProtocol {
+    @discardableResult
+    func get(withParams params: WalletGetParams,
+             callback: @escaping Wallet.RetrieveRequestCallback) -> Wallet.RetrieveRequest? {
+        return Wallet.get(using: SessionManager.shared.httpClient, params: params, callback: callback)
+    }
+}
+
+protocol TransactionGeneratorProtocol {
+    @discardableResult
+    func create(withParams params: TransactionCreateParams,
+                callback: @escaping Transaction.RetrieveRequestCallback) -> Transaction.RetrieveRequest?
+}
+
+/// This wrapper has been created for the sake of testing with dependency injection
+class TransactionGenerator: TransactionGeneratorProtocol {
+    @discardableResult
+    func create(withParams params: TransactionCreateParams,
+                callback: @escaping Transaction.RetrieveRequestCallback) -> Transaction.RetrieveRequest? {
+        return Transaction.create(using: SessionManager.shared.httpClient, params: params, callback: callback)
     }
 }

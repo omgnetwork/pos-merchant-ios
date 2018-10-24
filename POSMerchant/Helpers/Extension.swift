@@ -105,4 +105,16 @@ extension UIView {
         }
         return fromNibHelper(nibName: nibName)
     }
+
+    func pinToSuperView() {
+        [.left, .top, .right, .bottom].forEach({ attribute in
+            self.superview?.addConstraint(NSLayoutConstraint(item: self,
+                                                             attribute: attribute,
+                                                             relatedBy: .equal,
+                                                             toItem: self.superview!,
+                                                             attribute: attribute,
+                                                             multiplier: 1,
+                                                             constant: 0))
+        })
+    }
 }

@@ -13,7 +13,14 @@ enum Storyboard {
     case welcome
     case signin
     case selectAccount
-    case tmp
+    case tabBar
+    case receive
+    case topup
+    case more
+    case keyboard
+    case selectToken
+    case qrReader
+    case transaction
 
     var name: String {
         switch self {
@@ -21,7 +28,14 @@ enum Storyboard {
         case .welcome: return "Welcome"
         case .signin: return "Signin"
         case .selectAccount: return "SelectAccount"
-        case .tmp: return "Tmp"
+        case .tabBar: return "TabBar"
+        case .receive: return "Receive"
+        case .topup: return "Topup"
+        case .more: return "More"
+        case .keyboard: return "Keyboard"
+        case .selectToken: return "SelectToken"
+        case .qrReader: return "QRReader"
+        case .transaction: return "Transaction"
         }
     }
 

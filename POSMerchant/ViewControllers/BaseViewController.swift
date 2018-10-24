@@ -24,6 +24,24 @@ class BaseViewController: UIViewController, Toastable, Loadable, Configurable {
 }
 
 class BaseTableViewController: UITableViewController, Toastable, Loadable, Configurable {
+    lazy var loadingView: UIView = {
+        let loader = UIActivityIndicatorView(style: .white)
+        loader.startAnimating()
+        loader.translatesAutoresizingMaskIntoConstraints = false
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44))
+        view.addSubview(loader)
+        [.centerX, .centerY].forEach({
+            view.addConstraint(NSLayoutConstraint(item: loader,
+                                                  attribute: $0,
+                                                  relatedBy: .equal,
+                                                  toItem: view,
+                                                  attribute: $0,
+                                                  multiplier: 1,
+                                                  constant: 0))
+        })
+        return view
+    }()
+
     var loading: MBProgressHUD?
 
     override func viewDidLoad() {
@@ -32,6 +50,8 @@ class BaseTableViewController: UITableViewController, Toastable, Loadable, Confi
     }
 
     func configureView() {
+        self.tableView.contentInsetAdjustmentBehavior = .never
+        self.tableView.tableFooterView = UIView()
         self.configureViewModel()
     }
 

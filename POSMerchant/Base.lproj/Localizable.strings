@@ -38,3 +38,37 @@
 "welcome.title" = "Welcome!";
 "welcome.label.you_are_in" = "You are in";
 "welcome.label.account" = "Account";
+
+// Tab bar
+"tab.receive.title" = "Receive";
+"tab.topup.title" = "Top-up";
+"tab.more.title" = "More";
+
+// Receive
+"receive.label.receive" = "Receive";
+"receive.button.receive" = "Receive";
+"receive.error.no_token" = "There is no token available.";
+
+// Select token
+"select_token.view.title" = "Select token";
+
+// QR reader
+"qr_reader.label.scan_to" = "Scan to";
+"qr_reader.label.hint" = "Allign QR code here";
+
+// Transaction confirmation
+"transaction_confirmation.receive" = "Receive";
+"transaction_confirmation.topup" = "Topup";
+"transaction_confirmation.from" = "from";
+"transaction_confirmation.to" = "to";
+"transaction_confirmation.button.confirm" = "Confirm";
+"transaction_confirmation.button.cancel" = "Cancel";
+
+// Transaction result
+"transaction_result.from" = "from";
+"transaction_result.to" = "to";
+"transaction_result.done" = "Done";
+"transaction_result.payment_successful" = "Payment successful";
+"transaction_result.topup_successful" = "Topup successful";
+"transaction_result.payment_failed" = "Payment failed";
+"transaction_result.topup_failed" = "Topup failed";
