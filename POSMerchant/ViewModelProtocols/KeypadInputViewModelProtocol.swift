@@ -14,6 +14,8 @@ protocol KeypadInputViewModelProtocol: KeyboardEventDelegate, SelectTokenDelegat
     var displayAmount: String { get }
     var tokenString: String { get }
     var selectedToken: Token? { get }
+    var isReady: Bool { get }
+    var isAmountValid: Bool { get }
     var onAmountUpdate: ObjectClosure<String>? { get set }
     var onTokenUpdate: ObjectClosure<String>? { get set }
     var onFailGetDefaultToken: FailureClosure? { get set }
