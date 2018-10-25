@@ -1,0 +1,50 @@
+[
+  {
+    "updated_at": "2018-10-08T06:17:14.246615Z",
+    "socket_topic": "account:acc_01cs94yc3x4gggm6pwq2fhh1kv",
+    "parent_id": null,
+    "object": "account",
+    "name": "Headquarter",
+    "metadata": {},
+    "master": true,
+    "id": "acc_01cs94yc3x4gggm6pwq2fhh1kv",
+    "encrypted_metadata": {},
+    "description": "Master Account",
+    "created_at": "2018-10-08T06:13:33.440688Z",
+    "category_ids": [],
+    "categories": {
+      "object": "list",
+      "data": []
+    },
+    "avatar": {
+      "thumb": "http://192.168.82.18:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/thumb.png?v=63706198634",
+      "small": "http://192.168.82.18:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/small.png?v=63706198634",
+      "original": "http://192.168.82.18:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/original.jpg?v=63706198634",
+      "large": "http://192.168.82.18:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/large.png?v=63706198634"
+    }
+  },
+  {
+    "updated_at": "2018-10-25T04:08:25.051265Z",
+    "socket_topic": "account:acc_01ctmphepvs5f3p0gn49ckx88k",
+    "parent_id": "acc_01cs94yc3x4gggm6pwq2fhh1kv",
+    "object": "account",
+    "name": "Account 2",
+    "metadata": {},
+    "master": false,
+    "id": "acc_01ctmphepvs5f3p0gn49ckx88k",
+    "encrypted_metadata": {},
+    "description": null,
+    "created_at": "2018-10-25T04:08:25.051257Z",
+    "category_ids": [],
+    "categories": {
+      "object": "list",
+      "data": []
+    },
+    "avatar": {
+      "thumb": null,
+      "small": null,
+      "original": null,
+      "large": null
+    }
+  }
+]

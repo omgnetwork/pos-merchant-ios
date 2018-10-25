@@ -103,8 +103,9 @@ class TestSessionManager: Publisher, SessionManagerProtocol {
         self.notify(event: .onBioStateUpdate(enabled: false))
     }
 
-    func selectCurrentAccount(_: Account) {
+    func selectCurrentAccount(_ account: Account) {
         self.selectCurrentAccountCalled = true
+        self.selectedAccount = account
     }
 
     func loadCurrentAccountFailure(withError error: OMGError) {

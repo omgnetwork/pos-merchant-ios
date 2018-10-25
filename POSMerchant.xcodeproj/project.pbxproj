@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030217522181B9AA0055D800 /* SelectAccountViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030217512181B9AA0055D800 /* SelectAccountViewContollerTests.swift */; };
+		030217542181B9F30055D800 /* TestSelectAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030217532181B9F30055D800 /* TestSelectAccountViewModel.swift */; };
 		0306DC71215A255100612953 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC70215A255100612953 /* SessionManager.swift */; };
 		0306DC81215A25A100612953 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC72215A25A100612953 /* Theme.swift */; };
 		0306DC82215A25A100612953 /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0306DC73215A25A100612953 /* Biometric.swift */; };
@@ -40,6 +42,10 @@
 		0325B59721633428006850FF /* TransactionConfirmationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B59621633428006850FF /* TransactionConfirmationViewModelProtocol.swift */; };
 		0325B5992163345E006850FF /* TransactionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B5982163345E006850FF /* TransactionConfirmationViewModel.swift */; };
 		0325B59B21635BF4006850FF /* TransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0325B59A21635BF4006850FF /* TransactionBuilder.swift */; };
+		0328FEFC218173F100AC7CD2 /* SelectAccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328FEFB218173F100AC7CD2 /* SelectAccountViewModelTests.swift */; };
+		0328FEFE2181749200AC7CD2 /* TestAccountLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328FEFD2181749200AC7CD2 /* TestAccountLoader.swift */; };
+		0328FF002181783500AC7CD2 /* StubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328FEFF2181783500AC7CD2 /* StubGenerator.swift */; };
+		0328FF022181799500AC7CD2 /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 0328FF012181799400AC7CD2 /* Fixtures */; };
 		032BACAB2165CE7E00D63EBC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032BACAA2165CE7E00D63EBC /* TabBarViewController.swift */; };
 		032BACAD2165CE9F00D63EBC /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032BACAC2165CE9F00D63EBC /* TabBarViewModel.swift */; };
 		033802A5215B9AAE00C2501F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033802A4215B9AAE00C2501F /* WelcomeViewController.swift */; };
@@ -91,10 +97,6 @@
 		0354DE1121673D7C009D9E7B /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354DE0F21673D7C009D9E7B /* TransactionTableViewCell.swift */; };
 		0354DE1221673D7C009D9E7B /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0354DE1021673D7C009D9E7B /* TransactionTableViewCell.xib */; };
 		0354DE1421673DBF009D9E7B /* TransactionPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354DE1321673DBF009D9E7B /* TransactionPaginator.swift */; };
-		0372A1E4217DAC6700742033 /* transaction_consumption.json in Resources */ = {isa = PBXBuildFile; fileRef = 0372A1AC217DAC6700742033 /* transaction_consumption.json */; };
-		0372A1E5217DAC6700742033 /* transactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0372A1AD217DAC6700742033 /* transactions.json */; };
-		0372A1E6217DAC6700742033 /* pagination.json in Resources */ = {isa = PBXBuildFile; fileRef = 0372A1AE217DAC6700742033 /* pagination.json */; };
-		0372A1E7217DAC6700742033 /* transaction_request.json in Resources */ = {isa = PBXBuildFile; fileRef = 0372A1AF217DAC6700742033 /* transaction_request.json */; };
 		0372A1F8217DBA0000742033 /* LoadingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372A1F7217DBA0000742033 /* LoadingViewModelTests.swift */; };
 		0372A1FA217DBA8A00742033 /* TestSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372A1F9217DBA8A00742033 /* TestSessionManager.swift */; };
 		0372A1FC217DBD3200742033 /* TestSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372A1FB217DBD3200742033 /* TestSocketClient.swift */; };
@@ -135,6 +137,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030217512181B9AA0055D800 /* SelectAccountViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountViewContollerTests.swift; sourceTree = "<group>"; };
+		030217532181B9F30055D800 /* TestSelectAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSelectAccountViewModel.swift; sourceTree = "<group>"; };
 		0306DC70215A255100612953 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		0306DC72215A25A100612953 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		0306DC73215A25A100612953 /* Biometric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biometric.swift; sourceTree = "<group>"; };
@@ -168,6 +172,10 @@
 		0325B59621633428006850FF /* TransactionConfirmationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModelProtocol.swift; sourceTree = "<group>"; };
 		0325B5982163345E006850FF /* TransactionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModel.swift; sourceTree = "<group>"; };
 		0325B59A21635BF4006850FF /* TransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionBuilder.swift; sourceTree = "<group>"; };
+		0328FEFB218173F100AC7CD2 /* SelectAccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountViewModelTests.swift; sourceTree = "<group>"; };
+		0328FEFD2181749200AC7CD2 /* TestAccountLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAccountLoader.swift; sourceTree = "<group>"; };
+		0328FEFF2181783500AC7CD2 /* StubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubGenerator.swift; sourceTree = "<group>"; };
+		0328FF012181799400AC7CD2 /* Fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fixtures; sourceTree = "<group>"; };
 		032BACAA2165CE7E00D63EBC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		032BACAC2165CE9F00D63EBC /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		033802A4215B9AAE00C2501F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -219,10 +227,6 @@
 		0354DE0F21673D7C009D9E7B /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		0354DE1021673D7C009D9E7B /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		0354DE1321673DBF009D9E7B /* TransactionPaginator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPaginator.swift; sourceTree = "<group>"; };
-		0372A1AC217DAC6700742033 /* transaction_consumption.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transaction_consumption.json; sourceTree = "<group>"; };
-		0372A1AD217DAC6700742033 /* transactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transactions.json; sourceTree = "<group>"; };
-		0372A1AE217DAC6700742033 /* pagination.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pagination.json; sourceTree = "<group>"; };
-		0372A1AF217DAC6700742033 /* transaction_request.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transaction_request.json; sourceTree = "<group>"; };
 		0372A1F7217DBA0000742033 /* LoadingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModelTests.swift; sourceTree = "<group>"; };
 		0372A1F9217DBA8A00742033 /* TestSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSessionManager.swift; sourceTree = "<group>"; };
 		0372A1FB217DBD3200742033 /* TestSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSocketClient.swift; sourceTree = "<group>"; };
@@ -297,6 +301,9 @@
 				0372A1FB217DBD3200742033 /* TestSocketClient.swift */,
 				0372A1FF217DC60600742033 /* TestLoadingViewModel.swift */,
 				0372A205217DD62200742033 /* TestSigninViewModel.swift */,
+				0328FEFD2181749200AC7CD2 /* TestAccountLoader.swift */,
+				0328FEFF2181783500AC7CD2 /* StubGenerator.swift */,
+				030217532181B9F30055D800 /* TestSelectAccountViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -313,19 +320,9 @@
 			children = (
 				0372A1FD217DC5E200742033 /* LoadingViewControllerTests.swift */,
 				0372A203217DD5F200742033 /* SigninViewControllerTests.swift */,
+				030217512181B9AA0055D800 /* SelectAccountViewContollerTests.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		0372A1A8217DAC6700742033 /* Fixtures */ = {
-			isa = PBXGroup;
-			children = (
-				0372A1AC217DAC6700742033 /* transaction_consumption.json */,
-				0372A1AD217DAC6700742033 /* transactions.json */,
-				0372A1AE217DAC6700742033 /* pagination.json */,
-				0372A1AF217DAC6700742033 /* transaction_request.json */,
-			);
-			path = Fixtures;
 			sourceTree = "<group>";
 		};
 		0372A1B0217DAC6700742033 /* Views */ = {
@@ -340,6 +337,7 @@
 			children = (
 				0372A1F7217DBA0000742033 /* LoadingViewModelTests.swift */,
 				0372A201217DD27200742033 /* SigninViewModelTests.swift */,
+				0328FEFB218173F100AC7CD2 /* SelectAccountViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -401,7 +399,7 @@
 		03FB02D8215A0A97001EF0D4 /* POSMerchantTests */ = {
 			isa = PBXGroup;
 			children = (
-				0372A1A8217DAC6700742033 /* Fixtures */,
+				0328FF012181799400AC7CD2 /* Fixtures */,
 				0372A197217DAC6700742033 /* Paginators */,
 				0372A184217DAC6700742033 /* TestMocks */,
 				0372A199217DAC6700742033 /* ViewControllers */,
@@ -721,10 +719,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0372A1E4217DAC6700742033 /* transaction_consumption.json in Resources */,
-				0372A1E7217DAC6700742033 /* transaction_request.json in Resources */,
-				0372A1E6217DAC6700742033 /* pagination.json in Resources */,
-				0372A1E5217DAC6700742033 /* transactions.json in Resources */,
+				0328FF022181799500AC7CD2 /* Fixtures in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,9 +913,14 @@
 				0372A202217DD27200742033 /* SigninViewModelTests.swift in Sources */,
 				0372A1FA217DBA8A00742033 /* TestSessionManager.swift in Sources */,
 				0372A1FC217DBD3200742033 /* TestSocketClient.swift in Sources */,
+				0328FEFE2181749200AC7CD2 /* TestAccountLoader.swift in Sources */,
+				030217522181B9AA0055D800 /* SelectAccountViewContollerTests.swift in Sources */,
 				0372A1FE217DC5E200742033 /* LoadingViewControllerTests.swift in Sources */,
+				030217542181B9F30055D800 /* TestSelectAccountViewModel.swift in Sources */,
+				0328FEFC218173F100AC7CD2 /* SelectAccountViewModelTests.swift in Sources */,
 				0372A204217DD5F200742033 /* SigninViewControllerTests.swift in Sources */,
 				0372A200217DC60600742033 /* TestLoadingViewModel.swift in Sources */,
+				0328FF002181783500AC7CD2 /* StubGenerator.swift in Sources */,
 				0372A1F8217DBA0000742033 /* LoadingViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
