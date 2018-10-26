@@ -15,10 +15,6 @@ protocol SelectTokenViewModelProtocol {
 
     var viewTitle: String { get }
 
-    init(tokenLoader: TokenLoaderProtocol,
-         sessionManager: SessionManagerProtocol,
-         delegate: SelectTokenDelegate?,
-         selectedToken: Token)
     func loadBalances()
     func tokenCellViewModel(at indexPath: IndexPath) -> BalanceCellViewModel
     func numberOfRow() -> Int
