@@ -9,7 +9,6 @@
 import UIKit
 
 protocol KeyboardViewModelProtocol {
-    init(delegate: KeyboardEventDelegate?)
     func tapNumber(_ number: Int)
     func tapDecimalSeparator()
     func tapDelete()

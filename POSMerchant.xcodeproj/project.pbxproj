@@ -110,6 +110,8 @@
 		03A352542182DEAC00F065F8 /* ReceiveViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352532182DEAC00F065F8 /* ReceiveViewModelTests.swift */; };
 		03A352562182E23900F065F8 /* TopUpViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352552182E23900F065F8 /* TopUpViewModelTests.swift */; };
 		03A352582182E72800F065F8 /* KeyboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352572182E72800F065F8 /* KeyboardViewModelTests.swift */; };
+		03A3525A2182F0E600F065F8 /* KeyboardViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352592182F0E600F065F8 /* KeyboardViewControllerTests.swift */; };
+		03A3525C2182F14800F065F8 /* TestKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3525B2182F14800F065F8 /* TestKeyboardViewModel.swift */; };
 		03C94B41215B4109007DF271 /* AccountSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C94B3F215B4109007DF271 /* AccountSelection.storyboard */; };
 		03C94B43215B4179007DF271 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */; };
 		03C94B45215B4229007DF271 /* SelectAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */; };
@@ -245,6 +247,8 @@
 		03A352532182DEAC00F065F8 /* ReceiveViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewModelTests.swift; sourceTree = "<group>"; };
 		03A352552182E23900F065F8 /* TopUpViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpViewModelTests.swift; sourceTree = "<group>"; };
 		03A352572182E72800F065F8 /* KeyboardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModelTests.swift; sourceTree = "<group>"; };
+		03A352592182F0E600F065F8 /* KeyboardViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewControllerTests.swift; sourceTree = "<group>"; };
+		03A3525B2182F14800F065F8 /* TestKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKeyboardViewModel.swift; sourceTree = "<group>"; };
 		03C94B40215B4109007DF271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AccountSelection.storyboard; sourceTree = "<group>"; };
 		03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountTableViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +319,7 @@
 				0328FEFF2181783500AC7CD2 /* StubGenerator.swift */,
 				030217532181B9F30055D800 /* TestSelectAccountViewModel.swift */,
 				03A352512182C57500F065F8 /* TestTokenLoader.swift */,
+				03A3525B2182F14800F065F8 /* TestKeyboardViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				0372A1FD217DC5E200742033 /* LoadingViewControllerTests.swift */,
 				0372A203217DD5F200742033 /* SigninViewControllerTests.swift */,
 				030217512181B9AA0055D800 /* SelectAccountViewContollerTests.swift */,
+				03A352592182F0E600F065F8 /* KeyboardViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -938,10 +944,12 @@
 				03A352582182E72800F065F8 /* KeyboardViewModelTests.swift in Sources */,
 				03A352522182C57500F065F8 /* TestTokenLoader.swift in Sources */,
 				03A352562182E23900F065F8 /* TopUpViewModelTests.swift in Sources */,
+				03A3525A2182F0E600F065F8 /* KeyboardViewControllerTests.swift in Sources */,
 				0372A200217DC60600742033 /* TestLoadingViewModel.swift in Sources */,
 				0328FF002181783500AC7CD2 /* StubGenerator.swift in Sources */,
 				0372A1F8217DBA0000742033 /* LoadingViewModelTests.swift in Sources */,
 				03A352502182C53900F065F8 /* KeypadInputViewModelTests.swift in Sources */,
+				03A3525C2182F14800F065F8 /* TestKeyboardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

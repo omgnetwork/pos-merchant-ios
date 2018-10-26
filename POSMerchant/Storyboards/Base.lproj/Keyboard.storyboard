@@ -13,7 +13,7 @@
         <!--Keyboard View Controller-->
         <scene sceneID="cwo-WF-s36">
             <objects>
-                <viewController id="nXM-6G-vrT" customClass="KeyboardViewController" customModule="POSMerchant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KeyboardViewController" id="nXM-6G-vrT" customClass="KeyboardViewController" customModule="POSMerchant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FjI-rQ-dZC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,7 +302,7 @@
                                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="didTapNumberButton:" destination="nXM-6G-vrT" eventType="touchUpInside" id="GNa-Tb-wMN"/>
+                                                            <action selector="didTapDeleteButton:" destination="nXM-6G-vrT" eventType="touchUpInside" id="A0L-z8-VpW"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
