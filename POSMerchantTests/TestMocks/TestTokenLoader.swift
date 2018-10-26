@@ -14,7 +14,7 @@ class TestTokenLoader {
 
     private var callback: Wallet.PaginatedListRequestCallback?
 
-    func success(withAccount wallets: [Wallet], pagination: Pagination) {
+    func success(withWallet wallets: [Wallet], pagination: Pagination) {
         let response = JSONPaginatedListResponse<Wallet>(data: wallets, pagination: pagination)
         self.callback?(OmiseGO.Response.success(data: response))
     }

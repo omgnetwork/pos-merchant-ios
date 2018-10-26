@@ -54,7 +54,7 @@ class KeypadInputViewModelTests: XCTestCase {
         let wallets = StubGenerator.wallets()
         let pagination = StubGenerator.pagination()
         self.sut.loadDefaultToken()
-        self.tokenLoader.success(withAccount: wallets, pagination: pagination)
+        self.tokenLoader.success(withWallet: wallets, pagination: pagination)
         XCTAssertEqual(tokenStr, wallets.first!.balances.first!.token.name)
     }
 
@@ -67,7 +67,7 @@ class KeypadInputViewModelTests: XCTestCase {
         }
         let pagination = StubGenerator.pagination()
         self.sut.loadDefaultToken()
-        self.tokenLoader.success(withAccount: [], pagination: pagination)
+        self.tokenLoader.success(withWallet: [], pagination: pagination)
         XCTAssertTrue(didFail)
     }
 
