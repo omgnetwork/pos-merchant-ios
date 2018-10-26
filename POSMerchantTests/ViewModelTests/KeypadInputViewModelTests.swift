@@ -79,7 +79,6 @@ class KeypadInputViewModelTests: XCTestCase {
         }
         self.sut.didTapNumber("1")
         XCTAssertEqual(amount, "1")
-
     }
 
     func testTap0WhenDisplayAmountIs0() {
