@@ -122,6 +122,7 @@
 		03A3526E2186EE0200F065F8 /* TestTransactionConsumptionRejector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3526D2186EE0200F065F8 /* TestTransactionConsumptionRejector.swift */; };
 		03A352702186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3526F2186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift */; };
 		03A352722187000700F065F8 /* TransactionConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352712187000700F065F8 /* TransactionConfirmationViewControllerTests.swift */; };
+		03A3527421870D8E00F065F8 /* MoreTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3527321870D8E00F065F8 /* MoreTableViewModelTests.swift */; };
 		03C94B41215B4109007DF271 /* AccountSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C94B3F215B4109007DF271 /* AccountSelection.storyboard */; };
 		03C94B43215B4179007DF271 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */; };
 		03C94B45215B4229007DF271 /* SelectAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */; };
@@ -269,6 +270,7 @@
 		03A3526D2186EE0200F065F8 /* TestTransactionConsumptionRejector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConsumptionRejector.swift; sourceTree = "<group>"; };
 		03A3526F2186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConfirmationViewModel.swift; sourceTree = "<group>"; };
 		03A352712187000700F065F8 /* TransactionConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
+		03A3527321870D8E00F065F8 /* MoreTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewModelTests.swift; sourceTree = "<group>"; };
 		03C94B40215B4109007DF271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AccountSelection.storyboard; sourceTree = "<group>"; };
 		03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountTableViewController.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				03A3525D218301D200F065F8 /* SelectTokenViewModelTests.swift */,
 				03A3525F218315BD00F065F8 /* SelectTokenTableViewControllerTests.swift */,
 				03A352652186BB3B00F065F8 /* TransactionConfirmationViewModelTests.swift */,
+				03A3527321870D8E00F065F8 /* MoreTableViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -972,6 +975,7 @@
 				0372A1FE217DC5E200742033 /* LoadingViewControllerTests.swift in Sources */,
 				030217542181B9F30055D800 /* TestSelectAccountViewModel.swift in Sources */,
 				03A3526A2186CE3100F065F8 /* TestTransactionConsumptionGenerator.swift in Sources */,
+				03A3527421870D8E00F065F8 /* MoreTableViewModelTests.swift in Sources */,
 				03A352542182DEAC00F065F8 /* ReceiveViewModelTests.swift in Sources */,
 				03A352622183164F00F065F8 /* TestSelectTokenViewModel.swift in Sources */,
 				0328FEFC218173F100AC7CD2 /* SelectAccountViewModelTests.swift in Sources */,
