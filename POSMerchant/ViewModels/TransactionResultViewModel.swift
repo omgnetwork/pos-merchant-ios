@@ -27,8 +27,8 @@ class TransactionResultViewModel: BaseViewModel, TransactionResultViewModelProto
         self.direction = transactionBuilder.type == .receive ?
             "transaction_result.from".localized() :
             "transaction_result.to".localized()
-        self.username = transactionBuilder.user!.email ?? "-"
-        self.userId = transactionBuilder.user!.id
+        self.username = transactionBuilder.user?.email ?? "-"
+        self.userId = transactionBuilder.user?.id ?? "-"
         self.done = "transaction_result.done".localized()
         if let error = transactionBuilder.error {
             self.statusImage = UIImage(named: "Failed")!

@@ -10,3 +10,4 @@ disabled_rules:
 - type_body_length
 - weak_delegate
 - file_length
+- type_name
