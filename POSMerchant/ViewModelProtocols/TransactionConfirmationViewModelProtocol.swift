@@ -25,11 +25,6 @@ protocol TransactionConfirmationViewModelProtocol: WaitingForUserConfirmationVie
     var userId: String { get }
     var userExpectedAmountDisplay: String { get }
 
-    init(sessionManager: SessionManagerProtocol,
-         walletLoader: WalletLoaderProtocol,
-         transactionConsumptionGenerator: TransactionConsumptionGeneratorProtocol,
-         transactionBuilder: TransactionBuilder)
-
     func loadTransactionRequest()
     func performTransaction()
     func stopListening()

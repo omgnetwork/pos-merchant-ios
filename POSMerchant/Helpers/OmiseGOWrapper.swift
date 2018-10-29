@@ -83,3 +83,36 @@ class TransactionLoader: TransactionLoaderProtocol {
                                 callback: callback)
     }
 }
+
+protocol TransactionRequestGetterProtocol {
+    @discardableResult
+    func get(withFormattedId id: String,
+             callback: @escaping TransactionRequest.RetrieveRequestCallback) -> TransactionRequest.RetrieveRequest?
+}
+
+/// This wrapper has been created for the sake of testing with dependency injection
+class TransactionRequestGetter: TransactionRequestGetterProtocol {
+    @discardableResult
+    func get(withFormattedId id: String,
+             callback: @escaping TransactionRequest.RetrieveRequestCallback) -> TransactionRequest.RetrieveRequest? {
+        return TransactionRequest.get(using: SessionManager.shared.httpClient,
+                                      formattedId: id,
+                                      callback: callback)
+    }
+}
+
+/// This wrapper has been created for the sake of testing with dependency injection
+protocol TransactionConsumptionRejectorProtocol {
+    @discardableResult
+    func reject(consumption: TransactionConsumption?,
+                callback: @escaping TransactionConsumption.RetrieveRequestCallback) -> TransactionConsumption.RetrieveRequest?
+}
+
+class TransactionConsumptionRejector: TransactionConsumptionRejectorProtocol {
+    @discardableResult
+    func reject(consumption: TransactionConsumption?,
+                callback: @escaping TransactionConsumption.RetrieveRequestCallback) -> TransactionConsumption.RetrieveRequest? {
+        return consumption?.reject(using: SessionManager.shared.httpClient,
+                                   callback: callback)
+    }
+}
