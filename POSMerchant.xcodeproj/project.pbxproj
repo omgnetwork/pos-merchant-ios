@@ -123,6 +123,8 @@
 		03A352702186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3526F2186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift */; };
 		03A352722187000700F065F8 /* TransactionConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352712187000700F065F8 /* TransactionConfirmationViewControllerTests.swift */; };
 		03A3527421870D8E00F065F8 /* MoreTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3527321870D8E00F065F8 /* MoreTableViewModelTests.swift */; };
+		03A352762188101C00F065F8 /* MoreTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352752188101C00F065F8 /* MoreTableViewControllerTests.swift */; };
+		03A352782188105600F065F8 /* TestMoreTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352772188105600F065F8 /* TestMoreTableViewModel.swift */; };
 		03C94B41215B4109007DF271 /* AccountSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C94B3F215B4109007DF271 /* AccountSelection.storyboard */; };
 		03C94B43215B4179007DF271 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */; };
 		03C94B45215B4229007DF271 /* SelectAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */; };
@@ -271,6 +273,8 @@
 		03A3526F2186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConfirmationViewModel.swift; sourceTree = "<group>"; };
 		03A352712187000700F065F8 /* TransactionConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
 		03A3527321870D8E00F065F8 /* MoreTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewModelTests.swift; sourceTree = "<group>"; };
+		03A352752188101C00F065F8 /* MoreTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewControllerTests.swift; sourceTree = "<group>"; };
+		03A352772188105600F065F8 /* TestMoreTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMoreTableViewModel.swift; sourceTree = "<group>"; };
 		03C94B40215B4109007DF271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AccountSelection.storyboard; sourceTree = "<group>"; };
 		03C94B42215B4179007DF271 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		03C94B44215B4229007DF271 /* SelectAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountTableViewController.swift; sourceTree = "<group>"; };
@@ -348,6 +352,7 @@
 				03A3526B2186D1EA00F065F8 /* TestTransactionRequestGetter.swift */,
 				03A3526D2186EE0200F065F8 /* TestTransactionConsumptionRejector.swift */,
 				03A3526F2186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift */,
+				03A352772188105600F065F8 /* TestMoreTableViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				030217512181B9AA0055D800 /* SelectAccountViewContollerTests.swift */,
 				03A352592182F0E600F065F8 /* KeyboardViewControllerTests.swift */,
 				03A352712187000700F065F8 /* TransactionConfirmationViewControllerTests.swift */,
+				03A352752188101C00F065F8 /* MoreTableViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -971,6 +977,7 @@
 				0372A1FC217DBD3200742033 /* TestSocketClient.swift in Sources */,
 				03A3526E2186EE0200F065F8 /* TestTransactionConsumptionRejector.swift in Sources */,
 				0328FEFE2181749200AC7CD2 /* TestAccountLoader.swift in Sources */,
+				03A352782188105600F065F8 /* TestMoreTableViewModel.swift in Sources */,
 				030217522181B9AA0055D800 /* SelectAccountViewContollerTests.swift in Sources */,
 				0372A1FE217DC5E200742033 /* LoadingViewControllerTests.swift in Sources */,
 				030217542181B9F30055D800 /* TestSelectAccountViewModel.swift in Sources */,
@@ -981,6 +988,7 @@
 				0328FEFC218173F100AC7CD2 /* SelectAccountViewModelTests.swift in Sources */,
 				0372A204217DD5F200742033 /* SigninViewControllerTests.swift in Sources */,
 				03A352722187000700F065F8 /* TransactionConfirmationViewControllerTests.swift in Sources */,
+				03A352762188101C00F065F8 /* MoreTableViewControllerTests.swift in Sources */,
 				03A352582182E72800F065F8 /* KeyboardViewModelTests.swift in Sources */,
 				03A352522182C57500F065F8 /* TestTokenLoader.swift in Sources */,
 				03A352562182E23900F065F8 /* TopUpViewModelTests.swift in Sources */,
