@@ -14,7 +14,7 @@ class MoreTableViewModel: BaseViewModel, MoreTableViewModelProtocol {
     let accountLabelText = "more.label.account".localized()
     let signOutLabelText = "more.label.signout".localized()
     let exchangeAccountLabelText = "more.label.exchange_account".localized()
-    let currentVersion = "v\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "")"
+    let currentVersion = "v \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "")"
 
     let settingsSectionTitle = "more.section.settings".localized()
     let infoSectionTitle = "more.section.info".localized()
