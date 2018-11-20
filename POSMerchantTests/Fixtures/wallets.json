@@ -1,0 +1,142 @@
+[
+  {
+    "user_id": null,
+    "user": null,
+    "updated_at": "2018-10-08T06:13:33.462452Z",
+    "socket_topic": "wallet:pgjz791619968896",
+    "object": "wallet",
+    "name": "primary",
+    "metadata": {},
+    "identifier": "primary",
+    "encrypted_metadata": {},
+    "enabled": true,
+    "created_at": "2018-10-08T06:13:33.462441Z",
+    "balances": [
+      {
+        "token": {
+          "updated_at": "2018-10-08T06:16:35.158305Z",
+          "symbol": "TK1",
+          "subunit_to_unit": 100,
+          "object": "token",
+          "name": "Token",
+          "metadata": {},
+          "id": "tok_TK1_01cs953xjn9hvz1bcet7swq36j",
+          "encrypted_metadata": {},
+          "enabled": true,
+          "created_at": "2018-10-08T06:16:35.158298Z"
+        },
+        "object": "balance",
+        "amount": 9999999900
+      },
+      {
+        "token": {
+          "updated_at": "2018-10-18T07:02:48.547756Z",
+          "symbol": "TK2",
+          "subunit_to_unit": 1000000000000000000,
+          "object": "token",
+          "name": "Token 2",
+          "metadata": {},
+          "id": "tok_TK2_01ct2zqqz3yyvkbfbgbym3ffhg",
+          "encrypted_metadata": {},
+          "enabled": true,
+          "created_at": "2018-10-18T07:02:48.547743Z"
+        },
+        "object": "balance",
+        "amount": 0
+      }
+    ],
+    "address": "pgjz791619968896",
+    "account_id": "acc_01cs94yc3x4gggm6pwq2fhh1kv",
+    "account": {
+      "updated_at": "2018-10-08T06:17:14.246615Z",
+      "socket_topic": "account:acc_01cs94yc3x4gggm6pwq2fhh1kv",
+      "parent_id": null,
+      "object": "account",
+      "name": "Headquarter",
+      "metadata": {},
+      "master": true,
+      "id": "acc_01cs94yc3x4gggm6pwq2fhh1kv",
+      "encrypted_metadata": {},
+      "description": "Master Account",
+      "created_at": "2018-10-08T06:13:33.440688Z",
+      "category_ids": null,
+      "categories": null,
+      "avatar": {
+        "thumb": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/thumb.png?v=63706198634",
+        "small": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/small.png?v=63706198634",
+        "original": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/original.jpg?v=63706198634",
+        "large": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/large.png?v=63706198634"
+      }
+    }
+  },
+  {
+    "user_id": null,
+    "user": null,
+    "updated_at": "2018-10-08T06:13:33.464873Z",
+    "socket_topic": "wallet:oqhu442717991864",
+    "object": "wallet",
+    "name": "burn",
+    "metadata": {},
+    "identifier": "burn",
+    "encrypted_metadata": {},
+    "enabled": true,
+    "created_at": "2018-10-08T06:13:33.464864Z",
+    "balances": [
+      {
+        "token": {
+          "updated_at": "2018-10-08T06:16:35.158305Z",
+          "symbol": "TK1",
+          "subunit_to_unit": 100,
+          "object": "token",
+          "name": "Token",
+          "metadata": {},
+          "id": "tok_TK1_01cs953xjn9hvz1bcet7swq36j",
+          "encrypted_metadata": {},
+          "enabled": true,
+          "created_at": "2018-10-08T06:16:35.158298Z"
+        },
+        "object": "balance",
+        "amount": 0
+      },
+      {
+        "token": {
+          "updated_at": "2018-10-18T07:02:48.547756Z",
+          "symbol": "TK2",
+          "subunit_to_unit": 1000000000000000000,
+          "object": "token",
+          "name": "Token 2",
+          "metadata": {},
+          "id": "tok_TK2_01ct2zqqz3yyvkbfbgbym3ffhg",
+          "encrypted_metadata": {},
+          "enabled": true,
+          "created_at": "2018-10-18T07:02:48.547743Z"
+        },
+        "object": "balance",
+        "amount": 0
+      }
+    ],
+    "address": "oqhu442717991864",
+    "account_id": "acc_01cs94yc3x4gggm6pwq2fhh1kv",
+    "account": {
+      "updated_at": "2018-10-08T06:17:14.246615Z",
+      "socket_topic": "account:acc_01cs94yc3x4gggm6pwq2fhh1kv",
+      "parent_id": null,
+      "object": "account",
+      "name": "Headquarter",
+      "metadata": {},
+      "master": true,
+      "id": "acc_01cs94yc3x4gggm6pwq2fhh1kv",
+      "encrypted_metadata": {},
+      "description": "Master Account",
+      "created_at": "2018-10-08T06:13:33.440688Z",
+      "category_ids": null,
+      "categories": null,
+      "avatar": {
+        "thumb": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/thumb.png?v=63706198634",
+        "small": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/small.png?v=63706198634",
+        "original": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/original.jpg?v=63706198634",
+        "large": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/large.png?v=63706198634"
+      }
+    }
+  }
+]

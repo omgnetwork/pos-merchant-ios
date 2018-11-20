@@ -25,6 +25,10 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
     var onFailLoadAccounts: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
 
+    var isLoading: Bool = false {
+        didSet { self.onLoadStateChange?(self.isLoading) }
+    }
+
     weak var delegate: SelectAccountViewModelDelegate?
 
     let viewTitle: String = "select_account.view.title".localized()
@@ -37,12 +41,8 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
         }
     }
 
-    var isLoading: Bool = false {
-        didSet { self.onLoadStateChange?(self.isLoading) }
-    }
-
-    var paginator: AccountPaginator!
     private let sessionManager: SessionManagerProtocol
+    private var paginator: AccountPaginator!
 
     required init(accountLoader: AccountLoaderProtocol = AccountLoader(),
                   sessionManager: SessionManagerProtocol = SessionManager.shared,

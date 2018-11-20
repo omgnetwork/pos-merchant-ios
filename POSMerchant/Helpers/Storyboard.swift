@@ -27,7 +27,7 @@ enum Storyboard {
         case .loading: return "Loading"
         case .welcome: return "Welcome"
         case .signin: return "Signin"
-        case .selectAccount: return "SelectAccount"
+        case .selectAccount: return "AccountSelection"
         case .tabBar: return "TabBar"
         case .keypadInput: return "KeypadInput"
         case .topup: return "Topup"

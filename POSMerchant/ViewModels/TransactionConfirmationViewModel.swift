@@ -47,15 +47,21 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
     private let sessionManager: SessionManagerProtocol
     private let walletLoader: WalletLoaderProtocol
     private let transactionConsumptionGenerator: TransactionConsumptionGeneratorProtocol
+    private let transactionRequestGetter: TransactionRequestGetterProtocol
+    private let transactionConsumptionRejector: TransactionConsumptionRejectorProtocol
 
     required init(sessionManager: SessionManagerProtocol = SessionManager.shared,
                   walletLoader: WalletLoaderProtocol = WalletLoader(),
                   transactionConsumptionGenerator: TransactionConsumptionGeneratorProtocol = TransactionConsumptionGenerator(),
-                  transactionBuilder: TransactionBuilder) {
+                  transactionBuilder: TransactionBuilder,
+                  transactionRequestGetter: TransactionRequestGetterProtocol = TransactionRequestGetter(),
+                  transactionConsumptionRejector: TransactionConsumptionRejectorProtocol = TransactionConsumptionRejector()) {
         self.sessionManager = sessionManager
         self.walletLoader = walletLoader
         self.transactionBuilder = transactionBuilder
         self.transactionConsumptionGenerator = transactionConsumptionGenerator
+        self.transactionRequestGetter = transactionRequestGetter
+        self.transactionConsumptionRejector = transactionConsumptionRejector
         self.amountDisplay = "\(transactionBuilder.amount) \(transactionBuilder.token.symbol)"
         switch transactionBuilder.type {
         case .receive:
@@ -70,8 +76,7 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
 
     func loadTransactionRequest() {
         self.isLoading = true
-        TransactionRequest.get(using: self.sessionManager.httpClient,
-                               formattedId: self.transactionBuilder.transactionRequestFormattedId) { [weak self] result in
+        self.transactionRequestGetter.get(withFormattedId: self.transactionBuilder.transactionRequestFormattedId) { [weak self] result in
             self?.isLoading = false
             switch result {
             case let .success(data: transactionRequest) where
@@ -114,9 +119,9 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
 
     func waitingForUserConfirmationDidCancel() {
         self.isLoading = true
-        self.listenedConsumption?.reject(using: self.sessionManager.httpClient, callback: { [weak self] _ in
+        self.transactionConsumptionRejector.reject(consumption: self.listenedConsumption) { [weak self] _ in
             self?.isLoading = false
-        })
+        }
     }
 }
 

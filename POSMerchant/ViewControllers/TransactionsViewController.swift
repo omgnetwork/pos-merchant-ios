@@ -12,7 +12,7 @@ class TransactionsViewController: BaseTableViewController {
     private var viewModel: TransactionsViewModelProtocol = TransactionsViewModel()
 
     class func initWithViewModel(_ viewModel: TransactionsViewModelProtocol = TransactionsViewModel()) -> TransactionsViewController? {
-        guard let transactionsVC: TransactionsViewController = Storyboard.transaction.viewControllerFromId() else { return nil }
+        guard let transactionsVC: TransactionsViewController = Storyboard.more.viewControllerFromId() else { return nil }
         transactionsVC.viewModel = viewModel
         return transactionsVC
     }

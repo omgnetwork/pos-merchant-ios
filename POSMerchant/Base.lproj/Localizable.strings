@@ -58,6 +58,7 @@
 
 // Select token
 "select_token.view.title" = "Select token";
+"select_token.error.no_token" = "There is no token available.";
 
 // QR reader
 "qr_reader.label.scan_to" = "Scan to";

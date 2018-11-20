@@ -61,7 +61,7 @@ class SelectTokenViewModel: BaseViewModel, SelectTokenViewModelProtocol {
             switch result {
             case let .success(data: paginatedWallets):
                 guard let balances = paginatedWallets.data.first?.balances else {
-                    self.onFailLoadTokens?(POSMerchantError.message(message: "receive.error.no_token".localized()))
+                    self.onFailLoadTokens?(POSMerchantError.message(message: "select_token.error.no_token".localized()))
                     return
                 }
                 self.process(balances: balances)

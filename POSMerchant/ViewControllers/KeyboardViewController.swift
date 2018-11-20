@@ -31,7 +31,7 @@ class KeyboardViewController: BaseViewController {
         self.viewModel.tapDecimalSeparator()
     }
 
-    @IBAction func didTapNumberButton(_: UIButton) {
+    @IBAction func didTapDeleteButton(_: UIButton) {
         self.viewModel.tapDelete()
     }
 }

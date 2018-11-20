@@ -15,7 +15,7 @@ class LoadingViewController: BaseViewController {
     @IBOutlet var retryButton: UIButton!
 
     class func initWithViewModel(_ viewModel: LoadingViewModelProtocol = LoadingViewModel()) -> LoadingViewController? {
-        guard let loadingVC: LoadingViewController = Storyboard.welcome.viewControllerFromId() else { return nil }
+        guard let loadingVC: LoadingViewController = Storyboard.loading.viewControllerFromId() else { return nil }
         loadingVC.viewModel = viewModel
         return loadingVC
     }

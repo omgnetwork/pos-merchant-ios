@@ -17,11 +17,6 @@ protocol SelectAccountViewModelProtocol {
 
     var viewTitle: String { get }
 
-    init(accountLoader: AccountLoaderProtocol,
-         sessionManager: SessionManagerProtocol,
-         mode: SelectAccountMode,
-         delegate: SelectAccountViewModelDelegate?)
-
     func reloadAccounts()
     func getNextAccounts()
     func accountCellViewModel(at indexPath: IndexPath) -> AccountCellViewModel
