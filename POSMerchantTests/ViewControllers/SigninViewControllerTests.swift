@@ -7,7 +7,7 @@
 //
 
 @testable import POSMerchant
-import Toaster
+import SBToaster
 import XCTest
 
 class SigninViewControllerTests: XCTestCase {

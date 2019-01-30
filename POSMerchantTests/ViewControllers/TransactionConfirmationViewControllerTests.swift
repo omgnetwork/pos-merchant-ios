@@ -8,7 +8,7 @@
 
 import OmiseGO
 @testable import POSMerchant
-import Toaster
+import SBToaster
 import XCTest
 
 class TransactionConfirmationViewControllerTests: XCTestCase {
