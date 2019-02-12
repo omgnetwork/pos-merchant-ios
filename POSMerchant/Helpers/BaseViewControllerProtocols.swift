@@ -7,7 +7,7 @@
 //
 
 import MBProgressHUD
-import Toaster
+import SBToaster
 
 protocol Configurable {
     func configureView()

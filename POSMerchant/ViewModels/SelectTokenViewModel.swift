@@ -49,9 +49,10 @@ class SelectTokenViewModel: BaseViewModel, SelectTokenViewModelProtocol {
 
     func loadBalances() {
         self.isLoading = true
+        let primaryFilter = Wallet.filter(field: .identifier, comparator: .equal, value: "primary")
         let paginationParams = PaginatedListParams<Wallet>(page: 1,
                                                            perPage: 1,
-                                                           searchTerms: [.identifier: "primary"],
+                                                           filters: FilterParams(matchAll: [primaryFilter]),
                                                            sortBy: .address,
                                                            sortDirection: .ascending)
         let params = WalletListForAccountParams(paginatedListParams: paginationParams,
