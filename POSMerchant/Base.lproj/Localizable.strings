@@ -98,7 +98,7 @@
 "more.label.version" = "Version";
 
 // TouchID confirmation
-"touch_id_confirmation.view.title" = "Confirm your password";
+"touch_id_confirmation.view.title" = "Confirm password";
 "touch_id_confirmation.text_field.placeholder.password" = "Password";
 "touch_id_confirmation.button.title.enable" = "Enable";
 "touch_id_confirmation.error.validation.password" = "Password should be at least 8 characters long";

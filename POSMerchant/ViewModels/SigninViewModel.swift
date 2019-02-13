@@ -105,8 +105,13 @@ class SigninViewModel: BaseViewModel, SigninViewModelProtocol {
     private func validateAll() throws {
         // We use this syntax to force to go over all validation and don't stop when something is invalid
         // So we can show to the user all fields that have errors
-        var isValid = self.validateEmail()
-        isValid = self.validatePassword() && isValid
-        guard isValid else { throw POSMerchantError.missingRequiredFields }
+        var error: POSMerchantError?
+        if !self.validatePassword() {
+            error = POSMerchantError.message(message: "sign_in.error.validation.password".localized())
+        }
+        if !self.validateEmail() {
+            error = POSMerchantError.message(message: "sign_in.error.validation.email".localized())
+        }
+        if let e = error { throw e }
     }
 }
