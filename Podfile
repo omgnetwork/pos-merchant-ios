@@ -14,7 +14,7 @@ target 'POSMerchant' do
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
   pod 'AlamofireImage'
-  pod 'OmiseGO/Admin', '~> 1.1.0'
+  pod 'OmiseGO/Admin', '~> 1.1.1'
 
   target 'POSMerchantTests' do
     inherit! :search_paths
