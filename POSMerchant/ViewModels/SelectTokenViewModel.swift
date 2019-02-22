@@ -57,7 +57,7 @@ class SelectTokenViewModel: BaseViewModel, SelectTokenViewModelProtocol {
                                                            sortDirection: .ascending)
         let params = WalletListForAccountParams(paginatedListParams: paginationParams,
                                                 accountId: self.sessionManager.selectedAccount?.id ?? "",
-                                                owned: false)
+                                                owned: true)
         self.tokenLoader.listForAccount(withParams: params) { result in
             switch result {
             case let .success(data: paginatedWallets):

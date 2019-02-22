@@ -9,7 +9,7 @@
 import UIKit
 
 protocol KeyboardEventDelegate: class {
-    func didTapNumber(_ number: String)
+    func didTapNumber(_ number: String, keyboardViewModel: KeyboardViewModel)
     func didTapDecimalSeparator(_ character: Character)
     func didTapDelete()
 }
@@ -23,7 +23,7 @@ class KeyboardViewModel: BaseViewModel, KeyboardViewModelProtocol {
     }
 
     func tapNumber(_ number: Int) {
-        self.delegate?.didTapNumber(String(number))
+        self.delegate?.didTapNumber(String(number), keyboardViewModel: self)
     }
 
     func tapDecimalSeparator() {
