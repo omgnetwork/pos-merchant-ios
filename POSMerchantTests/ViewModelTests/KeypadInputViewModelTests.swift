@@ -77,7 +77,7 @@ class KeypadInputViewModelTests: XCTestCase {
         self.sut.onAmountUpdate = {
             amount = $0
         }
-        self.sut.didTapNumber("1")
+        self.sut.didTapNumber("1", keyboardViewModel: KeyboardViewModel(delegate: nil))
         XCTAssertEqual(amount, "1")
     }
 
@@ -87,7 +87,8 @@ class KeypadInputViewModelTests: XCTestCase {
         self.sut.onAmountUpdate = { _ in
             XCTFail("should not be called")
         }
-        self.sut.didTapNumber("0")
+
+        self.sut.didTapNumber("0", keyboardViewModel: KeyboardViewModel(delegate: nil))
         XCTAssertEqual(self.sut.displayAmount, initialAmount)
     }
 
@@ -97,8 +98,19 @@ class KeypadInputViewModelTests: XCTestCase {
         self.sut.onAmountUpdate = {
             amount = $0
         }
-        self.sut.didTapNumber("2")
+        self.sut.didTapNumber("2", keyboardViewModel: KeyboardViewModel(delegate: nil))
         XCTAssertEqual(amount, "12")
+    }
+
+    func testTapNumberWithHigherDecimalCountThanSelectedTokenIsNotAllowed() {
+        self.sut.selectedToken = StubGenerator.wallets().first!.balances.first!.token
+        XCTAssertEqual(self.sut.selectedToken?.subUnitToUnit, 100)
+        self.sut.displayAmount = "1.23"
+        self.sut.onAmountUpdate = { _ in
+            XCTFail("should not be called")
+        }
+        self.sut.didTapNumber("4", keyboardViewModel: KeyboardViewModel(delegate: nil))
+        XCTAssertEqual(self.sut.displayAmount, "1.23")
     }
 
     func testTapDesimalSeparatorWhenNotContainingYet() {
@@ -151,6 +163,13 @@ class KeypadInputViewModelTests: XCTestCase {
         }
         self.sut.didSelectToken(expectedToken)
         XCTAssertEqual(tokenStr, expectedToken.name)
+    }
+
+    func testSelectingTokenResetsAmount() {
+        let token = StubGenerator.wallets().first!.balances.first!.token
+        self.sut.displayAmount = "1.23"
+        self.sut.didSelectToken(token)
+        XCTAssertEqual(self.sut.displayAmount, "0")
     }
 
     func testResetAmount() {
