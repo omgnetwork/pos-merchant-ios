@@ -84,7 +84,7 @@ class KeypadInputViewModel: BaseViewModel, KeypadInputViewModelProtocol {
                                                            sortDirection: .ascending)
         let params = WalletListForAccountParams(paginatedListParams: paginationParams,
                                                 accountId: self.sessionManager.selectedAccount?.id ?? "",
-                                                owned: false)
+                                                owned: true)
         self.tokenLoader.listForAccount(withParams: params) { result in
             switch result {
             case let .success(data: paginatedWallets):
@@ -99,10 +99,17 @@ class KeypadInputViewModel: BaseViewModel, KeypadInputViewModelProtocol {
         }
     }
 
-    func didTapNumber(_ number: String) {
+    func didTapNumber(_ number: String, keyboardViewModel: KeyboardViewModel) {
+        let newNumber = self.displayAmount.appending(number)
         if self.displayAmount == "0" {
             if number == "0" { return }
             self.displayAmount = number
+        } else if let token = self.selectedToken,
+            let index = newNumber.index(where: { String($0) == keyboardViewModel.decimalSeparator }) {
+            let fractionalDigits = newNumber.distance(from: newNumber.index(after: index), to: newNumber.endIndex)
+            let maxAvailableDecimal = Int(log10(Double(token.subUnitToUnit)))
+            guard fractionalDigits <= maxAvailableDecimal else { return }
+            self.displayAmount.append(number)
         } else {
             self.displayAmount.append(number)
         }
@@ -124,6 +131,7 @@ class KeypadInputViewModel: BaseViewModel, KeypadInputViewModelProtocol {
 
     func didSelectToken(_ token: Token) {
         self.selectedToken = token
+        self.resetAmount()
     }
 
     func resetAmount() {

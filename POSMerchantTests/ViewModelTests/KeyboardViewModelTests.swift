@@ -55,7 +55,7 @@ class KeyboardViewModelTests: XCTestCase {
         var didTapDecimalSeparatorCalled: Character?
         var didTapDeleteCalled = false
 
-        func didTapNumber(_ number: String) {
+        func didTapNumber(_ number: String, keyboardViewModel _: KeyboardViewModel) {
             self.didTapNumberCalled = number
             self.expectation.fulfill()
         }
