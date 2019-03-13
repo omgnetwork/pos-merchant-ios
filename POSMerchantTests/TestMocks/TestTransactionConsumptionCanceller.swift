@@ -1,5 +1,5 @@
 //
-//  TestTransactionConsumptionRejector.swift
+//  TestTransactionConsumptionCanceller.swift
 //  POSMerchantTests
 //
 //  Created by Mederic Petit on 29/10/18.
@@ -10,7 +10,7 @@ import OmiseGO
 @testable import POSMerchant
 import UIKit
 
-class TestTransactionConsumptionRejector {
+class TestTransactionConsumptionCanceller {
     var callbackClosure: TransactionConsumption.RetrieveRequestCallback!
     var consumption: TransactionConsumption?
 
@@ -23,8 +23,8 @@ class TestTransactionConsumptionRejector {
     }
 }
 
-extension TestTransactionConsumptionRejector: TransactionConsumptionRejectorProtocol {
-    func reject(consumption: TransactionConsumption?,
+extension TestTransactionConsumptionCanceller: TransactionConsumptionCancellerProtocol {
+    func cancel(consumption: TransactionConsumption?,
                 callback: @escaping TransactionConsumption.RetrieveRequestCallback) -> TransactionConsumption.RetrieveRequest? {
         self.consumption = consumption
         self.callbackClosure = callback

@@ -72,7 +72,7 @@
 "transaction_confirmation.button.confirm" = "Confirm";
 "transaction_confirmation.button.cancel" = "Cancel";
 "transaction_confirmation.error.invalid_qr_code" = "The scanned QR code doesn't seem to be valid, please try again.";
-"transaction_cofirmation.error.user_rejected" = "The transaction has been cancelled";
+"transaction_confirmation.error.cancelled" = "The transaction has been cancelled";
 
 // Pending confirmation
 

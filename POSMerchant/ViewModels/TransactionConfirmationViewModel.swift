@@ -48,20 +48,20 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
     private let walletLoader: WalletLoaderProtocol
     private let transactionConsumptionGenerator: TransactionConsumptionGeneratorProtocol
     private let transactionRequestGetter: TransactionRequestGetterProtocol
-    private let transactionConsumptionRejector: TransactionConsumptionRejectorProtocol
+    private let transactionConsumptionCanceller: TransactionConsumptionCancellerProtocol
 
     required init(sessionManager: SessionManagerProtocol = SessionManager.shared,
                   walletLoader: WalletLoaderProtocol = WalletLoader(),
                   transactionConsumptionGenerator: TransactionConsumptionGeneratorProtocol = TransactionConsumptionGenerator(),
                   transactionBuilder: TransactionBuilder,
                   transactionRequestGetter: TransactionRequestGetterProtocol = TransactionRequestGetter(),
-                  transactionConsumptionRejector: TransactionConsumptionRejectorProtocol = TransactionConsumptionRejector()) {
+                  transactionConsumptionCanceller: TransactionConsumptionCancellerProtocol = TransactionConsumptionCanceller()) {
         self.sessionManager = sessionManager
         self.walletLoader = walletLoader
         self.transactionBuilder = transactionBuilder
         self.transactionConsumptionGenerator = transactionConsumptionGenerator
         self.transactionRequestGetter = transactionRequestGetter
-        self.transactionConsumptionRejector = transactionConsumptionRejector
+        self.transactionConsumptionCanceller = transactionConsumptionCanceller
         self.amountDisplay = "\(transactionBuilder.amount) \(transactionBuilder.token.symbol)"
         switch transactionBuilder.type {
         case .receive:
@@ -119,7 +119,7 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
 
     func waitingForUserConfirmationDidCancel() {
         self.isLoading = true
-        self.transactionConsumptionRejector.reject(consumption: self.listenedConsumption) { [weak self] _ in
+        self.transactionConsumptionCanceller.cancel(consumption: self.listenedConsumption) { [weak self] _ in
             self?.isLoading = false
         }
     }
@@ -129,8 +129,8 @@ extension TransactionConfirmationViewModel: TransactionConsumptionEventDelegate 
     func onSuccessfulTransactionConsumptionFinalized(_ transactionConsumption: TransactionConsumption) {
         self.transactionBuilder.transactionConsumption = transactionConsumption
         switch transactionConsumption.status {
-        case .rejected:
-            self.transactionBuilder.error = POSMerchantError.message(message: "transaction_cofirmation.error.user_rejected".localized())
+        case .rejected, .cancelled:
+            self.transactionBuilder.error = POSMerchantError.message(message: "transaction_confirmation.error.cancelled".localized())
         default: break
         }
         self.onCompletedConsumption?(self.transactionBuilder)
