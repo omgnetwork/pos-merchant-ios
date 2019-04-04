@@ -102,17 +102,17 @@ class TransactionRequestGetter: TransactionRequestGetterProtocol {
 }
 
 /// This wrapper has been created for the sake of testing with dependency injection
-protocol TransactionConsumptionRejectorProtocol {
+protocol TransactionConsumptionCancellerProtocol {
     @discardableResult
-    func reject(consumption: TransactionConsumption?,
+    func cancel(consumption: TransactionConsumption?,
                 callback: @escaping TransactionConsumption.RetrieveRequestCallback) -> TransactionConsumption.RetrieveRequest?
 }
 
-class TransactionConsumptionRejector: TransactionConsumptionRejectorProtocol {
+class TransactionConsumptionCanceller: TransactionConsumptionCancellerProtocol {
     @discardableResult
-    func reject(consumption: TransactionConsumption?,
+    func cancel(consumption: TransactionConsumption?,
                 callback: @escaping TransactionConsumption.RetrieveRequestCallback) -> TransactionConsumption.RetrieveRequest? {
-        return consumption?.reject(using: SessionManager.shared.httpClient,
+        return consumption?.cancel(using: SessionManager.shared.httpClient,
                                    callback: callback)
     }
 }

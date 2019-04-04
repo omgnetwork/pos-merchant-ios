@@ -17,7 +17,7 @@ class TransactionConfirmationViewModelTests: XCTestCase {
     var transactionBuilder: TransactionBuilder!
     var transactionConsumptionGenerator: TestTransactionConsumptionGenerator!
     var transactionRequestGetter: TestTransactionRequestGetter!
-    var transactionConsumptionRejector: TestTransactionConsumptionRejector!
+    var transactionConsumptionCanceller: TestTransactionConsumptionCanceller!
 
     override func setUp() {
         super.setUp()
@@ -26,7 +26,7 @@ class TransactionConfirmationViewModelTests: XCTestCase {
         self.walletLoader = TestWalletLoader()
         self.transactionConsumptionGenerator = TestTransactionConsumptionGenerator()
         self.transactionRequestGetter = TestTransactionRequestGetter()
-        self.transactionConsumptionRejector = TestTransactionConsumptionRejector()
+        self.transactionConsumptionCanceller = TestTransactionConsumptionCanceller()
     }
 
     func setupWithReceive() {
@@ -40,7 +40,7 @@ class TransactionConfirmationViewModelTests: XCTestCase {
                                                     transactionConsumptionGenerator: self.transactionConsumptionGenerator,
                                                     transactionBuilder: self.transactionBuilder,
                                                     transactionRequestGetter: self.transactionRequestGetter,
-                                                    transactionConsumptionRejector: self.transactionConsumptionRejector)
+                                                    transactionConsumptionCanceller: self.transactionConsumptionCanceller)
     }
 
     func setupWithTopup() {
@@ -54,7 +54,7 @@ class TransactionConfirmationViewModelTests: XCTestCase {
                                                     transactionConsumptionGenerator: self.transactionConsumptionGenerator,
                                                     transactionBuilder: self.transactionBuilder,
                                                     transactionRequestGetter: self.transactionRequestGetter,
-                                                    transactionConsumptionRejector: self.transactionConsumptionRejector)
+                                                    transactionConsumptionCanceller: self.transactionConsumptionCanceller)
     }
 
     override func tearDown() {
@@ -189,7 +189,7 @@ class TransactionConfirmationViewModelTests: XCTestCase {
         self.sut.performTransaction()
         self.transactionConsumptionGenerator.success(withConsumption: consumption)
         self.sut.waitingForUserConfirmationDidCancel()
-        XCTAssertEqual(self.transactionConsumptionRejector.consumption, consumption)
+        XCTAssertEqual(self.transactionConsumptionCanceller.consumption, consumption)
     }
 
     func testOnSuccessfulConsumptionFinalized() {

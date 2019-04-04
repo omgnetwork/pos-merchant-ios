@@ -119,7 +119,7 @@
 		03A352682186BBC200F065F8 /* TestWalletLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352672186BBC200F065F8 /* TestWalletLoader.swift */; };
 		03A3526A2186CE3100F065F8 /* TestTransactionConsumptionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352692186CE3100F065F8 /* TestTransactionConsumptionGenerator.swift */; };
 		03A3526C2186D1EA00F065F8 /* TestTransactionRequestGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3526B2186D1EA00F065F8 /* TestTransactionRequestGetter.swift */; };
-		03A3526E2186EE0200F065F8 /* TestTransactionConsumptionRejector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3526D2186EE0200F065F8 /* TestTransactionConsumptionRejector.swift */; };
+		03A3526E2186EE0200F065F8 /* TestTransactionConsumptionCanceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3526D2186EE0200F065F8 /* TestTransactionConsumptionCanceller.swift */; };
 		03A352702186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3526F2186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift */; };
 		03A352722187000700F065F8 /* TransactionConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A352712187000700F065F8 /* TransactionConfirmationViewControllerTests.swift */; };
 		03A3527421870D8E00F065F8 /* MoreTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A3527321870D8E00F065F8 /* MoreTableViewModelTests.swift */; };
@@ -276,7 +276,7 @@
 		03A352672186BBC200F065F8 /* TestWalletLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWalletLoader.swift; sourceTree = "<group>"; };
 		03A352692186CE3100F065F8 /* TestTransactionConsumptionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConsumptionGenerator.swift; sourceTree = "<group>"; };
 		03A3526B2186D1EA00F065F8 /* TestTransactionRequestGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionRequestGetter.swift; sourceTree = "<group>"; };
-		03A3526D2186EE0200F065F8 /* TestTransactionConsumptionRejector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConsumptionRejector.swift; sourceTree = "<group>"; };
+		03A3526D2186EE0200F065F8 /* TestTransactionConsumptionCanceller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConsumptionCanceller.swift; sourceTree = "<group>"; };
 		03A3526F2186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConfirmationViewModel.swift; sourceTree = "<group>"; };
 		03A352712187000700F065F8 /* TransactionConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
 		03A3527321870D8E00F065F8 /* MoreTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewModelTests.swift; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 				03A352672186BBC200F065F8 /* TestWalletLoader.swift */,
 				03A352692186CE3100F065F8 /* TestTransactionConsumptionGenerator.swift */,
 				03A3526B2186D1EA00F065F8 /* TestTransactionRequestGetter.swift */,
-				03A3526D2186EE0200F065F8 /* TestTransactionConsumptionRejector.swift */,
+				03A3526D2186EE0200F065F8 /* TestTransactionConsumptionCanceller.swift */,
 				03A3526F2186FF5E00F065F8 /* TestTransactionConfirmationViewModel.swift */,
 				03A352772188105600F065F8 /* TestMoreTableViewModel.swift */,
 				03A3527D2188194A00F065F8 /* TestTouchIDConfirmationViewModel.swift */,
@@ -862,7 +862,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-POSMerchant/Pods-POSMerchant-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-POSMerchant/Pods-POSMerchant-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
@@ -891,7 +891,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-POSMerchant/Pods-POSMerchant-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-POSMerchant/Pods-POSMerchant-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -996,7 +996,7 @@
 				0372A202217DD27200742033 /* SigninViewModelTests.swift in Sources */,
 				0372A1FA217DBA8A00742033 /* TestSessionManager.swift in Sources */,
 				0372A1FC217DBD3200742033 /* TestSocketClient.swift in Sources */,
-				03A3526E2186EE0200F065F8 /* TestTransactionConsumptionRejector.swift in Sources */,
+				03A3526E2186EE0200F065F8 /* TestTransactionConsumptionCanceller.swift in Sources */,
 				0328FEFE2181749200AC7CD2 /* TestAccountLoader.swift in Sources */,
 				03A352782188105600F065F8 /* TestMoreTableViewModel.swift in Sources */,
 				030217522181B9AA0055D800 /* SelectAccountViewContollerTests.swift in Sources */,
