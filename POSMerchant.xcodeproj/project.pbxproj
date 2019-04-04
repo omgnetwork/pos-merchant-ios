@@ -142,6 +142,7 @@
 		03C94B4F215B48BC007DF271 /* Paginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B4E215B48BC007DF271 /* Paginator.swift */; };
 		03C94B53215B49D5007DF271 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C94B51215B49D5007DF271 /* AccountTableViewCell.swift */; };
 		03C94B54215B49D5007DF271 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C94B52215B49D5007DF271 /* AccountTableViewCell.xib */; };
+		03CEB90A2251B81500C37843 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 03CEB9092251B81500C37843 /* Settings.bundle */; };
 		03E0BB472164821800FCB154 /* TransactionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0BB462164821800FCB154 /* TransactionResultViewController.swift */; };
 		03E0BB492164881A00FCB154 /* TransactionResultViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0BB482164881A00FCB154 /* TransactionResultViewModelProtocol.swift */; };
 		03E0BB4B2164882900FCB154 /* TransactionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0BB4A2164882900FCB154 /* TransactionResultViewModel.swift */; };
@@ -299,6 +300,7 @@
 		03C94B4E215B48BC007DF271 /* Paginator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paginator.swift; sourceTree = "<group>"; };
 		03C94B51215B49D5007DF271 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		03C94B52215B49D5007DF271 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		03CEB9092251B81500C37843 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		03E0BB462164821800FCB154 /* TransactionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewController.swift; sourceTree = "<group>"; };
 		03E0BB482164881A00FCB154 /* TransactionResultViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewModelProtocol.swift; sourceTree = "<group>"; };
 		03E0BB4A2164882900FCB154 /* TransactionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewModel.swift; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 				03FB02E4215A0DDE001EF0D4 /* Views */,
 				03FB02C4215A0A95001EF0D4 /* AppDelegate.swift */,
 				03FB02D0215A0A96001EF0D4 /* Info.plist */,
+				03CEB9092251B81500C37843 /* Settings.bundle */,
 			);
 			path = POSMerchant;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				03FB02BF215A0A95001EF0D4 /* Resources */,
 				EB9D3E963FCBD3681AF6D1DA /* [CP] Embed Pods Frameworks */,
 				03FB02F8215A0E8C001EF0D4 /* ShellScript */,
+				03CEB90B2251B82000C37843 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -786,6 +790,7 @@
 				03FB02F7215A0DDF001EF0D4 /* Assets.xcassets in Resources */,
 				033802E62161EBD100C2501F /* QRReader.storyboard in Resources */,
 				0325B59321632CDF006850FF /* Transaction.storyboard in Resources */,
+				03CEB90A2251B81500C37843 /* Settings.bundle in Resources */,
 				033802C3215CBEA000C2501F /* More.storyboard in Resources */,
 				033802DF215DEAB400C2501F /* BalanceTableViewCell.xib in Resources */,
 				0306DCA7215A334E00612953 /* LoadingView.xib in Resources */,
@@ -807,6 +812,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03CEB90B2251B82000C37843 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./credits.py -s \"$SRCROOT\" -o \"$SRCROOT/POSMerchant/Settings.bundle/Credits.plist\"\n";
+		};
 		03FB02F8215A0E8C001EF0D4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
