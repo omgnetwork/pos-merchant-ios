@@ -29,6 +29,6 @@ class AccountCellViewModel: BaseViewModel {
         self.shortName =
             account.name.count <= 3 ?
             account.name :
-            account.name.split(separator: " ").map({ String($0.first ?? Character("")).uppercased() }).prefix(3).joined()
+            account.name.split(separator: " ").map { String($0.first ?? Character("")).uppercased() }.prefix(3).joined()
     }
 }

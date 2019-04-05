@@ -15,11 +15,11 @@ class TestTransactionRequestGetter: NSObject {
     var formattedId: String?
 
     func getSuccess(withRequest request: TransactionRequest) {
-        self.callbackClosure?(OmiseGO.Response.success(data: request))
+        self.callbackClosure?(OmiseGO.Response.success(request))
     }
 
     func getFailure() {
-        self.callbackClosure?(OmiseGO.Response.fail(error: .unexpected(message: "test")))
+        self.callbackClosure?(OmiseGO.Response.failure(.unexpected(message: "test")))
     }
 }
 

@@ -16,11 +16,11 @@ class TestAccountLoader {
 
     func success(withAccount accounts: [Account], pagination: Pagination) {
         let response = JSONPaginatedListResponse<Account>(data: accounts, pagination: pagination)
-        self.callback?(OmiseGO.Response.success(data: response))
+        self.callback?(OmiseGO.Response.success(response))
     }
 
     func failure(withError error: OMGError) {
-        self.callback?(OmiseGO.Response.fail(error: error))
+        self.callback?(OmiseGO.Response.failure(error))
     }
 }
 

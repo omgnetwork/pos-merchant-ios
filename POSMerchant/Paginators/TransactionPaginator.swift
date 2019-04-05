@@ -25,9 +25,9 @@ class TransactionPaginator: Paginator<Transaction> {
                                                       sortDirection: .descending)
         self.currentRequest = self.transactionLoader.list(withParams: params) { response in
             switch response {
-            case let .success(data: transactionList):
+            case let .success(transactionList):
                 self.didReceiveResults(results: transactionList.data, pagination: transactionList.pagination)
-            case let .fail(error: error):
+            case let .failure(error):
                 self.didFail(withError: error)
             }
         }

@@ -14,7 +14,7 @@ protocol Configurable {
     func configureViewModel()
 }
 
-protocol Loadable: class {
+protocol Loadable: AnyObject {
     var loading: MBProgressHUD? { get set }
 }
 

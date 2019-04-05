@@ -25,7 +25,7 @@ class LoadingViewModel: BaseViewModel, LoadingViewModelProtocol {
 
     var isLoading: Bool = true {
         didSet {
-            self.onLoadStateChange?(isLoading)
+            self.onLoadStateChange?(self.isLoading)
         }
     }
 

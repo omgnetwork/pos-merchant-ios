@@ -46,7 +46,7 @@ class Paginator<T: Decodable> {
     }
 
     func loadNext() {
-        guard self.state == .idle && !self.reachedLastPage else { return }
+        guard self.state == .idle, !self.reachedLastPage else { return }
         self.state = .loading
         self.load()
     }

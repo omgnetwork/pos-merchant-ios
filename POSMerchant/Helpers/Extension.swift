@@ -107,7 +107,7 @@ extension UIView {
     }
 
     func pinToSuperView() {
-        [.left, .top, .right, .bottom].forEach({ attribute in
+        [.left, .top, .right, .bottom].forEach { attribute in
             self.superview?.addConstraint(NSLayoutConstraint(item: self,
                                                              attribute: attribute,
                                                              relatedBy: .equal,
@@ -115,6 +115,6 @@ extension UIView {
                                                              attribute: attribute,
                                                              multiplier: 1,
                                                              constant: 0))
-        })
+        }
     }
 }

@@ -75,7 +75,8 @@ extension SelectTokenTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell: BalanceTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: BalanceTableViewCell.identifier(),
-            for: indexPath) as? BalanceTableViewCell else {
+            for: indexPath
+        ) as? BalanceTableViewCell else {
             return UITableViewCell()
         }
         cell.balanceCellViewModel = self.viewModel.tokenCellViewModel(at: indexPath)

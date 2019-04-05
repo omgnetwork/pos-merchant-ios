@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol WaitingForUserConfirmationViewControllerDelegate: class {
+protocol WaitingForUserConfirmationViewControllerDelegate: AnyObject {
     func waitingForUserConfirmationDidCancel()
 }
 

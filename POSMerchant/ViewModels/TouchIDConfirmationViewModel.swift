@@ -34,7 +34,7 @@ class TouchIDConfirmationViewModel: BaseViewModel, TouchIDConfirmationViewModelP
     }
 
     var isLoading: Bool = false {
-        didSet { self.onLoadStateChange?(isLoading) }
+        didSet { self.onLoadStateChange?(self.isLoading) }
     }
 
     private let sessionManager: SessionManagerProtocol

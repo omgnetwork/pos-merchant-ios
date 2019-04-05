@@ -22,7 +22,7 @@ class BalanceCellViewModel: BaseViewModel {
         self.shortName =
             balance.token.name.count <= 3 ?
             balance.token.name :
-            balance.token.name.split(separator: " ").map({ String($0.first ?? Character("")).uppercased() }).prefix(3).joined()
+            balance.token.name.split(separator: " ").map { String($0.first ?? Character("")).uppercased() }.prefix(3).joined()
         self.displayAmount = balance.displayAmount(withPrecision: 2)
         self.isSelected = isSelected
     }

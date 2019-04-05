@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol KeyboardEventDelegate: class {
+protocol KeyboardEventDelegate: AnyObject {
     func didTapNumber(_ number: String, keyboardViewModel: KeyboardViewModel)
     func didTapDecimalSeparator(_ character: Character)
     func didTapDelete()

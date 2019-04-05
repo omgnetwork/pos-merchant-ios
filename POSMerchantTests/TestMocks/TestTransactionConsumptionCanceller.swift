@@ -15,11 +15,11 @@ class TestTransactionConsumptionCanceller {
     var consumption: TransactionConsumption?
 
     func getSuccess(withConsumption consumption: TransactionConsumption) {
-        self.callbackClosure?(OmiseGO.Response.success(data: consumption))
+        self.callbackClosure?(OmiseGO.Response.success(consumption))
     }
 
     func getFailure() {
-        self.callbackClosure?(OmiseGO.Response.fail(error: .unexpected(message: "test")))
+        self.callbackClosure?(OmiseGO.Response.failure(.unexpected(message: "test")))
     }
 }
 

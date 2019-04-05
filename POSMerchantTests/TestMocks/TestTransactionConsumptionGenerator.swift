@@ -15,11 +15,11 @@ class TestTransactionConsumptionGenerator {
     var callbackClosure: TransactionConsumption.RetrieveRequestCallback!
 
     func success(withConsumption consumption: TransactionConsumption) {
-        self.callbackClosure?(OmiseGO.Response.success(data: consumption))
+        self.callbackClosure?(OmiseGO.Response.success(consumption))
     }
 
     func failure(withError error: OMGError) {
-        self.callbackClosure?(OmiseGO.Response.fail(error: error))
+        self.callbackClosure?(OmiseGO.Response.failure(error))
     }
 }
 

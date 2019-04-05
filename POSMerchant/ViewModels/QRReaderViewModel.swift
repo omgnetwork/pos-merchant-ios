@@ -9,7 +9,7 @@
 import AVFoundation
 import UIKit
 
-protocol QRReaderDelegate: class {
+protocol QRReaderDelegate: AnyObject {
     func didDecode(_ string: String)
 }
 

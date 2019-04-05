@@ -14,11 +14,11 @@ class TestWalletLoader: NSObject {
     var callbackClosure: Wallet.RetrieveRequestCallback?
 
     func getSuccess(withWallet wallet: Wallet) {
-        self.callbackClosure?(OmiseGO.Response.success(data: wallet))
+        self.callbackClosure?(OmiseGO.Response.success(wallet))
     }
 
     func getFailure(withError error: OMGError) {
-        self.callbackClosure?(OmiseGO.Response.fail(error: error))
+        self.callbackClosure?(OmiseGO.Response.failure(error))
     }
 }
 

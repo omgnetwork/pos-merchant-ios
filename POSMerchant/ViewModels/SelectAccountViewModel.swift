@@ -14,7 +14,7 @@ enum SelectAccountMode {
     case exchangeAccount
 }
 
-protocol SelectAccountViewModelDelegate: class {
+protocol SelectAccountViewModelDelegate: AnyObject {
     func didSelectAccount(account: Account, forMode mode: SelectAccountMode)
 }
 
@@ -37,7 +37,7 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
 
     private var accountCellViewModels: [AccountCellViewModel]! = [] {
         didSet {
-            if accountCellViewModels.isEmpty { self.reloadTableViewClosure?() }
+            if self.accountCellViewModels.isEmpty { self.reloadTableViewClosure?() }
         }
     }
 
@@ -59,8 +59,7 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
                                           }, failureClosure: { [weak self] error in
                                               self?.process(error: error)
                                               self?.isLoading = false
-                                          }
-        )
+        })
     }
 
     func reloadAccounts() {
@@ -77,12 +76,12 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
     private func process(accounts: [Account]) {
         var newCellViewModels: [AccountCellViewModel] = []
         let exchangeAccountId = UserDefaultsWrapper().getValue(forKey: .exchangeAccountId)
-        accounts.forEach({
+        accounts.forEach {
             let isSelected: Bool = self.mode == .currentAccount ?
                 $0.id == self.sessionManager.selectedAccount?.id :
                 $0.id == exchangeAccountId
             newCellViewModels.append(AccountCellViewModel(account: $0, isSelected: isSelected))
-        })
+        }
         var indexPaths: [IndexPath] = []
         for row in
         self.accountCellViewModels.count ..< (self.accountCellViewModels.count + newCellViewModels.count) {
@@ -105,11 +104,11 @@ class SelectAccountViewModel: BaseViewModel, SelectAccountViewModelProtocol {
 
     private func updateSelection() {
         let exchangeAccountId = UserDefaultsWrapper().getValue(forKey: .exchangeAccountId)
-        self.accountCellViewModels.forEach({
+        self.accountCellViewModels.forEach {
             $0.isSelected = self.mode == .currentAccount ?
                 $0.account.id == self.sessionManager.selectedAccount?.id :
                 $0.account.id == exchangeAccountId
-        })
+        }
         self.reloadTableViewClosure?()
     }
 }

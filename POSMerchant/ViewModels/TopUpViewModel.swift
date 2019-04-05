@@ -23,7 +23,8 @@ class TopUpViewModel: KeypadInputViewModel {
                                                           token: self.selectedToken!,
                                                           decodedString: string) else {
             self.onInvalidQRCodeFormat?(.message(message: "keypad_input.error.invalid_qr_code".localized()))
-            return }
+            return
+        }
         self.shouldProcessTransaction?(transactionBuilder)
     }
 
