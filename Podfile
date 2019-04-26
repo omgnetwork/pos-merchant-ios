@@ -8,13 +8,13 @@ target 'POSMerchant' do
   # Pods for POSMerchant
   pod 'Alamofire'
   pod 'KeychainAccess'
-  pod 'BigInt'
+  pod 'BigInt', '~> 4.0'
   pod 'MBProgressHUD'
   pod 'SBToaster'
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
   pod 'AlamofireImage'
-  pod 'OmiseGO/Admin', :git => 'https://github.com/omisego/ios-sdk.git', :branch => '123-update-reset-password'#'~> 1.2.0.beta.1'
+  pod 'OmiseGO/Admin', '~> 1.2.0.beta.2'
 
   target 'POSMerchantTests' do
     inherit! :search_paths
