@@ -61,7 +61,8 @@ extension TransactionsViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell: TransactionTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: TransactionTableViewCell.identifier(),
-            for: indexPath) as? TransactionTableViewCell else {
+            for: indexPath
+        ) as? TransactionTableViewCell else {
             return UITableViewCell()
         }
         cell.transactionCellViewModel = self.viewModel.transactionCellViewModel(at: indexPath)

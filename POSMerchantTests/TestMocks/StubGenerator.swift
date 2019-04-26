@@ -17,7 +17,7 @@ class StubGenerator {
         let fixtureFileURL = directoryURL.appendingPathComponent(filePath)
         let data = try! Data(contentsOf: fixtureFileURL)
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .custom({ try dateDecodingStrategy(decoder: $0) })
+        decoder.dateDecodingStrategy = .custom { try dateDecodingStrategy(decoder: $0) }
         return try! decoder.decode(T.self, from: data)
     }
 

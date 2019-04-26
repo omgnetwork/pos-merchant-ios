@@ -19,13 +19,13 @@ class TestTransactionLoader {
     func loadTransactionSuccess() {
         self.completionClosure(
             OmiseGO.Response.success(
-                data: JSONPaginatedListResponse<Transaction>(data: self.transactions!, pagination: self.pagination!)
+                JSONPaginatedListResponse<Transaction>(data: self.transactions!, pagination: self.pagination!)
             )
         )
     }
 
     func loadTransactionFailed(withError error: OMGError) {
-        self.completionClosure(OmiseGO.Response.fail(error: error))
+        self.completionClosure(OmiseGO.Response.failure(error))
     }
 }
 

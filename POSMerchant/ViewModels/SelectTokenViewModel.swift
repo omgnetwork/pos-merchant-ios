@@ -8,7 +8,7 @@
 
 import OmiseGO
 
-protocol SelectTokenDelegate: class {
+protocol SelectTokenDelegate: AnyObject {
     func didSelectToken(_ token: Token)
 }
 
@@ -66,7 +66,7 @@ class SelectTokenViewModel: BaseViewModel, SelectTokenViewModelProtocol {
                     return
                 }
                 self.process(balances: balances)
-            case let .fail(error: error):
+            case let .failure(error):
                 self.onFailLoadTokens?(.omiseGO(error: error))
             }
             self.isLoading = false
@@ -75,10 +75,10 @@ class SelectTokenViewModel: BaseViewModel, SelectTokenViewModelProtocol {
 
     private func process(balances: [Balance]) {
         var newCellViewModels: [BalanceCellViewModel] = []
-        balances.forEach({
+        balances.forEach {
             newCellViewModels.append(BalanceCellViewModel(balance: $0,
                                                           isSelected: $0.token == self.selectedToken))
-        })
+        }
         self.balanceCellViewModels = newCellViewModels
     }
 }

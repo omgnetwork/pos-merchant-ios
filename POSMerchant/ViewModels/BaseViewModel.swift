@@ -8,5 +8,4 @@
 
 import UIKit
 
-class BaseViewModel: NSObject {
-}
+class BaseViewModel: NSObject {}

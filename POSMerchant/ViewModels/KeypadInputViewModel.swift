@@ -52,13 +52,13 @@ class KeypadInputViewModel: BaseViewModel, KeypadInputViewModelProtocol {
 
     var isReady: Bool = false {
         didSet {
-            self.onReadyStateChange?(isReady)
+            self.onReadyStateChange?(self.isReady)
         }
     }
 
     var isAmountValid: Bool = false {
         didSet {
-            self.onAmountValidationChange?(isAmountValid)
+            self.onAmountValidationChange?(self.isAmountValid)
         }
     }
 
@@ -93,7 +93,7 @@ class KeypadInputViewModel: BaseViewModel, KeypadInputViewModelProtocol {
                     return
                 }
                 self.selectedToken = token
-            case let .fail(error: error):
+            case let .failure(error):
                 self.onFailGetDefaultToken?(.omiseGO(error: error))
             }
         }
@@ -105,7 +105,7 @@ class KeypadInputViewModel: BaseViewModel, KeypadInputViewModelProtocol {
             if number == "0" { return }
             self.displayAmount = number
         } else if let token = self.selectedToken,
-            let index = newNumber.index(where: { String($0) == keyboardViewModel.decimalSeparator }) {
+            let index = newNumber.firstIndex(where: { String($0) == keyboardViewModel.decimalSeparator }) {
             let fractionalDigits = newNumber.distance(from: newNumber.index(after: index), to: newNumber.endIndex)
             let maxAvailableDecimal = Int(log10(Double(token.subUnitToUnit)))
             guard fractionalDigits <= maxAvailableDecimal else { return }

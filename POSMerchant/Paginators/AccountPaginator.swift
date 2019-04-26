@@ -27,7 +27,7 @@ class AccountPaginator: Paginator<Account> {
             switch response {
             case let .success(data: transactionList):
                 self.didReceiveResults(results: transactionList.data, pagination: transactionList.pagination)
-            case let .fail(error: error):
+            case let .failure(error):
                 self.didFail(withError: error)
             }
         }

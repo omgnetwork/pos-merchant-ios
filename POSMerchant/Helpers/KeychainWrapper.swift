@@ -24,7 +24,7 @@ class KeychainWrapper {
                 dispatchMain {
                     success()
                 }
-            } catch let error {
+            } catch {
                 dispatchMain {
                     failure(POSMerchantError.other(error: error))
                 }
@@ -44,7 +44,7 @@ class KeychainWrapper {
                 dispatchMain {
                     success(password)
                 }
-            } catch let error {
+            } catch {
                 dispatchMain {
                     failure(POSMerchantError.other(error: error))
                 }

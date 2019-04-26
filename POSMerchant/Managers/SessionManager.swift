@@ -103,7 +103,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
         self.httpClient.login(withParams: params) { response in
             switch response {
-            case let .fail(error: error): failure(.omiseGO(error: error))
+            case let .failure(error): failure(.omiseGO(error: error))
             case let .success(data: authenticationToken):
                 self.keychainWrapper.storeValue(value: authenticationToken.token, forKey: .authenticationToken)
                 self.keychainWrapper.storeValue(value: authenticationToken.user.id, forKey: .userId)
@@ -125,7 +125,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
                 case .success(data: _):
                     self.clearTokens()
                     success()
-                case let .fail(error: error):
+                case let .failure(error):
                     failure(.omiseGO(error: error))
                 }
             }
@@ -143,7 +143,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
             case let .success(data: account):
                 self.selectedAccount = account
                 self.setDefaultExchangeAccount(withAccount: account)
-            case let .fail(error: error):
+            case let .failure(error):
                 failure(error)
             }
         }
@@ -174,7 +174,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
     }
 
     private func updateState() {
-        if self.isLoggedIn() && self.userDefaultsWrapper.getValue(forKey: .accountId) != nil {
+        if self.isLoggedIn(), self.userDefaultsWrapper.getValue(forKey: .accountId) != nil {
             if self.selectedAccount == nil {
                 self.state = .loading
             } else if self.didShowWelcome == false {

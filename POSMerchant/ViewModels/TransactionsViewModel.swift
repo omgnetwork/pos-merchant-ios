@@ -20,7 +20,7 @@ class TransactionsViewModel: BaseViewModel, TransactionsViewModelProtocol {
 
     private var transactionCellViewModels: [TransactionCellViewModel]! = [] {
         didSet {
-            if transactionCellViewModels.isEmpty { self.reloadTableViewClosure?() }
+            if self.transactionCellViewModels.isEmpty { self.reloadTableViewClosure?() }
         }
     }
 
@@ -42,8 +42,7 @@ class TransactionsViewModel: BaseViewModel, TransactionsViewModelProtocol {
                                               }, failureClosure: { [weak self] error in
                                                   self?.process(error: error)
                                                   self?.isLoading = false
-                                              }
-        )
+        })
     }
 
     func reloadTransactions() {
@@ -60,10 +59,10 @@ class TransactionsViewModel: BaseViewModel, TransactionsViewModelProtocol {
     private func process(transactions: [Transaction]) {
         guard let account = self.sessionManager.selectedAccount else { return }
         var newCellViewModels: [TransactionCellViewModel] = []
-        transactions.forEach({
+        transactions.forEach {
             newCellViewModels.append(TransactionCellViewModel(transaction: $0,
                                                               currentAccount: account))
-        })
+        }
         var indexPaths: [IndexPath] = []
         for row in
         self.transactionCellViewModels.count ..< (self.transactionCellViewModels.count + newCellViewModels.count) {

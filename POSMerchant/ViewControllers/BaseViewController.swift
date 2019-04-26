@@ -30,7 +30,7 @@ class BaseTableViewController: UITableViewController, Toastable, Loadable, Confi
         loader.translatesAutoresizingMaskIntoConstraints = false
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44))
         view.addSubview(loader)
-        [.centerX, .centerY].forEach({
+        [.centerX, .centerY].forEach {
             view.addConstraint(NSLayoutConstraint(item: loader,
                                                   attribute: $0,
                                                   relatedBy: .equal,
@@ -38,7 +38,7 @@ class BaseTableViewController: UITableViewController, Toastable, Loadable, Confi
                                                   attribute: $0,
                                                   multiplier: 1,
                                                   constant: 0))
-        })
+        }
         return view
     }()
 

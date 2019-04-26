@@ -42,6 +42,7 @@ class TestSocketClient: WebSocketClient {
     func write(data: Data, completion _: (() -> Void)?) {
         self.lastSentData = data
     }
+
     func write(ping _: Data, completion _: (() -> Void)?) {}
     func write(pong _: Data, completion _: (() -> Void)?) {}
 }

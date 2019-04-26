@@ -1,5 +1,5 @@
 language: swift
-osx_image: xcode10
+osx_image: xcode10.2
 cache: cocoapods
 xcode_workspace: POSMerchant.xcworkspace
 xcode_scheme: POSMerchant

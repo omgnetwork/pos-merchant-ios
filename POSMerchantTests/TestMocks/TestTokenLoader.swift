@@ -16,11 +16,11 @@ class TestTokenLoader {
 
     func success(withWallet wallets: [Wallet], pagination: Pagination) {
         let response = JSONPaginatedListResponse<Wallet>(data: wallets, pagination: pagination)
-        self.callback?(OmiseGO.Response.success(data: response))
+        self.callback?(OmiseGO.Response.success(response))
     }
 
     func failure(withError error: OMGError) {
-        self.callback?(OmiseGO.Response.fail(error: error))
+        self.callback?(OmiseGO.Response.failure(error))
     }
 }
 

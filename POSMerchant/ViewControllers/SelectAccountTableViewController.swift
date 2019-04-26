@@ -62,7 +62,8 @@ extension SelectAccountTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell: AccountTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: AccountTableViewCell.identifier(),
-            for: indexPath) as? AccountTableViewCell else {
+            for: indexPath
+        ) as? AccountTableViewCell else {
             return UITableViewCell()
         }
         cell.accountCellViewModel = self.viewModel.accountCellViewModel(at: indexPath)
